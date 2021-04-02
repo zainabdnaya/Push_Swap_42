@@ -6,7 +6,7 @@
 #    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/02 16:37:51 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/02 17:08:48 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC_NAME1= 	checker.c\
 			errors.c\
 			to_use.c\
 			simple_free.c\
+			list.c\
 			sa.c\
 
 SRC_NAME2= swap.c\
