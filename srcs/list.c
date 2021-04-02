@@ -12,50 +12,49 @@
 
 #include "push_swap.h"
 
-void add_back(t_stack **head,t_stack *new)
+t_stack *add_back(t_stack **head,t_stack *new,char *av)
 {
     t_stack *tmp;
     
-    if (!head || !new)
-        return;
-    if (new)
+    new=(t_stack *)malloc(sizeof(t_stack));
+    new->number = ft_atoi(av);
+    new->next = NULL;
+    new->previous = NULL;
+    if(*head == NULL)
+       *head = new;
+    else
     {
         tmp = *head;
         while (tmp->next)
                 tmp = tmp->next;
         tmp->next = new;
-        new->next = NULL;
         new->previous = tmp;
-        }
-    else
-        *head = new;
+            return(*head);
+    }
+    return(*head);
 }
 
-t_stack *creat_stack(char *av,t_stack *A)
-{
-    A = malloc(sizeof(t_stack));
-    
-    A->number = ft_atoi(av);
-    A->next = NULL;
-    A->previous = NULL;
-    return (A);
-}
 
 t_stack *put_in_list(char **av)
 {
     t_stack *A;
     t_stack *tmp;
+    char *str;
     int i;
 
     i = 1;
-    A = malloc(sizeof(t_stack));
+     A =(t_stack *)malloc(sizeof(t_stack));
+    A = NULL;
+    tmp = NULL;
+    str = NULL;
     while (av[i])
     {
-        // puts(av[i]);
-        tmp = creat_stack(av[i], tmp);
-        add_back(&A, tmp);
+        str = ft_strdup(av[i]);
+        // puts(str);
+        add_back(&A,tmp,str);
+        free_stack(tmp);
+        free_arg(&str);
         i++;
     }
-    // free_stack(tmp);
     return (A);
 }

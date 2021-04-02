@@ -28,12 +28,12 @@ typedef struct s_stack{
 /**********************LIST*******************/
 t_stack *put_in_list(char **av);
 t_stack *creat_stack(char *av, t_stack *A);
-void add_back(t_stack **head, t_stack *new);
+// void add_back(t_stack **head, t_stack *new);
 /**********************TOOlS*******************/
 int ft_strcmp(const char *s1, const char *s2);
 
 /**********************ERRORS*********************/
-void first_errors(int ac, char **av);
+int first_errors(int ac, char **av);
 
 /**********************FREE*********************/
 void free_arg(char **arg);

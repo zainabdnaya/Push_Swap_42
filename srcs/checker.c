@@ -30,12 +30,10 @@ void print_list(t_stack *ptr)
 int main(int ac, char **av)
 {
     t_stack A;
-    t_stack B;
 
-    first_errors(ac, av);
-    // A = *put_in_list(av);
-    A = *creat_stack(av[1], &A);
-    B = *creat_stack(av[2], &B);
-    A.next = &B;
-    print_list(&A);
+    if (first_errors(ac, av) == 1)
+    {
+        A = *put_in_list(av);
+        print_list(&A);
+    }
 }

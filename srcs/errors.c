@@ -42,16 +42,21 @@ void check_replicat(char **av)
     }
 }
 
-void first_errors(int ac, char **av)
+int  first_errors(int ac, char **av)
 {
     if (ac < 2)
-        ft_putstr_fd("Error: Add agruments", 0);
+        {
+            ft_putstr_fd("Error: Add agruments", 0);
+             exit(1);
+        }
     if (ac == 2)
     {
         ft_putstr_fd("Error: There is one element:", 0);
         write(1, "\n", 1);
         write(1, av[1], 1);
+        exit(1);
     }
     else
         check_replicat(av);
+    return(1);
 }
