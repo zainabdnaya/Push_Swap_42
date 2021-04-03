@@ -14,7 +14,7 @@ sort data on a stack, with a limited set of instructions, using the lowest possi
 the moves are named:  sa, sb, ss, ra, rb, rr, rra, rrb, rrr, pa, pb.<br>
 I use Double linked list to implement these moves :<br>
 
-## sa || sb 	:arrow_right_hoo:  ##
+## sa || sb :arrows_clockwise:  ##
     
     -swap 2 first element
 
