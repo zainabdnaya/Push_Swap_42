@@ -22,7 +22,9 @@ I use Double linked list to implement these moves :<br>
 <a href="https://ibb.co/9ggTtbY"><img src="https://i.ibb.co/YQQkZcj/Screen-Shot-2021-04-03-at-2-51-42-PM.png" alt="Screen-Shot-2021-04-03-at-2-51-42-PM" border="0"></a>
 
 ##  :arrow_heading_down: rra || rrb :arrows_counterclockwise: ##
-
-    - put the last element First, so all elements go DOWN by ine element 
-
+    -put the last element First, so all elements go DOWN by ine element 
 <a href="https://ibb.co/k6NrLj8"><img src="https://i.ibb.co/KzTQtdq/Screen-Shot-2021-04-03-at-5-26-13-PM.png" alt="Screen-Shot-2021-04-03-at-5-26-13-PM" border="0"></a>
+
+## pa || pb :arrow_right: ##
+    -take the first element at the top of a stack and put it at the top of other_stack.
+<a href="https://ibb.co/Byf5G3C"><img src="https://i.ibb.co/qND3Cjr/Screen-Shot-2021-04-03-at-6-41-55-PM.png" alt="Screen-Shot-2021-04-03-at-6-41-55-PM" border="0"></a>

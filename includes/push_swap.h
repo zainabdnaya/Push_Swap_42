@@ -45,5 +45,6 @@ void free_stack(t_stack *stack);
 t_stack *swap_stack(t_stack *head);
 t_stack *rotate_stack(t_stack *head);
 t_stack *reverse_stack(t_stack *head);
+void push_stack(t_stack *push_out, t_stack *push_in);
 
 #endif
