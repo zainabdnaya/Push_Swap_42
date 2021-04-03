@@ -17,9 +17,10 @@ I use Double linked list to implement these moves :<br>
 ## sa || sb 	:arrow_right_hoo:  ##
     
     -swap 2 first element
-    
+
 
 <a href="https://ibb.co/wC6FY2V"><img src="https://i.ibb.co/828LXQq/Screen-Shot-2021-04-03-at-12-44-32-PM.png" alt="Screen-Shot-2021-04-03-at-12-44-32-PM" border="0"></a>
-## ra || rb :leftwards_arrow_with_hook: ##
+
+## ra || rb :arrow_right_hook:	 ##
     -put the first element last,and all elemnt go UP by one :arrow_heading_up:
 <a href="https://ibb.co/9ggTtbY"><img src="https://i.ibb.co/YQQkZcj/Screen-Shot-2021-04-03-at-2-51-42-PM.png" alt="Screen-Shot-2021-04-03-at-2-51-42-PM" border="0"></a>
