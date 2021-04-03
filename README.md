@@ -11,7 +11,9 @@ sort data on a stack, with a limited set of instructions, using the lowest possi
 
  ## MOVES ##
 
-the moves are named:  sa, sb, ss, ra, rb, rr, rra, rrb, rrr, pa, pb.
-I use Double linked list to implement these moves :
-** sa || sb **
+the moves are named:  sa, sb, ss, ra, rb, rr, rra, rrb, rrr, pa, pb.<br>
+I use Double linked list to implement these moves :<br>
+
+**sa || sb**
+    <br>
     <a href="https://ibb.co/wC6FY2V"><img src="https://i.ibb.co/828LXQq/Screen-Shot-2021-04-03-at-12-44-32-PM.png" alt="Screen-Shot-2021-04-03-at-12-44-32-PM" border="0"></a>
