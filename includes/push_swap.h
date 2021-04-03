@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 12:39:44 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/03 13:29:16 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ typedef struct s_stack{
 /**********************LIST*******************/
 t_stack *put_in_list(char **av);
 t_stack *creat_stack(char *av, t_stack *A);
-// void add_back(t_stack **head, t_stack *new);
+t_stack *add_back(t_stack **head,t_stack *new,char *av);
+t_stack *add_back1(t_stack **head,t_stack *new);
+t_stack *add_back1(t_stack **head, t_stack *new);
 /**********************TOOlS*******************/
 int ft_strcmp(const char *s1, const char *s2);
 int size_list(t_stack *A);

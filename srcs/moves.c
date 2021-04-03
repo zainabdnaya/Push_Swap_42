@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 12:41:17 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/03 13:33:28 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,18 @@ t_stack *swap_stack(t_stack *head)
     return(head);   
 }
 
+
 t_stack *rotate_stack(t_stack *head)
 {
-    
+    t_stack *tmp;
+    t_stack *tmp2;
+    t_stack *A;
 
-    return(head);
+    tmp = head;
+    tmp2 =(t_stack *)malloc(sizeof(t_stack));
+    tmp2->number = tmp->number;
+    tmp2->next = NULL;
+    head = head->next;
+    A = add_back1(&head, tmp2);
+    return (head);
 }
