@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:33:49 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/02 15:35:16 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/03 12:33:38 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,17 @@ int ft_strcmp(const char *s1, const char *s2)
     if (((s1[i] == '\0' && s2[i] != '\0') || (s2[i] == '\0' && s1[i] != '\0')))
         return ((unsigned char)s1[i] - (unsigned char)s2[i]);
     return (0);
+}
+
+int size_list(t_stack *A)
+{
+    int len;
+
+    len = 0 ;
+    while(A)
+    {
+        len++;
+        A = A->next;
+    }
+    return(len);
 }

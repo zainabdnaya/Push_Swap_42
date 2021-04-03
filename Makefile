@@ -6,7 +6,7 @@
 #    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/02 17:08:48 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/03 12:30:26 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC_NAME1= 	checker.c\
 			to_use.c\
 			simple_free.c\
 			list.c\
-			sa.c\
+			moves.c\
 
 SRC_NAME2= swap.c\
 

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/02 18:10:47 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/03 12:41:57 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 void print_list(t_stack *ptr)
 {
-    printf("\n -------Printing list Start------- \n");
+    // printf(" -------Printing list Start------- \n");
     while (ptr != NULL)
     {
         printf("[%d]\n", ptr->number);
         printf("↑↓\n");
         ptr = ptr->next;
     }
-    printf("\n -------Printing list End------- \n");
+    // printf(" -------Printing list End------- \n");
 
     return;
 }
@@ -31,9 +31,17 @@ int main(int ac, char **av)
 {
     t_stack A;
 
-    if (first_errors(ac, av) == 1)
+    if (first_errors(ac, av) && check_ascii(av) )
     {
+        puts("---------Printing list Start--------");
         A = *put_in_list(av);
         print_list(&A);
+        puts("------- sa : Swap 2 first element---");
+        A = *swap_stack(&A);
+        print_list(&A);
+        puts("----------- Roate stack ------------");
+        // A = *rotate_stack(&A);
+        // print_list(&A);
+
     }
 }

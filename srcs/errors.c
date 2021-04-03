@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/02 17:59:36 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/03 12:33:09 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,36 @@ void check_replicat(char **av)
     }
 }
 
-int  first_errors(int ac, char **av)
+int check_ascii(char **av)
+{
+    int i;
+    int j;
+
+    i = 1;
+    while (av[i])
+    {
+        j = 0;
+        while(av[i][j])
+        {
+            if (ft_isalpha(av[i][j]) == 1)
+            {
+                ft_putstr_fd("Error: Imposter!", 0);
+                exit(1);
+            }
+            j++;
+        }
+        i++;
+    }
+    return(1);
+}
+
+int first_errors(int ac, char **av)
 {
     if (ac < 2)
-        {
-            ft_putstr_fd("Error: Add agruments", 0);
-             exit(1);
-        }
+    {
+        ft_putstr_fd("Error: Add agruments", 0);
+        exit(1);
+    }
     if (ac == 2)
     {
         ft_putstr_fd("Error: There is one element:", 0);
@@ -57,6 +80,8 @@ int  first_errors(int ac, char **av)
         exit(1);
     }
     else
+    {
         check_replicat(av);
-    return(1);
+    }
+    return (1);
 }

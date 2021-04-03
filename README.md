@@ -8,3 +8,10 @@ sort data on a stack, with a limited set of instructions, using the lowest possi
  You must take the random list of numbers in Stack A and sort them so that Stack A is organized from smallest to largest. <br> 
  There are only a few moves you’re allowed to used to manipulate the stacks that we’re going to call “Actions”.  <br>
  The main goal of this project is to organize Stack A in as few actions as possible. <br>
+
+ ## MOVES ##
+
+the moves are named:  sa, sb, ss, ra, rb, rr, rra, rrb, rrr, pa, pb.
+I use Double linked list to implement these moves :
+** sa || sb **
+    <a href="https://ibb.co/wC6FY2V"><img src="https://i.ibb.co/828LXQq/Screen-Shot-2021-04-03-at-12-44-32-PM.png" alt="Screen-Shot-2021-04-03-at-12-44-32-PM" border="0"></a>
