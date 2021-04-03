@@ -50,6 +50,17 @@ t_stack *add_back1(t_stack **head, t_stack *new)
     return (*head);
 }
 
+t_stack *add_front(t_stack **head,t_stack *new_node)
+{
+    new_node->next = (*head);
+    new_node->previous = NULL;
+
+    if ((*head) != NULL)
+        (*head)->previous = new_node;
+    (*head) = new_node;
+    return (*head);
+}
+
 t_stack *put_in_list(char **av)
 {
     t_stack *A;

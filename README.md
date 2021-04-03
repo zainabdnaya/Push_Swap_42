@@ -15,12 +15,14 @@ the moves are named:  sa, sb, ss, ra, rb, rr, rra, rrb, rrr, pa, pb.<br>
 I use Double linked list to implement these moves :<br>
 
 ## sa || sb :arrows_clockwise:  ##
-    
     -swap 2 first element
-
-
 <a href="https://ibb.co/wC6FY2V"><img src="https://i.ibb.co/828LXQq/Screen-Shot-2021-04-03-at-12-44-32-PM.png" alt="Screen-Shot-2021-04-03-at-12-44-32-PM" border="0"></a>
-
 ## ra || rb :arrow_right_hook:	 ##
     -put the first element last,and all elemnt go UP by one :arrow_heading_up:
 <a href="https://ibb.co/9ggTtbY"><img src="https://i.ibb.co/YQQkZcj/Screen-Shot-2021-04-03-at-2-51-42-PM.png" alt="Screen-Shot-2021-04-03-at-2-51-42-PM" border="0"></a>
+
+## rra || rrb :arrows_counterclockwise: ##
+
+    - put the last element First, so all elements go DOWN by ine element :arrow_heading_down:
+
+<a href="https://ibb.co/k6NrLj8"><img src="https://i.ibb.co/KzTQtdq/Screen-Shot-2021-04-03-at-5-26-13-PM.png" alt="Screen-Shot-2021-04-03-at-5-26-13-PM" border="0"></a>

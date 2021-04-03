@@ -15,13 +15,16 @@
 
 void print_list(t_stack *ptr)
 {
+    t_stack *tmp;
     // printf(" -------Printing list Start------- \n");
+    tmp = ptr;
     while (ptr != NULL)
     {
         printf("[%d]\n", ptr->number);
         printf("↑↓\n");
         ptr = ptr->next;
     }
+    ptr = tmp;
     // printf(" -------Printing list End------- \n");
 
     return;
@@ -29,19 +32,22 @@ void print_list(t_stack *ptr)
 
 int main(int ac, char **av)
 {
-    t_stack A;
+    t_stack *A;
 
+    
     if (first_errors(ac, av) && check_ascii(av) )
     {
         puts("---------Printing list Start--------");
-        A = *put_in_list(av);
-        print_list(&A);
+        A = put_in_list(av);
+        print_list(A);
         // puts("------- sa : Swap 2 first element---");
-        // A = *swap_stack(&A);
-        // print_list(&A);
-        puts("----------- Roate stack ------------");
-        A = *rotate_stack(&A);
-        print_list(&A);
-
+        // A = swap_stack(A);
+        // print_list(A);
+        // puts("----------- Roate stack ------------");
+        // A = rotate_stack(A);
+        // print_list(A);
+        // puts("----------- Reverse Roate stack ------------");
+        A = reverse_stack(A);
+        print_list(A);
     }
 }
