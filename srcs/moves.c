@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/04 15:23:40 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/04 15:41:01 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,21 @@ t_stack *swap_stack(t_stack *head)
 
 t_stack *rotate_stack(t_stack *head)
 {
-    t_stack *tmp;
+    // t_stack *tmp;
     t_stack *tmp2;
     t_stack *A;
 
-    tmp = head;
+    // tmp = head;
     tmp2 = (t_stack *)malloc(sizeof(t_stack));
-    tmp2->number = tmp->number;
+    tmp2->number = head->number;
     tmp2->next = NULL;
+    tmp2->previous = NULL;
     head = head->next;
+    // puts("---------Printing list Start--------");
     A = add_back1(&head, tmp2);
-    return (head);
+    // print_list(A);
+    // puts("---------Printing list Start--------");
+    return (A);
 }
 
 t_stack *rr_part1(t_stack *head)
