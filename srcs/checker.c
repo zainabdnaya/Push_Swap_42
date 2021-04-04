@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 13:27:32 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/04 12:00:31 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,26 +59,27 @@ int main(int ac, char **av)
     t_stack *A;
     t_stack *B;
 
-    B = NULL;
     if (first_errors(ac, av) && check_ascii(av))
     {
         // puts("---------Printing list Start--------");
         A = put_in_list(av);
-        // print_list(A);
+        // print_list(&A);
         // puts("------- sa : Swap 2 first element---");
-        // A = swap_stack(A);
+        // swap_stack(A);
         // print_list(A);
         // puts("----------- Roate stack ------------");
-        // A = rotate_stack(A);
+        // rotate_stack(A);
         // print_list(A);
         // puts("------- Reverse Roate stack --------");
-        // A = reverse_stack(A);
+        // reverse_stack(A);
         // print_list(A);
-        puts("----------- Push stack --------------");
-        push_stack(A,B);
-        // printf("\n[A]\n");
+        // puts("----------- Push stack --------------");
+        // push_stack(&A,&B);
+        // // printf("\n[push_out]\n");
         // print_list(A);
-        // printf("\n[B]\n");
-        // print_list(B);
+        push_stack(&A, &B);
+        print_list(A);
+        puts(" ----------- Printing ------------ \n");
+        print_list(B);
     }
 }

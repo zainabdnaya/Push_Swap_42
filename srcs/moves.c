@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 13:33:28 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/04 12:02:59 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,23 +93,23 @@ t_stack *reverse_stack(t_stack *head)
     return (head);
 }
 
-void push_stack(t_stack *push_out, t_stack *push_in)
+void push_stack(t_stack **A, t_stack **B)
 {
     int i;
 
     i = 0;
-    if (push_in == NULL)
+    if (*B == NULL)
     {
-        push_in = (t_stack *)malloc(sizeof(t_stack));
-        push_in->next = NULL;
-        push_in->previous = NULL;
+        *B = (t_stack *)malloc(sizeof(t_stack ));
+        (*B)->previous = NULL;
+        (*B)->number = (*A)->number;
+        (*B)->next = NULL;
+        (*A) = (*A)->next;
+        (*A)->previous = NULL;
     }
-        push_in->number = push_out->number;
-    push_in->next = NULL;
-    push_out = push_out->next;
-    push_out->previous = NULL;
-    printf("\n[push_out]\n");
-    print_list(push_out);
-    printf("\n[push_in]\n");
-    print_list(push_in);
+    // else
+    // {
+        
+    // }
+    
 }

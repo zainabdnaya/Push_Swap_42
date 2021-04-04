@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 13:29:16 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/04 11:56:03 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void free_stack(t_stack *stack);
 t_stack *swap_stack(t_stack *head);
 t_stack *rotate_stack(t_stack *head);
 t_stack *reverse_stack(t_stack *head);
-void push_stack(t_stack *push_out, t_stack *push_in);
+void     push_stack(t_stack **A, t_stack **B);
 
 #endif
