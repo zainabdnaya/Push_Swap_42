@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/04 12:02:59 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/04 15:23:40 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ t_stack *reverse_stack(t_stack *head)
 
 void push_stack(t_stack **A, t_stack **B)
 {
-    int i;
+    t_stack *new;
+    t_stack *tmp;
 
-    i = 0;
     if (*B == NULL)
     {
         *B = (t_stack *)malloc(sizeof(t_stack ));
@@ -107,9 +107,19 @@ void push_stack(t_stack **A, t_stack **B)
         (*A) = (*A)->next;
         (*A)->previous = NULL;
     }
-    // else
-    // {
-        
-    // }
-    
+    else
+    {
+        new = malloc(sizeof(t_stack));
+        new->number = (*A)->number;
+        new->next = NULL;
+        new->previous = NULL;
+        (*A) = (*A)->next;
+        (*A)->previous = NULL;
+        tmp = (*B);
+        while ((*B)->previous != NULL)
+            (*B) = (*B)->previous;
+        (*B) = new;
+        new->next = (tmp);
+        new->previous = NULL;
+    }
 }

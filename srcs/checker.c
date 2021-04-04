@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/04 12:00:31 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/04 15:26:09 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,31 +28,6 @@ void print_list(t_stack *ptr)
 
     return;
 }
-// void print_2_stack(t_stack *ptr,t_stack *ptr1)
-// {
-//     t_stack *tmp;
-//     t_stack *tmp1;
-//     // printf(" -------Printing list Start------- \n");
-//     tmp = ptr;
-//     tmp1 = ptr;
-
-//     printf("[A]\t\t\t[B]\n");
-//     puts("\n");
-//     while (ptr != NULL || ptr1 != NULL )
-//     {
-//         printf("[%d]\t\t\t[%d]\n", ptr->number,ptr1->number);
-//         printf("↑↓\t\t\t↑↓\n");
-//         if(ptr)
-//             ptr = ptr->next;
-//         if ( ptr1)
-//             ptr1 = ptr1->next;
-//     }
-//     ptr = tmp;
-//     ptr1 = tmp1;
-//     // printf(" -------Printing list End------- \n");
-
-//     return;
-// }
 
 int main(int ac, char **av)
 {
@@ -73,13 +48,15 @@ int main(int ac, char **av)
         // puts("------- Reverse Roate stack --------");
         // reverse_stack(A);
         // print_list(A);
-        // puts("----------- Push stack --------------");
-        // push_stack(&A,&B);
-        // // printf("\n[push_out]\n");
-        // print_list(A);
+        puts("----------- Push stack --------------");
         push_stack(&A, &B);
+        push_stack(&A, &B);
+        push_stack(&A, &B);
+        push_stack(&A, &B);
+        puts("pb pb pb pb\n");
+        puts(" ----------- A  ------------ \n");
         print_list(A);
-        puts(" ----------- Printing ------------ \n");
+        puts(" ----------- B ------------ \n");
         print_list(B);
     }
 }
