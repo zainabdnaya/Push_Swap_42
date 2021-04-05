@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 11:45:40 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/04 11:54:52 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/05 14:12:01 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+typedef struct s_test{
+    int data;
+    struct s_test *next;
+} t_test;
 
-void    refer(char **b)
+void refer(char **b)
 {
-    // char **s;
 
     *b = "world";
 
-    // b = s;
 }
 
 int main()
