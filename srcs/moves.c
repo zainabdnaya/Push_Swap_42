@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/05 14:03:13 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/05 20:47:56 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,8 @@ void push_stack(t_stack **A, t_stack **B)
         new->next = NULL;
         new->previous = NULL;
         (*A) = (*A)->next;
-        (*A)->previous = NULL;
+        // (*A)->previous = NULL;
+        // puts("\n ======================>here\n");
         tmp = (*B);
         while ((*B)->previous != NULL)
             (*B) = (*B)->previous;
@@ -122,4 +123,23 @@ void push_stack(t_stack **A, t_stack **B)
         new->next = (tmp);
         new->previous = NULL;
     }
+}
+
+void rr(t_stack **A,t_stack **B)
+{
+    r_stack(A);
+    r_stack(B);
+}
+
+void ss(t_stack **A,t_stack **B)
+{
+    swap_stack(A);
+    swap_stack(B);
+}
+
+void rrr(t_stack **A,t_stack **B)
+{
+    // puts("here");
+    rr_stack(A);
+    rr_stack(B);
 }

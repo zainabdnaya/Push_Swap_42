@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/05 13:59:14 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/05 20:47:46 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "../libft/libft.h"
+#define BUFFER 50
 
 typedef struct s_stack{
 
@@ -48,7 +49,9 @@ void     swap_stack(t_stack **head);
 void     r_stack(t_stack **head);
 void     rr_stack(t_stack **head);
 void     push_stack(t_stack **A, t_stack **B);
-
+void ss(t_stack **A,t_stack **B);
+void rrr(t_stack **A,t_stack **B);
+void rr(t_stack **A,t_stack **B);
 /********************** Sorting *******************/
 int avreage(t_stack *A);
 void sort(t_stack *head);

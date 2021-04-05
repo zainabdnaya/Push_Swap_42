@@ -13,26 +13,26 @@
 #include "push_swap.h"
 
 /******** WRONG *******/
-void first(t_stack **A, t_stack **B)
-{
-    t_stack *tmp;
-    t_stack *tmp2;
-    int len;
-    int m;
+// void first(t_stack **A, t_stack **B)
+// {
+//     t_stack *tmp;
+//     t_stack *tmp2;
+//     t_stack *tmp3;
+//     int len;
+//     int m;
+//     int i;
+//     int j;
 
+//     i = 0;
+//     j = 0;
+//     len = size_list(*A);
+//     (void)B;
+//     m = avreage(*A);
+//     tmp2 = NULL;
+//     tmp = *A;
+//     tmp3 = sort(*A);
+//     i = size_list(tmp3)/4;
+//     while()
+    
 
-    m = avreage(*A);
-    (void)B;
-    tmp = *A;
-    tmp2 = NULL;
-    t_stack *tmp3;
-
-    tmp3 = *A;
-    int i;
-
-    i = -1;
-
-    len = size_list(*A);
-   
-
-}
+// }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
+#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/05 13:54:03 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/05 18:51:17 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC_NAME1= 	checker.c\
 			orderby.c\
 		    cordnate.c\
 			gen_sort.c\
+			ok_ko.c\
 
 SRC_NAME2=  swap.c\
 
@@ -42,7 +43,7 @@ SRC2= $(addprefix $(SRC_PATH)/,$(SRC_NAME2))
 HDR= $(addprefix $(HDR_PATH)/,$(HDR_NAME))
 
 LIB= libft.a
-FLAGS= -Wall -Wextra -Werror
+# FLAGS= -Wall -Wextra -Werror
 LLIB_FLAG= -L$(LIB_PATH) libft/libft.a
 H_FLAG= -I $(HDR_PATH)
 
