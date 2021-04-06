@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/06 11:43:55 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:28:49 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void     rr(t_stack **A,t_stack **B);
 /********************** Sorting *******************/
 int     avreage(t_stack *A);
 void    sort(t_stack *head);
-int     check_sort(t_stack **A);
-void     sort_result(t_stack *A);
+int     check_sort(t_stack **A,int len);
+void     sort_result(t_stack *A,int len);
 
 // void first(t_stack **A, t_stack **B);
 

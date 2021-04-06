@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/06 11:55:55 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:39:00 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void push_stack(t_stack **A, t_stack **B)
     t_stack *new;
     t_stack *tmp;
 
-    if (*B == NULL)
+    if (*B == NULL && *A)
     {
         *B = (t_stack *)malloc(sizeof(t_stack));
         (*B)->previous = NULL;
@@ -109,35 +109,40 @@ void push_stack(t_stack **A, t_stack **B)
     }
     else
     {
-        new = malloc(sizeof(t_stack));
-        new->number = (*A)->number;
-        new->next = NULL;
-        new->previous = NULL;
-        (*A) = (*A)->next;
-        // (*A)->previous = NULL;
-        // puts("\n ======================>here\n");
-        tmp = (*B);
-        while ((*B)->previous != NULL)
-            (*B) = (*B)->previous;
-        (*B) = new;
-        new->next = (tmp);
-        new->previous = NULL;
+        if (*A)
+        {
+            new = malloc(sizeof(t_stack));
+            new->number = (*A)->number;
+            new->next = NULL;
+            new->previous = NULL;
+            (*A) = (*A)->next;
+            // (*A)->previous = NULL;
+            // puts("\n ======================>here\n");
+            tmp = (*B);
+            while ((*B)->previous != NULL)
+                (*B) = (*B)->previous;
+            (*B) = new;
+            new->next = (tmp);
+            new->previous = NULL;
+        }
+        else
+            return;
     }
 }
 
-void rr(t_stack **A,t_stack **B)
+void rr(t_stack **A, t_stack **B)
 {
     r_stack(A);
     r_stack(B);
 }
 
-void ss(t_stack **A,t_stack **B)
+void ss(t_stack **A, t_stack **B)
 {
     swap_stack(A);
     swap_stack(B);
 }
 
-void rrr(t_stack **A,t_stack **B)
+void rrr(t_stack **A, t_stack **B)
 {
     // puts("here");
     rr_stack(A);

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/06 12:06:24 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/06 12:54:23 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(int ac, char **av)
     t_stack *B;
     char *line;
     t_stack *C;
+    int len;
 
     line = NULL;
     A = NULL;
@@ -32,6 +33,7 @@ int main(int ac, char **av)
     puts("-------------sorted-----------\n");
     print_list(C);
     puts("-------------sorted-----------\n");
+    len = size_list(A);
     while (1)
     {
         line =(char *) malloc(sizeof(char) * (BUFFER));
@@ -42,19 +44,19 @@ int main(int ac, char **av)
         {
             swap_stack(&A);
             print_list(A);
-            sort_result(A);
+            sort_result(A,len);
         }
         if (!ft_strcmp(line, "ra\n"))
         {
             r_stack(&A);
             print_list(A);
-            sort_result(A);
+            sort_result(A,len);
         }
         if (!ft_strcmp(line, "rra\n"))
         {
             rr_stack(&A);
             print_list(A);
-            sort_result(A);
+            sort_result(A,len);
         }
         /*****************************************/
         if (!ft_strcmp(line, "sb\n"))
@@ -66,7 +68,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
         }
         if (!ft_strcmp(line, "rb\n"))
         {
@@ -77,7 +79,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
         }
         if (!ft_strcmp(line, "rrb\n"))
         {
@@ -88,7 +90,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
         }
         /*****************************************/
 
@@ -99,6 +101,7 @@ int main(int ac, char **av)
             print_list(A);
             puts("B : ");
             print_list(B);
+            sort_result(A,len);
         }
         if (!ft_strcmp(line, "pb\n"))
         {
@@ -112,7 +115,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
         }
         /*****************************************/
         if (!ft_strcmp(line, "ss\n"))
@@ -127,7 +130,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
         }
         if (!ft_strcmp(line, "rr\n"))
         {
@@ -141,7 +144,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
 
         }
         if (!ft_strcmp(line, "rrr\n"))
@@ -156,20 +159,21 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A);
+            sort_result(A,len);
         }
         /*****************************************/
 
         if (line[0] == '\0')
         {
-            if (check_sort(&A) == 1)
-                ft_putstr_fd("Ok\n", 2);
+            if (check_sort(&A,len) == 1)
+                ft_putstr_fd("Ok\n", 0);
             else
-                ft_putstr_fd("KO\n", 2);
+                ft_putstr_fd("KO\n", 0);
 
             exit(0);
         }
-        free_arg(&line);
+        free(line);
+        line = NULL;
     }
 }
 
