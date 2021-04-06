@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 12:33:09 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/06 11:00:27 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int first_errors(int ac, char **av)
 {
     if (ac < 2)
     {
-        ft_putstr_fd("Error: Add agruments", 0);
+        // ft_putstr_fd("Error: Add agruments", 0);
         exit(1);
     }
     if (ac == 2)
     {
-        ft_putstr_fd("Error: There is one element:", 0);
-        write(1, "\n", 1);
+        // ft_putstr_fd("Error: There is one element:", 0);
+        // write(1, "\n", 1);
         write(1, av[1], 1);
         exit(1);
     }

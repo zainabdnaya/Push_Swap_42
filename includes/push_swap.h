@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/05 20:47:46 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/06 11:43:55 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack{
 t_stack *put_in_list(char **av);
 t_stack *creat_stack(char *av, t_stack *A);
 t_stack *add_back(t_stack **head,t_stack *new,char *av);
-t_stack *add_back1(t_stack **head,t_stack *new);
+void    add_back1(t_stack **head,t_stack *new);
 t_stack *add_front(t_stack **head, t_stack *new_node);
 
 void print_list(t_stack *ptr);
@@ -43,18 +43,21 @@ int check_ascii(char **av);
 /**********************FREE*********************/
 void free_arg(char **arg);
 void free_stack(t_stack *stack);
-
+void free_single_stack(t_stack **stack);
 /********************** MOVES*******************/
-void     swap_stack(t_stack **head);
+void swap_stack(t_stack **head);
 void     r_stack(t_stack **head);
 void     rr_stack(t_stack **head);
 void     push_stack(t_stack **A, t_stack **B);
-void ss(t_stack **A,t_stack **B);
-void rrr(t_stack **A,t_stack **B);
-void rr(t_stack **A,t_stack **B);
+void     ss(t_stack **A,t_stack **B);
+void     rrr(t_stack **A,t_stack **B);
+void     rr(t_stack **A,t_stack **B);
 /********************** Sorting *******************/
-int avreage(t_stack *A);
-void sort(t_stack *head);
-void first(t_stack **A, t_stack **B);
+int     avreage(t_stack *A);
+void    sort(t_stack *head);
+int     check_sort(t_stack **A);
+void     sort_result(t_stack *A);
+
+// void first(t_stack **A, t_stack **B);
 
 #endif

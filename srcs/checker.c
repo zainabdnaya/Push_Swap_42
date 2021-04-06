@@ -3,105 +3,98 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/05 20:48:06 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/06 12:06:24 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int check_sort(t_stack **A);
-
-void print_list(t_stack *ptr)
-{
-    t_stack *tmp;
-    tmp = ptr;
-    while (ptr != NULL)
-    {
-        printf("[%d]->", ptr->number);
-        ptr = ptr->next;
-    }
-    puts("\n");
-    ptr = tmp;
-    return;
-}
 
 int main(int ac, char **av)
 {
     t_stack *A;
     t_stack *B;
-    char *line = NULL;
+    char *line;
+    t_stack *C;
 
+    line = NULL;
     A = NULL;
     B = NULL;
-
+    C = NULL;
     if (first_errors(ac, av) && check_ascii(av))
+    {
         A = put_in_list(av);
-
+        C = put_in_list(av);
+    }
+    sort(C);
+    puts("-------------sorted-----------\n");
+    print_list(C);
+    puts("-------------sorted-----------\n");
     while (1)
     {
-        line = malloc(sizeof(char) * (BUFFER));
+        line =(char *) malloc(sizeof(char) * (BUFFER));
         read(0, line, BUFFER);
         if (!line)
             exit(0);
         if (!ft_strcmp(line, "sa\n"))
         {
             swap_stack(&A);
-            // puts("------- sa : Swap 2 first element---\n");
             print_list(A);
+            sort_result(A);
         }
         if (!ft_strcmp(line, "ra\n"))
         {
             r_stack(&A);
-            // puts("----------- Rotate stack A ------------\n");
             print_list(A);
+            sort_result(A);
         }
         if (!ft_strcmp(line, "rra\n"))
         {
             rr_stack(&A);
-            // puts("----------- Reverse Rotate stack A ------------\n");
             print_list(A);
+            sort_result(A);
         }
         /*****************************************/
-
         if (!ft_strcmp(line, "sb\n"))
         {
             if (B)
             {
                 swap_stack(&B);
-                // puts("------- sb : Swap 2 first element---");
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
         }
         if (!ft_strcmp(line, "rb\n"))
         {
             if (B)
             {
                 r_stack(&B);
-                // puts("------- rotate b---");
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
         }
         if (!ft_strcmp(line, "rrb\n"))
         {
             if (B)
             {
                 rr_stack(&B);
-                // puts("------- reverse rotation ---");
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
         }
+        /*****************************************/
+
         if (!ft_strcmp(line, "pa\n"))
         {
             push_stack(&A, &B);
-            // puts("-------push_stack in B----------\n");
             puts("A : ");
             print_list(A);
             puts("B : ");
@@ -112,14 +105,14 @@ int main(int ac, char **av)
             if (B)
             {
                 push_stack(&B, &A);
-                // puts("-------push_stack in A----------\n");
                 puts("A : ");
                 print_list(A);
                 puts("B : ");
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
         }
         /*****************************************/
         if (!ft_strcmp(line, "ss\n"))
@@ -127,13 +120,14 @@ int main(int ac, char **av)
             if (B)
             {
                 ss(&A, &B);
-                puts("A : ");
+                puts("A:  ");
                 print_list(A);
                 puts("B : ");
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
         }
         if (!ft_strcmp(line, "rr\n"))
         {
@@ -146,9 +140,11 @@ int main(int ac, char **av)
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
+
         }
-                if (!ft_strcmp(line, "rrr\n"))
+        if (!ft_strcmp(line, "rrr\n"))
         {
             if (B)
             {
@@ -159,19 +155,18 @@ int main(int ac, char **av)
                 print_list(B);
             }
             else
-                ft_putstr_fd("B : empty :/", 2);
+                ft_putstr_fd("B : empty \n", 2);
+            sort_result(A);
         }
-
         /*****************************************/
 
-        if (!ft_strcmp(line, "\0"))
+        if (line[0] == '\0')
         {
             if (check_sort(&A) == 1)
-                ft_putstr_fd("ok\n", 1);
+                ft_putstr_fd("Ok\n", 2);
             else
-                ft_putstr_fd("ko\n", 1);
-            // free_stack(A);
-            // free_stack(B);
+                ft_putstr_fd("KO\n", 2);
+
             exit(0);
         }
         free_arg(&line);

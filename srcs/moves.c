@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/05 20:47:56 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/06 11:55:55 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void r_stack(t_stack **head)
 {
     t_stack *tmp2;
 
+    tmp2 = NULL;
     tmp2 = (t_stack *)malloc(sizeof(t_stack));
     tmp2->number = (*head)->number;
     tmp2->next = NULL;
     tmp2->previous = NULL;
     (*head) = (*head)->next;
-    add_back1(head, tmp2);
-    free_stack(tmp2);
+    add_back1(&(*head), tmp2);
 }
 
 t_stack *rr_part1(t_stack *head)
