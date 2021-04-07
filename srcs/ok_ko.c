@@ -6,35 +6,37 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/06 12:34:38 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/07 16:41:32 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_sort(t_stack **A,int len)
+int check_sort(t_stack *A,int len)
 {
     t_stack *tmp;
     int i;
 
-    tmp = *A;
+    tmp = A;
     i = 0;
-    while ( i < len && *A)
+    while ( i < len && tmp)
     {
-        if ( (*A)->next != NULL && ((*A)->number < (*A)->next->number))
+        if ( (tmp)->next != NULL && ((tmp)->number < (tmp)->next->number))
             {
-                (*A) = (*A)->next;
+                (tmp) = (tmp)->next;
                 i++;
             }
         else
             return (0);
     }
-    *A = tmp;
+    A = tmp;
+    if ( size_list(A) != len)
+        return (0);
     return (1);
 }
 void sort_result(t_stack *A,int len)
 {
-    if (check_sort(&A,len) == 1)
+    if (check_sort(A,len) == 1)
     {
         ft_putstr_fd("ok\n", 2);
         exit(0);

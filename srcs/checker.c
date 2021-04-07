@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/06 12:54:23 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/07 17:30:38 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,44 @@ int main(int ac, char **av)
         C = put_in_list(av);
     }
     sort(C);
-    puts("-------------sorted-----------\n");
+    ft_putstr_fd("-----sorted---\n", 0);
     print_list(C);
-    puts("-------------sorted-----------\n");
-    len = size_list(A);
+    ft_putstr_fd("-----sorted---\n", 0);
+    len = size_list(C);
     while (1)
     {
-        line =(char *) malloc(sizeof(char) * (BUFFER));
+        line = malloc(sizeof(char) * (BUFFER));
         read(0, line, BUFFER);
-        if (!line)
+        puts(line);
+        if
+         (line[0] == '\0')
+        {
+            if (check_sort(A, len) == 1)
+                ft_putstr_fd("Ok\n", 0);
+            else
+                ft_putstr_fd("KO\n", 0);
+
             exit(0);
+        }
         if (!ft_strcmp(line, "sa\n"))
         {
             swap_stack(&A);
             print_list(A);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
         if (!ft_strcmp(line, "ra\n"))
         {
             r_stack(&A);
             print_list(A);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
         if (!ft_strcmp(line, "rra\n"))
         {
             rr_stack(&A);
             print_list(A);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
-        /*****************************************/
+        // /*****************************************/
         if (!ft_strcmp(line, "sb\n"))
         {
             if (B)
@@ -68,7 +77,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
         if (!ft_strcmp(line, "rb\n"))
         {
@@ -79,7 +88,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
         if (!ft_strcmp(line, "rrb\n"))
         {
@@ -90,20 +99,20 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
-        /*****************************************/
+        // /*****************************************/
 
-        if (!ft_strcmp(line, "pa\n"))
+        if (!ft_strcmp(line, "pb\n"))
         {
             push_stack(&A, &B);
             puts("A : ");
             print_list(A);
             puts("B : ");
             print_list(B);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
-        if (!ft_strcmp(line, "pb\n"))
+        if (!ft_strcmp(line, "pa\n"))
         {
             if (B)
             {
@@ -115,9 +124,8 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
         }
-        /*****************************************/
+        // /*****************************************/
         if (!ft_strcmp(line, "ss\n"))
         {
             if (B)
@@ -130,7 +138,7 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
         if (!ft_strcmp(line, "rr\n"))
         {
@@ -144,7 +152,6 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
 
         }
         if (!ft_strcmp(line, "rrr\n"))
@@ -159,19 +166,9 @@ int main(int ac, char **av)
             }
             else
                 ft_putstr_fd("B : empty \n", 2);
-            sort_result(A,len);
+            // sort_result(A,len);
         }
         /*****************************************/
-
-        if (line[0] == '\0')
-        {
-            if (check_sort(&A,len) == 1)
-                ft_putstr_fd("Ok\n", 0);
-            else
-                ft_putstr_fd("KO\n", 0);
-
-            exit(0);
-        }
         free(line);
         line = NULL;
     }

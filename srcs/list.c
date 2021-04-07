@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/06 11:55:57 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/06 13:03:50 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ t_stack *put_in_list(char **av)
     {
         str = ft_strdup(av[i]);
         add_back(&A, tmp, str);
-        free_stack(tmp);
-        free_arg(&str);
+        // free_stack(tmp);
+        // free_arg(&str);
         i++;
     }
     return (A);

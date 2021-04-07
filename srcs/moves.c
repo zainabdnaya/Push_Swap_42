@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/06 12:39:00 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/07 17:27:36 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void push_stack(t_stack **A, t_stack **B)
             new->next = NULL;
             new->previous = NULL;
             (*A) = (*A)->next;
-            // (*A)->previous = NULL;
+            (*A)->previous = NULL;
             // puts("\n ======================>here\n");
             tmp = (*B);
             while ((*B)->previous != NULL)
