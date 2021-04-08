@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   to_use.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:33:49 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 15:41:40 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 21:59:16 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int val_aprox(float m)
+{
+    int k;
+
+    k = (int)m;   
+    if ( (m - k) >= 0.5 )
+        return((int)m +1);
+    else
+        return((int)m);
+}
+
 
 int ft_strcmp(const char *s1, const char *s2)
 {

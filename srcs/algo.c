@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 13:06:00 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 18:19:50 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 23:46:09 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 int get_pivot(t_stack *c)
 {
-    // t_stack *result;
+   t_stack *result;
     int len;
     int m;
     int k;
 
-    // result = a;
-    sort(c);
-    len = size_list(c);
-    // print_list(c);
+    result = sort(dup_list(c));
+    len = size_list(result);
+    print_list(result);
     m = (int)(len / 2);
-    k = node_nbr(&c, m);
+    k = node_nbr(&result, m);
     return (k);
 }
 
@@ -59,14 +58,14 @@ void algo(t_stack **a, t_stack **b, int m)
     t_stack *now;
     int index;
     int proximity;
-    
+
     now = (*a);
-   
+
     // while (now)
     {
-        int sum = get_pivot(*a);
+        // int sum = get_pivot(dup_list(now));
         // puts(sum);
-        print_list(*a);
+        // print_list(*a);
         // exit(1);
         while (now && check_under_pivot(now, m))
         {
@@ -91,9 +90,10 @@ void algo(t_stack **a, t_stack **b, int m)
                     rr_stack(a);
                 }
                 now = *a;
+            // print_all(*a, *b);
             }
-            print_list(*a);
-            sleep(1);
+            // print_list(*a);
+            // sleep(1);,
             // now = now->next;
         }
     }

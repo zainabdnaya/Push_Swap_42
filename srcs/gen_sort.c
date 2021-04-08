@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:45:52 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 16:55:20 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 23:39:31 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ void swap(t_stack *one,t_stack *two)
     one->number = two->number;
     two->number = k;
 }
-void    sort(t_stack *head)
+
+t_stack    *sort(t_stack *head)
 {
     t_stack *start;
     t_stack *tmp2;
     t_stack *min;
-    t_stack *tmp;
 
     start = head;
-    tmp = head;
     while (start->next)
     {
         min = start;
@@ -43,7 +42,5 @@ void    sort(t_stack *head)
         swap(start, min);
         start = start->next;
     }
-    head = tmp;
-    // print_list(tmp);
-    // exit(1);
+    return(head);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 18:18:10 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 23:42:38 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,11 @@ int main(int ac, char **av)
     else
     {
         t_stack *c;
-
+        
         a = put_in_list(av);
         c = put_in_list(av);
-        // print_list(a);
         m = get_pivot(c);
-        // printf("pivot==>%d\n", m );
+        printf("pivot==>%d\n", m );
         algo(&a, &b, m);
         print_all(a, b);
     }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 16:06:14 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 23:44:46 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,25 @@ int node_nbr(t_stack **head, int index)
         tmp = tmp->next;
     }
     exit(1);
+}
+
+t_stack *dup_list(t_stack *head)
+{
+t_stack *tmp;
+    t_stack *tmp2;
+
+    tmp2 = malloc(sizeof(t_stack));
+    tmp = tmp2;
+    while (head)
+    {
+        tmp2->number = head->number;
+        if (head->next)
+        {
+            tmp2->next = malloc(sizeof(t_stack));
+            tmp2 = tmp2->next;
+        }
+        head = head->next;
+    }
+    tmp2 = tmp;
+    return (tmp2);
 }

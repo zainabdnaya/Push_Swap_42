@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 15:44:17 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 22:39:04 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void print_list(t_stack *ptr)
 
         ptr = ptr->next;
     }
-        ft_putstr_fd("\n", 1);
     ft_putstr_fd("\n", 1);
     ptr = tmp;
     return;
@@ -43,9 +42,9 @@ void print_all(t_stack *a, t_stack *b)
         ft_putstr_fd("a is empty \n", 1);
     if (b)
     {
-        ft_putstr_fd("B:", 1);
+        ft_putstr_fd("b:", 1);
         print_list(b);
     }
     else if (b== NULL)
-        ft_putstr_fd("bis  empty \n", 1);
+        ft_putstr_fd("b is empty \n", 1);
 }
