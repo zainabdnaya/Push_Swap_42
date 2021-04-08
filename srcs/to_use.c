@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:33:49 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/03 12:33:38 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 10:39:30 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,35 @@ int size_list(t_stack *A)
         A = A->next;
     }
     return(len);
+}
+
+static long long  operation(const char *str, long lenght, int sign)
+{
+    long  long r;
+
+    r = 0;
+    while (str[lenght] >= 48 && str[lenght] <= 57)
+    {
+        r = r * 10 + str[lenght] - '0';
+        lenght++;
+    }
+    return (sign * r);
+}
+
+long long    my_atoi(const char *str)
+{
+    long lenght;
+    int sign;
+
+    lenght = 0;
+    sign = 1;
+    while (str[lenght] == ' ' || str[lenght] == '\n' || str[lenght] == '\t' || str[lenght] == '\r' || str[lenght] == '\f' || str[lenght] == '\v')
+        lenght++;
+    if (str[lenght] == '-' || str[lenght] == '+')
+    {
+        if (str[lenght] == '-')
+            sign *= -1;
+        lenght++;
+    }
+    return (operation(str, lenght, sign));
 }

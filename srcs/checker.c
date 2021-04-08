@@ -6,11 +6,23 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/07 17:30:38 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 12:56:26 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// int checker_1(t_stack *A,t_stack *B,int m,char *line)
+// {
+// }
+
+void the_end(t_stack **A, t_stack **B, char **line, int len)
+{
+    free_stack(A);
+    free_stack(B);
+    free_arg(line);
+    exit(0);
+}
 
 int main(int ac, char **av)
 {
@@ -19,158 +31,64 @@ int main(int ac, char **av)
     char *line;
     t_stack *C;
     int len;
+    int m;
 
     line = NULL;
     A = NULL;
     B = NULL;
     C = NULL;
+    m = 0;
     if (first_errors(ac, av) && check_ascii(av))
     {
         A = put_in_list(av);
         C = put_in_list(av);
     }
-    sort(C);
-    ft_putstr_fd("-----sorted---\n", 0);
-    print_list(C);
-    ft_putstr_fd("-----sorted---\n", 0);
-    len = size_list(C);
+    // sort(C);
+    // ft_putstr_fd("-----sorted---\n", 0);
+    // print_list(C);
+    // ft_putstr_fd("-----sorted---\n", 0);
+    len = size_list(A);
     while (1)
     {
-        line = malloc(sizeof(char) * (BUFFER));
+        line = (char *)malloc(sizeof(char) * (BUFFER));
         read(0, line, BUFFER);
-        puts(line);
-        if
-         (line[0] == '\0')
+        if (line[0] == '\0' || line[0] == '\n')
         {
-            if (check_sort(A, len) == 1)
-                ft_putstr_fd("Ok\n", 0);
+            if (check_sort(&A, len) == 1)
+                ft_putstr_fd("OK\n", 1);
             else
-                ft_putstr_fd("KO\n", 0);
-
-            exit(0);
+                ft_putstr_fd("KO\n", 1);
+            the_end(&A, &B, &line, len);
         }
         if (!ft_strcmp(line, "sa\n"))
-        {
             swap_stack(&A);
-            print_list(A);
-            // sort_result(A,len);
-        }
         if (!ft_strcmp(line, "ra\n"))
-        {
             r_stack(&A);
-            print_list(A);
-            // sort_result(A,len);
-        }
         if (!ft_strcmp(line, "rra\n"))
-        {
             rr_stack(&A);
-            print_list(A);
-            // sort_result(A,len);
-        }
-        // /*****************************************/
         if (!ft_strcmp(line, "sb\n"))
-        {
-            if (B)
-            {
-                swap_stack(&B);
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-            // sort_result(A,len);
-        }
+            swap_stack(&B);
         if (!ft_strcmp(line, "rb\n"))
-        {
-            if (B)
-            {
-                r_stack(&B);
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-            // sort_result(A,len);
-        }
+            r_stack(&B);
         if (!ft_strcmp(line, "rrb\n"))
-        {
-            if (B)
-            {
-                rr_stack(&B);
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-            // sort_result(A,len);
-        }
-        // /*****************************************/
-
+            rr_stack(&B);
         if (!ft_strcmp(line, "pb\n"))
-        {
             push_stack(&A, &B);
-            puts("A : ");
-            print_list(A);
-            puts("B : ");
-            print_list(B);
-            // sort_result(A,len);
-        }
         if (!ft_strcmp(line, "pa\n"))
-        {
-            if (B)
-            {
-                push_stack(&B, &A);
-                puts("A : ");
-                print_list(A);
-                puts("B : ");
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-        }
-        // /*****************************************/
+            push_stack(&B, &A);
         if (!ft_strcmp(line, "ss\n"))
-        {
-            if (B)
-            {
-                ss(&A, &B);
-                puts("A:  ");
-                print_list(A);
-                puts("B : ");
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-            // sort_result(A,len);
-        }
+            ss(&A, &B);
         if (!ft_strcmp(line, "rr\n"))
-        {
-            if (B)
-            {
-                rr(&A, &B);
-                puts("A : ");
-                print_list(A);
-                puts("B : ");
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-
-        }
+            rr(&A, &B);
         if (!ft_strcmp(line, "rrr\n"))
-        {
-            if (B)
-            {
-                rrr(&A, &B);
-                puts("A : ");
-                print_list(A);
-                puts("B : ");
-                print_list(B);
-            }
-            else
-                ft_putstr_fd("B : empty \n", 2);
-            // sort_result(A,len);
-        }
-        /*****************************************/
-        free(line);
-        line = NULL;
+            rrr(&A, &B);
+        // if (check_sort(&A, len) == 1)
+        // {
+        //     ft_putstr_fd("OK\n", 1);
+        //     the_end(&A, &B, &line, len);
+        // }
+        free_arg(&line);
+        print_all(A, B);
     }
 }
 

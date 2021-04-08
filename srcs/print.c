@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/07 17:26:25 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 11:02:11 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,25 @@ void print_list(t_stack *ptr)
         ft_putstr_fd("]->", 1);
         ptr = ptr->next;
     }
-    puts("\n");
+    ft_putstr_fd("\n", 1);
     ptr = tmp;
     return;
+}
+
+void print_all(t_stack *A, t_stack *B)
+{
+    if (A)
+    {
+        ft_putstr_fd("A:", 1);
+        print_list(A);
+    }
+    else if (A == NULL)
+        ft_putstr_fd("A is empty \n", 1);
+    if (B)
+    {
+        ft_putstr_fd("B:", 1);
+        print_list(B);
+    }
+    else if (B == NULL)
+        ft_putstr_fd("B is  empty \n", 1);
 }

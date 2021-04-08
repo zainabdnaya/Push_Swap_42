@@ -29,3 +29,8 @@ I use Double linked list to implement these moves :<br>
     -take the first element at the top of a stack and put it at the top of other_stack.
 <a href="https://ibb.co/Byf5G3C"><img src="https://i.ibb.co/qND3Cjr/Screen-Shot-2021-04-03-at-6-41-55-PM.png" alt="Screen-Shot-2021-04-03-at-6-41-55-PM" border="0"></a>
 <a href="https://ibb.co/j4Kjp2F"><img src="https://i.ibb.co/kcnPdfF/Screen-Shot-2021-04-04-at-3-27-57-PM.png" alt="Screen-Shot-2021-04-04-at-3-27-57-PM" border="0"></a>
+
+## Checker:
+    -Thanks to the checker program, you will be able to check if the
+    list of instructions you’ll generate with the program push_swap is
+    actually sorting the stack properly.
