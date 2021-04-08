@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 10:39:03 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 16:06:14 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ t_stack *add_back(t_stack **head, t_stack *new, char *av)
     new->next = NULL;
     new->previous = NULL;
     if (*head == NULL)
+    {
         *head = new;
+    }
     else
     {
         tmp = *head;
@@ -52,7 +54,6 @@ void add_back1(t_stack **head, t_stack *new)
         {
             while (tmp->next)
                 tmp = tmp->next;
-            // puts("*************");
             tmp->next = new;
             new->previous = tmp;
         }
@@ -72,23 +73,41 @@ t_stack *add_front(t_stack **head, t_stack *new_node)
 
 t_stack *put_in_list(char **av)
 {
-    t_stack *A;
+    t_stack *a;
     t_stack *tmp;
     char *str;
     int i;
 
     i = 1;
-    A = (t_stack *)malloc(sizeof(t_stack));
-    A = NULL;
+    a = (t_stack *)malloc(sizeof(t_stack));
+    a = NULL;
     tmp = NULL;
     str = NULL;
     while (av[i])
     {
         str = ft_strdup(av[i]);
-        add_back(&A, tmp, str);
+        add_back(&a, tmp, str);
         // free_stack(tmp);
         // free_arg(&str);
         i++;
     }
-    return (A);
+    return (a);
+}
+
+int node_nbr(t_stack **head, int index)
+{
+
+    t_stack *tmp;
+    int count;
+
+    count = 0;
+    tmp = *head;
+    while (tmp != NULL)
+    {
+        if (count == index)
+            return (tmp->number);
+        count++;
+        tmp = tmp->next;
+    }
+    exit(1);
 }

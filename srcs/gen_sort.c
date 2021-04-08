@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:45:52 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 10:54:40 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 16:55:20 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ void    sort(t_stack *head)
     t_stack *start;
     t_stack *tmp2;
     t_stack *min;
+    t_stack *tmp;
 
     start = head;
-    while(start->next)
+    tmp = head;
+    while (start->next)
     {
         min = start;
         tmp2 = start->next;
@@ -41,5 +43,7 @@ void    sort(t_stack *head)
         swap(start, min);
         start = start->next;
     }
-    head = start;
+    head = tmp;
+    // print_list(tmp);
+    // exit(1);
 }

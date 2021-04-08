@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 11:02:11 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 15:44:17 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,34 @@ void print_list(t_stack *ptr)
     tmp = ptr;
     while (ptr)
     {
+        // ft_putstr_fd("k:", 1);
+        // ft_putnbr_fd(ptr->index, 1);
         ft_putstr_fd("[", 1);
         ft_putnbr_fd(ptr->number, 1);
-        ft_putstr_fd("]->", 1);
+        ft_putstr_fd("]-->", 1);
+
         ptr = ptr->next;
     }
+        ft_putstr_fd("\n", 1);
     ft_putstr_fd("\n", 1);
     ptr = tmp;
     return;
 }
 
-void print_all(t_stack *A, t_stack *B)
+void print_all(t_stack *a, t_stack *b)
 {
-    if (A)
+    if (a)
     {
-        ft_putstr_fd("A:", 1);
-        print_list(A);
+        ft_putstr_fd("a:", 1);
+        print_list(a);
     }
-    else if (A == NULL)
-        ft_putstr_fd("A is empty \n", 1);
-    if (B)
+    else if (a == NULL)
+        ft_putstr_fd("a is empty \n", 1);
+    if (b)
     {
         ft_putstr_fd("B:", 1);
-        print_list(B);
+        print_list(b);
     }
-    else if (B == NULL)
-        ft_putstr_fd("B is  empty \n", 1);
+    else if (b== NULL)
+        ft_putstr_fd("bis  empty \n", 1);
 }

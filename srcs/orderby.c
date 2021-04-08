@@ -6,13 +6,13 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:47:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/04 16:31:49 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 15:41:40 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int    avreage(t_stack *A)
+int    avreage(t_stack *a)
 {
     int k;
     int i;
@@ -22,14 +22,14 @@ int    avreage(t_stack *A)
     i = 0;
     k = 0;
     avg = 0;
-    tmp = A;
-    while (A != NULL)
+    tmp = a;
+    while (a != NULL)
     {
-        k += A->number;
+        k += a->number;
         i++;
-        A = A->next;
+        a = a->next;
     }
-    A = tmp;
+    a = tmp;
     avg = (int)(k / i);
     return (avg);
 }

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 12:56:30 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 15:44:17 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,14 @@ t_stack *rr_part1(t_stack *head)
 }
 t_stack *rr_part2(t_stack *head)
 {
-    t_stack *A;
+    t_stack *a;
 
-    A = head;
+    a = head;
     while (head->next)
         head = head->next;
     head = head->previous;
     head->next = NULL;
-    head = A;
+    head = a;
     return (head);
 }
 
@@ -80,15 +80,15 @@ void rr_stack(t_stack **head)
 {
     t_stack *tmp;
     t_stack *new_node;
-    t_stack *A;
+    t_stack *a;
 
-    A = (t_stack *)malloc(sizeof(t_stack));
+    a = (t_stack *)malloc(sizeof(t_stack));
     tmp = rr_part1(*head);
-    A = rr_part2(*head);
-    *head = A;
+    a = rr_part2(*head);
+    *head = a;
     new_node = (t_stack *)malloc(sizeof(t_stack));
     new_node->number = tmp->number;
-    new_node->next = A;
+    new_node->next = a;
     new_node->previous = NULL;
 
     (*head)->previous = new_node;
@@ -96,33 +96,33 @@ void rr_stack(t_stack **head)
     free_stack(&tmp);
 }
 
-void push_stack(t_stack **A, t_stack **B)
+void push_stack(t_stack **a, t_stack **b)
 {
     t_stack *new;
     t_stack *tmp;
 
-    if (*B == NULL && *A)
+    if (*b== NULL && *a)
     {
-        *B = (t_stack *)malloc(sizeof(t_stack));
-        (*B)->previous = NULL;
-        (*B)->number = (*A)->number;
-        (*B)->next = NULL;
-        (*A) = (*A)->next;
-        (*A)->previous = NULL;
+        *b= (t_stack *)malloc(sizeof(t_stack));
+        (*b)->previous = NULL;
+        (*b)->number = (*a)->number;
+        (*b)->next = NULL;
+        (*a) = (*a)->next;
+        (*a)->previous = NULL;
     }
     else
     {
-        if (*A)
+        if (*a)
         {
             new = malloc(sizeof(t_stack));
-            new->number = (*A)->number;
+            new->number = (*a)->number;
             new->next = NULL;
             new->previous = NULL;
-            (*A) = (*A)->next;
-            tmp = (*B);
-            while ((*B)->previous != NULL)
-                (*B) = (*B)->previous;
-            (*B) = new;
+            (*a) = (*a)->next;
+            tmp = (*b);
+            while ((*b)->previous != NULL)
+                (*b) = (*b)->previous;
+            (*b) = new;
             new->next = (tmp);
             new->previous = NULL;
         }
@@ -131,21 +131,21 @@ void push_stack(t_stack **A, t_stack **B)
     }
 }
 
-void rr(t_stack **A, t_stack **B)
+void rr(t_stack **a, t_stack **b)
 {
-    r_stack(A);
-    r_stack(B);
+    r_stack(a);
+    r_stack(b);
 }
 
-void ss(t_stack **A, t_stack **B)
+void ss(t_stack **a, t_stack **b)
 {
-    swap_stack(A);
-    swap_stack(B);
+    swap_stack(a);
+    swap_stack(b);
 }
 
-void rrr(t_stack **A, t_stack **B)
+void rrr(t_stack **a, t_stack **b)
 {
     // puts("here");
-    rr_stack(A);
-    rr_stack(B);
+    rr_stack(a);
+    rr_stack(b);
 }

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:33:49 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 10:39:30 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 15:41:40 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ int ft_strcmp(const char *s1, const char *s2)
     return (0);
 }
 
-int size_list(t_stack *A)
+int size_list(t_stack *a)
 {
     int len;
 
     len = 0 ;
-    while(A)
+    while(a)
     {
         len++;
-        A = A->next;
+        a = a->next;
     }
     return(len);
 }

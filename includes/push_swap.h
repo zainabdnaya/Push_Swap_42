@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 12:06:19 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/08 16:21:38 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ typedef struct s_stack{
 
 /**********************LIST*******************/
 t_stack *put_in_list(char **av);
-t_stack *creat_stack(char *av, t_stack *A);
+t_stack *creat_stack(char *av, t_stack *a);
 t_stack *add_back(t_stack **head,t_stack *new,char *av);
 void    add_back1(t_stack **head,t_stack *new);
 t_stack *add_front(t_stack **head, t_stack *new_node);
+int     node_nbr(t_stack **head, int index);
 
-void print_all(t_stack *A, t_stack *B);
+void print_all(t_stack *a, t_stack *b);
 void print_list(t_stack *ptr);
 /**********************TOOlS*******************/
 int ft_strcmp(const char *s1, const char *s2);
-int size_list(t_stack *A);
+int size_list(t_stack *a);
 long long my_atoi(const char *str);
 /**********************ERRORS*********************/
 int first_errors(int ac, char **av);
@@ -50,16 +51,20 @@ void free_single_stack(t_stack **stack);
 void     swap_stack(t_stack **head);
 void     r_stack(t_stack **head);
 void     rr_stack(t_stack **head);
-void     push_stack(t_stack **A, t_stack **B);
-void     ss(t_stack **A,t_stack **B);
-void     rrr(t_stack **A,t_stack **B);
-void     rr(t_stack **A,t_stack **B);
+void     push_stack(t_stack **a, t_stack **b);
+void     ss(t_stack **a,t_stack **b);
+void     rrr(t_stack **a,t_stack **b);
+void     rr(t_stack **a,t_stack **b);
 /********************** Sorting *******************/
-int     avreage(t_stack *A);
 void    sort(t_stack *head);
-int     check_sort(t_stack **A,int len);
-void     sort_result(t_stack *A,int len);
+void    sort_result(t_stack *a,int len);
+void    algo(t_stack **a, t_stack **b, int m);
 
-// void first(t_stack **A, t_stack **B);
+int     avreage(t_stack *a);
+int     check_sort(t_stack **a,int len);
+int     get_pivot(t_stack *a);
+int     node_nbr(t_stack **head, int index);
+
+// void first(t_stack **a, t_stack **b);
 
 #endif
