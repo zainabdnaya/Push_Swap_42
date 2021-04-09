@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 23:39:52 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/09 16:24:29 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ void     rrr(t_stack **a,t_stack **b);
 void     rr(t_stack **a,t_stack **b);
 /********************** Sorting *******************/
 t_stack  *sort(t_stack *head);
+
 void    sort_result(t_stack *a,int len);
-void    algo(t_stack **a, t_stack **b, int m);
+void    algo(t_stack **a, t_stack **b, int len);
+void    switch_case(t_stack **a, t_stack **b, int w);
 
 int     avreage(t_stack *a);
 int     check_sort(t_stack **a,int len);

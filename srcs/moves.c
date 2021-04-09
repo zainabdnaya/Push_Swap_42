@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 15:44:17 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/09 17:48:06 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,9 @@ t_stack *rr_part2(t_stack *head)
     a = head;
     while (head->next)
         head = head->next;
+    // print_list(head->previous);
     head = head->previous;
+    // print_list(a);
     head->next = NULL;
     head = a;
     return (head);
@@ -85,12 +87,11 @@ void rr_stack(t_stack **head)
     a = (t_stack *)malloc(sizeof(t_stack));
     tmp = rr_part1(*head);
     a = rr_part2(*head);
-    *head = a;
+    // *head = a;
     new_node = (t_stack *)malloc(sizeof(t_stack));
     new_node->number = tmp->number;
     new_node->next = a;
     new_node->previous = NULL;
-
     (*head)->previous = new_node;
     (*head) = new_node;
     free_stack(&tmp);

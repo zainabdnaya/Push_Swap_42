@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 23:44:46 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/09 17:43:02 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void add_back1(t_stack **head, t_stack *new)
     else
     {
         tmp = *head;
-
         if (new)
         {
             while (tmp->next)
@@ -109,7 +108,7 @@ int node_nbr(t_stack **head, int index)
         count++;
         tmp = tmp->next;
     }
-    exit(1);
+    return (1);
 }
 
 t_stack *dup_list(t_stack *head)

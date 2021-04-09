@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 23:42:38 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/09 16:34:17 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+void le_vide_vider(t_stack **a, t_stack **b);
 
 int main(int ac, char **av)
 {
@@ -33,12 +34,10 @@ int main(int ac, char **av)
     else
     {
         t_stack *c;
-        
+        int len;
+
         a = put_in_list(av);
-        c = put_in_list(av);
-        m = get_pivot(c);
-        printf("pivot==>%d\n", m );
-        algo(&a, &b, m);
-        print_all(a, b);
+        len = size_list(a);
+        algo(&a, &b,len);
     }
 }
