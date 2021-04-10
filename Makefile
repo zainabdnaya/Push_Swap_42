@@ -6,7 +6,7 @@
 #    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/09 14:15:04 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/10 14:51:55 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC_NAME1= 	checker.c\
 			gen_sort.c\
 			ok_ko.c\
 			print.c\
+			list_op.c\
 
 SRC_NAME2=  swap.c\
 			moves.c\
@@ -36,7 +37,9 @@ SRC_NAME2=  swap.c\
 			print.c\
 			gen_sort.c\
 			algo.c\
+			algo_use.c\
 			ok_ko.c\
+			list_op.c\
 
 HDR_NAME= push_swap.h
 

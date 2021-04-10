@@ -6,12 +6,11 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:29:28 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 14:47:11 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void le_vide_vider(t_stack **a, t_stack **b);
 
 int main(int ac, char **av)
 {

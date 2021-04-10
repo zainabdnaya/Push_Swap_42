@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_use.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:33:49 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 21:59:16 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/10 14:46:56 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int val_aprox(float m)
     else
         return((int)m);
 }
-
 
 int ft_strcmp(const char *s1, const char *s2)
 {

@@ -6,15 +6,12 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 15:44:17 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 14:49:27 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int checker_1(t_stack *a,t_stack *b,int m,char *line)
-// {
-// }
 
 void the_end(t_stack **a, t_stack **b, char **line, int len)
 {

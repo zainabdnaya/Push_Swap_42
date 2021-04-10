@@ -6,52 +6,11 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 13:06:00 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:36:19 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 14:51:07 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int check_under_pivot(t_stack *a, int pivot)
-{
-    while (a)
-    {
-        if (a->number <= pivot)
-            return (1);
-        a = a->next;
-    }
-    return (0);
-}
-
-int check_upper_pivot(t_stack *a, int pivot)
-{
-    while (a)
-    {
-        if (a->number == pivot)
-            return (1);
-        a = a->next;
-    }
-    return (0);
-}
-
-
-
-int get_min(t_stack *a)
-{
-    int min = a->number;
-    t_stack *tmp;
-    tmp = a;
-    while (a)
-    {
-        if (a->number < min)
-            min = a->number;
-        a = a->next;
-    }
-    return (min);
-}
-
-
-
 
 void algo(t_stack **a, t_stack **b, int len)
 {
