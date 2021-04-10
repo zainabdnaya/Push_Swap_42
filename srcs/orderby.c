@@ -3,15 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   orderby.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:47:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/08 23:08:57 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/10 14:39:34 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void rr(t_stack **a, t_stack **b)
+{
+    r_stack(a);
+    r_stack(b);
+}
+
+void ss(t_stack **a, t_stack **b)
+{
+    swap_stack(a);
+    swap_stack(b);
+}
+
+void rrr(t_stack **a, t_stack **b)
+{
+    rr_stack(a);
+    rr_stack(b);
+}
 
 int avreage(t_stack *a)
 {
@@ -34,3 +51,4 @@ int avreage(t_stack *a)
     avg = (int)(k / i);
     return (avg);
 }
+

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:45:52 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/09 15:58:59 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 14:37:58 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void switch_case(t_stack **a, t_stack **b, int w)
         ft_putstr_fd("ra\n", 1);
         r_stack(a);
     }
-    else if (w == 3)
+    else if (w == 3 && size_list(*a) > 1)
     {
         ft_putstr_fd("rra\n", 1);
         rr_stack(a);
@@ -43,7 +43,6 @@ void switch_case(t_stack **a, t_stack **b, int w)
     {
         ft_putstr_fd("rrb\n", 1);
         rr_stack(b);
-        // puts("here1");
     }
 }
 

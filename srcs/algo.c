@@ -6,30 +6,11 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 13:06:00 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/09 17:21:07 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 14:36:19 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int get_pivot(t_stack *c)
-{
-    t_stack *result;
-    int len;
-    int m;
-    int k;
-
-    result = sort(dup_list(c));
-    len = size_list(result);
-    if (len <= 12)
-        m = val_aprox(len / 2);
-    else if (len > 12 && len < 500)
-        m = val_aprox(len / 5);
-    // else if (len >= 500)
-    // m = val_aprox(len / 8);
-    k = node_nbr(&result, m);
-    return (k);
-}
 
 int check_under_pivot(t_stack *a, int pivot)
 {
@@ -53,35 +34,7 @@ int check_upper_pivot(t_stack *a, int pivot)
     return (0);
 }
 
-int get_index(t_stack *a, int pivot)
-{
-    int i;
-    i = 1;
 
-    while (a)
-    {
-        if (a->number <= pivot)
-            return (i);
-        a = a->next;
-        i++;
-    }
-    return (-1);
-}
-
-int get_index_max(t_stack *a, int pivot)
-{
-    int i;
-    i = 1;
-
-    while (a)
-    {
-        if (a->number == pivot)
-            return (i);
-        a = a->next;
-        i++;
-    }
-    return (-1);
-}
 
 int get_min(t_stack *a)
 {
@@ -97,41 +50,8 @@ int get_min(t_stack *a)
     return (min);
 }
 
-int get_max(t_stack *b)
-{
-    int max = b->number;
-    t_stack *tmp;
-    tmp = b;
-    while (b)
-    {
-        if (b->number >= max)
-            max = b->number;
-        b = b->next;
-    }
-    b = tmp;
-    return (max);
-}
 
-void le_vide_vider(t_stack **a, t_stack **b)
-{
-    while (*a)
-    {
-        switch_case(a, b, 1);
-        // sleep(1);
-    }
 
-    while (*b)
-    {
-        switch_case(a, b, 4);
-        // sleep(1);
-    }
-    // free(*a);
-    // free_stack(a);
-    // print_list(*a);
-    // puts(ft_itoa());
-    if (size_list(*b))
-        switch_case(a, b, 6);
-}
 
 void algo(t_stack **a, t_stack **b, int len)
 {
@@ -142,8 +62,6 @@ void algo(t_stack **a, t_stack **b, int len)
     int size = len;
 
     now = (*a);
-    // print_list(*a);
-
     while (size >= len / 5)
     {
         m = get_pivot(((*a)));
@@ -187,30 +105,22 @@ void algo(t_stack **a, t_stack **b, int len)
             }
         }
     }
-    // while (*b)
+    while (*b)
     {
         int max = get_max(*b);
         while (check_upper_pivot((*b), max))
         {
-            // max = get_max(*b);
+            max = get_max(*b);
             while (((*b)->number != max))
             {
-                // puts(ft_itoa(size_list(*b)));
-                // print_list(*b);
-                sleep(1);
-                printf("MAX: %d\n", max);
                 index = get_index_max((*b), max);
                 proximity = val_aprox((size_list((*b)) / 2));
                 if (proximity > index && *b) //|| size < 30
                     switch_case(a, b, 5);
                 else if (*b)
-                {
 
                     switch_case(a, b, 6);
-                    print_list(*b);
-                }
             }
-            puts("doasdksaopdksa");
             while (*b && (*b)->number == max)
             {
                 switch_case(a, b, 4);

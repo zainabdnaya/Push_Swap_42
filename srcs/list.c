@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/09 17:43:02 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 14:35:40 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void add_back1(t_stack **head, t_stack *new)
     }
 }
 
-t_stack *add_front(t_stack **head, t_stack *new_node)
+void add_front(t_stack **head, t_stack *new_node)
 {
     new_node->next = (*head);
     new_node->previous = NULL;
@@ -67,30 +67,6 @@ t_stack *add_front(t_stack **head, t_stack *new_node)
     if ((*head) != NULL)
         (*head)->previous = new_node;
     (*head) = new_node;
-    return (*head);
-}
-
-t_stack *put_in_list(char **av)
-{
-    t_stack *a;
-    t_stack *tmp;
-    char *str;
-    int i;
-
-    i = 1;
-    a = (t_stack *)malloc(sizeof(t_stack));
-    a = NULL;
-    tmp = NULL;
-    str = NULL;
-    while (av[i])
-    {
-        str = ft_strdup(av[i]);
-        add_back(&a, tmp, str);
-        // free_stack(tmp);
-        // free_arg(&str);
-        i++;
-    }
-    return (a);
 }
 
 int node_nbr(t_stack **head, int index)
@@ -113,7 +89,7 @@ int node_nbr(t_stack **head, int index)
 
 t_stack *dup_list(t_stack *head)
 {
-t_stack *tmp;
+    t_stack *tmp;
     t_stack *tmp2;
 
     tmp2 = malloc(sizeof(t_stack));
