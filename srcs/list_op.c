@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 10:14:15 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/11 14:29:30 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int get_pivot(t_stack *c)
     len = size_list(result);
     if (len <= 12)
         m = val_aprox(len / 2);
-    else if (len > 12 && len < 500)
-        m = val_aprox(len / 5);
-    else if (len >= 500)
+    else if (len > 12 && len < 200)
+        m = val_aprox(len / 4);
+    else if (len >= 200)
         m = val_aprox(len / 8);
     k = node_nbr(&result, m);
     return (k);
@@ -76,7 +76,7 @@ int get_index_max(t_stack *a, int pivot)
 
     while (a)
     {
-        if (a->number == pivot)
+        if (a->number >= pivot)
             return (i);
         a = a->next;
         i++;

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   algo_500.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/08 13:06:00 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 14:06:25 by zdnaya           ###   ########.fr       */
+/*   Created: 2021/04/11 12:38:17 by zdnaya            #+#    #+#             */
+/*   Updated: 2021/04/11 14:11:28 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void part1_1(t_stack **a, t_stack **b, int len, int m)
+void part_1(t_stack **a, t_stack **b, int len, int m)
 {
     int index;
     int proximity;
     int size;
 
     size = len;
-    while (size >= len / 4)
+    while (size >= len / 8)
     {
         m = get_pivot(((*a)));
         while (check_under_pivot((*a), m) && (*a))
@@ -41,7 +41,7 @@ void part1_1(t_stack **a, t_stack **b, int len, int m)
         }
     }
 }
-void part1_2(t_stack **a, t_stack **b, int index, int size)
+void part_2(t_stack **a, t_stack **b, int index, int size)
 {
     int proximity;
     t_stack *tmp;
@@ -50,7 +50,7 @@ void part1_2(t_stack **a, t_stack **b, int index, int size)
     {
         int min = get_min(*a);
         tmp = (*a)->next;
-        while ((*a)->number != min && tmp && tmp->number == min)
+        if ((*a)->number != min && tmp && tmp->number == min)
             switch_case(a, b, 8);
         while (size_list(*a) && check_under_pivot((*a), min))
         {
@@ -72,7 +72,7 @@ void part1_2(t_stack **a, t_stack **b, int index, int size)
     }
 }
 
-void part1_3(t_stack **a, t_stack **b, int index, int proximity)
+void part_3(t_stack **a, t_stack **b, int index, int proximity)
 {
     t_stack *tmp;
 
@@ -83,16 +83,16 @@ void part1_3(t_stack **a, t_stack **b, int index, int proximity)
         {
             max = get_max(*b);
             tmp = (*b)->next;
-            while ((*b)->number != max && tmp && tmp->number == max)
+            if ((*b)->number != max && tmp && tmp->number == max)
                 switch_case(a, b, 7);
             while (((*b)->number != max) && *b)
             {
-                    index = get_index_max((*b), max);
-                    proximity = val_aprox((size_list((*b)) / 2));
-                    if (proximity > index && *b)
-                        switch_case(a, b, 5);
-                    else if (*b)
-                        switch_case(a, b, 6);
+                index = get_index_max((*b), max);
+                proximity = val_aprox((size_list((*b)) / 2));
+                if (proximity > index && *b)
+                    switch_case(a, b, 5);
+                else if (*b)
+                    switch_case(a, b, 6);
             }
             while (*b && (*b)->number == max)
             {
@@ -103,7 +103,7 @@ void part1_3(t_stack **a, t_stack **b, int index, int proximity)
     }
 }
 
-void algo_1(t_stack **a, t_stack **b, int len)
+void algo(t_stack **a, t_stack **b, int len)
 {
     int index;
     int proximity;
@@ -114,7 +114,7 @@ void algo_1(t_stack **a, t_stack **b, int len)
     proximity = 0;
     m = 0;
     size = len;
-    part1_1(a, b, len, m);
-    part1_2(a, b, index, size_list(*a));
-    part1_3(a, b, index, proximity);
+    part_1(a, b, len, m); //put size*4/5 in b
+    part_2(a, b, index, size_list(*a)); //sort_a==>push to b
+    part_3(a, b, index, proximity); //sort_pushb
 }

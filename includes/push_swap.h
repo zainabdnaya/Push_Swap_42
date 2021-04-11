@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 16:11:00 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/11 12:41:20 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_stack  *sort(t_stack *head);
 void    sort_result(t_stack *a,int len);
 void    algo(t_stack **a, t_stack **b, int len);
 void    switch_case(t_stack **a, t_stack **b, int w);
+void    algo_1(t_stack **a, t_stack **b, int len);
 
 int     check_sort(t_stack **a,int len);
 int     get_pivot(t_stack *a);
@@ -75,7 +76,7 @@ int     get_max(t_stack *b);
 
 /********************** Test  *******************/
 
-void    le_vide_vider(t_stack **a, t_stack **b);
+void le_vide_vider(t_stack **a, t_stack **b);
 void    print_all(t_stack *a, t_stack *b);
 void    print_list(t_stack *ptr);
 

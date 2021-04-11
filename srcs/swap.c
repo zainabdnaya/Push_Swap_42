@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 10:30:34 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/11 12:41:47 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ int main(int ac, char **av)
     {
         a = put_in_list(av);
         len = size_list(a);
-        algo(&a, &b, len);
+        if (len < 200)
+            algo_1(&a, &b, len);
+        else
+            algo(&a, &b, len);
     }
 }
