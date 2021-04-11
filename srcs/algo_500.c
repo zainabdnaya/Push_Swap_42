@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:38:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 14:11:28 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/11 15:04:36 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void part_1(t_stack **a, t_stack **b, int len, int m)
     int size;
 
     size = len;
-    while (size >= len / 8)
+    while (size >= val_aprox(len / 8))
     {
         m = get_pivot(((*a)));
         while (check_under_pivot((*a), m) && (*a))
