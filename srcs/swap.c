@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:47:11 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/11 10:30:34 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int ac, char **av)
 {
     t_stack *a;
     t_stack *b;
-    int m;
+    int len;
 
     a = NULL;
     b = NULL;
@@ -32,11 +32,8 @@ int main(int ac, char **av)
     }
     else
     {
-        t_stack *c;
-        int len;
-
         a = put_in_list(av);
         len = size_list(a);
-        algo(&a, &b,len);
+        algo(&a, &b, len);
     }
 }

@@ -6,26 +6,25 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 13:06:00 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:51:07 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/11 11:52:34 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void algo(t_stack **a, t_stack **b, int len)
+void part_1(t_stack **a, t_stack **b, int len, int m)
 {
-    t_stack *now;
     int index;
     int proximity;
-    int m;
-    int size = len;
+    int size;
 
-    now = (*a);
+    size = len;
     while (size >= len / 5)
     {
         m = get_pivot(((*a)));
         while (check_under_pivot((*a), m))
         {
+
             if ((*a)->number <= m)
             {
                 switch_case(a, b, 1);
@@ -42,6 +41,16 @@ void algo(t_stack **a, t_stack **b, int len)
             }
         }
     }
+}
+
+void algo(t_stack **a, t_stack **b, int len)
+{
+    int index;
+    int proximity;
+    int m;
+    int size = len;
+
+    part_1(a, b, len, m);
     size = size_list(*a);
     while (*a && !check_sort(a, size))
     {
@@ -74,7 +83,7 @@ void algo(t_stack **a, t_stack **b, int len)
             {
                 index = get_index_max((*b), max);
                 proximity = val_aprox((size_list((*b)) / 2));
-                if (proximity > index && *b) //|| size < 30
+                if (proximity > index && *b)
                     switch_case(a, b, 5);
                 else if (*b)
 

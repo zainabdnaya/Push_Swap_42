@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:50:57 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/10 16:11:00 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int     get_max(t_stack *b);
 
 /********************** Test  *******************/
 
-void le_vide_vider(t_stack **a, t_stack **b);
-void print_all(t_stack *a, t_stack *b);
-void print_list(t_stack *ptr);
+void    le_vide_vider(t_stack **a, t_stack **b);
+void    print_all(t_stack *a, t_stack *b);
+void    print_list(t_stack *ptr);
 
 #endif
