@@ -34,3 +34,7 @@ I use Double linked list to implement these moves :<br>
     -Thanks to the checker program, you will be able to check if the
     list of instructions you’ll generate with the program push_swap is
     actually sorting the stack properly.
+
+## This is how much instriction the algorithm Do with 100 random number 
+
+<a href="https://ibb.co/Rb0SvY5"><img src="https://i.ibb.co/jfM56bp/Screen-Shot-2021-04-11-at-2-33-56-PM.png" alt="Screen-Shot-2021-04-11-at-2-33-56-PM" border="0"></a>
