@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/12 16:41:03 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 18:25:28 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,38 @@ void sort_a_3(t_stack **a, t_stack **b, int len)
     }
 }
 
-// void sort_min(t_stack **a, t_stack **b, int len)
-// {
-//     t_stack *tmp;
-//     int size;
-//     int pivot;
+void sort_min(t_stack **a, t_stack **b, int len)
+{
+    t_stack *tmp;
+    int index;
+    int proximity;
+    int size;
+    int m;
+    int min;
+    int max;
 
-//     size = len
-//         pivot = get_pivot(a);
-//     while (len < val_aprox(len / 2))
-//     {
-//         if (check_under_pivot(a, pivot))
-//         {
-//                 }
-//     }
-// }
+    size = len;
+    if (len == 3)
+        sort_a_3(a, b, len);
+    else if (len > 3)
+    {
+        while (size > 3)
+        {
+            m = get_min(*a);
+            while (m != (*a)->number)
+            {
+                proximity = size / 2;
+                index = get_index(*a, m);
+                if (proximity <= index)
+                    switch_case(a, b, 3);
+                else
+                    switch_case(a, b, 2);
+            }
+            switch_case(a, b, 1);
+            size--;
+        }
+        sort_a_3(a, b, 3);
+        while ((*b))
+            switch_case(a, b, 4);
+    }
+}
