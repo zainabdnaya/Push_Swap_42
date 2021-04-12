@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 13:06:00 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 15:03:22 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 13:52:58 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ void part1_2(t_stack **a, t_stack **b, int index, int size)
 {
     int proximity;
     t_stack *tmp;
-
+    int min;
+    
     while (*a && !check_sort(a, size))
     {
-        int min = get_min(*a);
+        min = get_min(*a);
         tmp = (*a)->next;
         while ((*a)->number != min && tmp && tmp->number == min)
             switch_case(a, b, 8);

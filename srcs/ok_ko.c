@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/09 14:08:34 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 14:58:28 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int check_sort(t_stack **a, int len)
     int i;
 
     i = 0;
+
     if (size_list(*a) != len)
         return (0);
     tmp = (*a);
@@ -28,6 +29,5 @@ int check_sort(t_stack **a, int len)
         else
             return (0);
     }
-    (*a) = tmp;
-    return (1);
+  return (1);
 }

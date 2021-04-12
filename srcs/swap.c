@@ -6,11 +6,13 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 12:41:47 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 16:41:18 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+void sort_a_3(t_stack **a, t_stack **b,int len);
+void sort_min(t_stack **a, t_stack **b, int len);
 
 int main(int ac, char **av)
 {
@@ -34,9 +36,13 @@ int main(int ac, char **av)
     {
         a = put_in_list(av);
         len = size_list(a);
-        if (len < 200)
+        // if (len <= 10)
+        //     sort_min(&a,&b,len);
+        // else 
+        if (len > 10 && len < 200)
             algo_1(&a, &b, len);
         else
             algo(&a, &b, len);
+        // print_list(a);
     }
 }

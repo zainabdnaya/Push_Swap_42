@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:45:52 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 12:26:35 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 14:33:43 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void switch_case(t_stack **a, t_stack **b, int w)
 {
-    if (w == 1)
+    if (w == 1 && size_list(*a) > 0)
     {
         ft_putstr_fd("pb\n", 1);
         push_stack(a, b);

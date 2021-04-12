@@ -6,7 +6,7 @@
 #    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/11 12:41:38 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/12 09:08:30 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC_NAME2=  swap.c\
 			ok_ko.c\
 			list_op.c\
 			algo_500.c\
+			algo_min.c\
 
 HDR_NAME= push_swap.h
 

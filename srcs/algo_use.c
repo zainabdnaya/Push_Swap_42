@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 15:07:20 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 15:07:22 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 09:09:27 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int check_upper_pivot(t_stack *a, int pivot)
 
 int get_min(t_stack *a)
 {
-    int min = a->number;
+    int min;
+    
+    min = a->number;
     t_stack *tmp;
     tmp = a;
     while (a)

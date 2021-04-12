@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/11 12:41:20 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/12 14:33:56 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,11 @@ int     node_nbr(t_stack **head, int index);
 int     get_index(t_stack *a, int pivot);
 int     get_index_max(t_stack *a, int pivot);
 int     get_max(t_stack *b);
+void    algo_min(t_stack **a, t_stack **b, int len);
 
 /********************** Test  *******************/
 
-void le_vide_vider(t_stack **a, t_stack **b);
+void    le_vide_vider(t_stack **a, t_stack **b);
 void    print_all(t_stack *a, t_stack *b);
 void    print_list(t_stack *ptr);
 
