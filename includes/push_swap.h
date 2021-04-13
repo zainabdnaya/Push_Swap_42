@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 11:15:55 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 20:28:17 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,7 @@ int get_index(t_stack *a, int pivot);
 int get_index_max(t_stack *a, int pivot);
 int get_max(t_stack *b);
 void algo_min(t_stack **a, t_stack **b, int len);
-void checker_pars(t_stack *a, t_stack *b, int len, char *line);
-/********************** Test  *******************/
+void checker_pars(t_stack **a, t_stack **b, int len, char *line);/********************** Test  *******************/
 
 void le_vide_vider(t_stack **a, t_stack **b);
 void print_all(t_stack *a, t_stack *b);

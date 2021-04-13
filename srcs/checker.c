@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 13:42:35 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 20:30:31 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int ac, char **av)
     all->len = size_list(all->a);
     while (get_next_line(0, &all->line) == 1)
     {
-        checker_pars(all->a, all->b, all->len, all->line);
+        checker_pars(&all->a,&all->b, all->len, all->line);
         free_arg(&(all->line));
     }
 }
