@@ -3,35 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   list_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 11:54:11 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 23:32:04 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *put_in_list(t_all *all,char **av)
+t_stack *put_in_list(t_all *all,char **split)
 {
     t_stack *tmp;
-    char *str;
+    // char *str;
     int i;
 
-    i = 1;
+    i = 0;
     tmp = NULL;
-    str = NULL;
+    // str = NULL;
     all->a = (t_stack *)malloc(sizeof(t_stack));
     all->a = NULL;
-    while (av[i])
+    while (split[i])
     {
-        str = ft_strdup(av[i]);
-        add_back(&all->a, tmp, str);
+        add_back(&all->a, tmp, split[i]);
         free_stack(&tmp);
-        free_arg(&str);
         i++;
     }
-    // print_list(a);
     return (all->a);
 }
 

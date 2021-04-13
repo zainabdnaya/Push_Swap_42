@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 10:47:35 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 23:35:38 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,5 @@ int check_ascii(char **av)
         }
         i++;
     }
-    return (1);
-}
-
-int first_errors(int ac, char **av)
-{
-    if (ac < 2)
-    {
-        ft_putstr_fd("Error:\n", 0);
-        exit(1);
-    }
-    if (ac == 2)
-    {
-        write(1, av[1], 1);
-        exit(1);
-    }
-    else
-        check_replicat(av);
     return (1);
 }

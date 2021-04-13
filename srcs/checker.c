@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 20:30:31 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/13 23:39:48 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,42 +19,41 @@ void the_end(t_stack **a, t_stack **b, char **line, int len)
     free_arg(line);
     exit(0);
 }
-t_stack *put_in_list1(char **av)
-{
-    t_stack *a;
-    t_stack *tmp;
-    char *str;
-    int i;
-
-    i = 1;
-    tmp = NULL;
-    str = NULL;
-    a = (t_stack *)malloc(sizeof(t_stack));
-    a = NULL;
-    while (av[i])
-    {
-        str = ft_strdup(av[i]);
-        add_back(&a, tmp, str);
-        free_stack(&tmp);
-        free_arg(&str);
-        i++;
-    }
-    // print_list(a);
-    return (a);
-}
 
 int main(int ac, char **av)
 {
     t_all *all;
-
-    if (first_errors(ac, av) && check_ascii(av))
-        all = initial(ac, av, all);
-    all->a = put_in_list(all, av);
-    all->len = size_list(all->a);
-    while (get_next_line(0, &all->line) == 1)
+    if (ac < 2)
+        exit(1);
+    else
     {
-        checker_pars(&all->a,&all->b, all->len, all->line);
-        free_arg(&(all->line));
+        int i;
+
+        i = 1;
+        all = initial(ac, all);
+        while (av[i])
+        {
+            all->split = ft_split(av[i], ' ');
+            i++;
+        }
+        check_replicat(all->split);
+        check_ascii(all->split);
+        all->a = put_in_list(all, all->split);
+        all->len = size_list(all->a);
+        while ((get_next_line(0, &all->line)) == 1)
+        {
+            if (all->line[0] == '\0' || all->line[0] == '\n')
+            {
+                if (check_sort(&all->a, all->len) == 1)
+                    ft_putstr_fd("OK\n", 1);
+                else
+                    ft_putstr_fd("KO\n", 1);
+                the_end(&all->a, &all->b, &all->line, all->len);
+            }
+            else
+                checker_pars(&all->a, &all->b, all->len, all->line);
+            free_arg(&(all->line));
+        }
     }
 }
 

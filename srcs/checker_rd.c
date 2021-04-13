@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:15:44 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 20:35:16 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/13 23:39:47 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 void checker_pars(t_stack **a, t_stack **b, int len, char *line)
 {
-    if (line[0] == '\0')
-    {
-        if (check_sort(a, len) == 1)
-            ft_putstr_fd("OK\n", 1);
-        else
-            ft_putstr_fd("KO\n", 1);
-        the_end(a, b, &line, len);
-    }
-    else if (!ft_strcmp(line, "sa") && size_list(*a) > 1)
+
+    if (!ft_strcmp(line, "sa") && size_list(*a) > 1)
         swap_stack(a);
     else if (!ft_strcmp(line, "ra") && size_list(*a) > 1)
         r_stack(a);
@@ -44,5 +37,4 @@ void checker_pars(t_stack **a, t_stack **b, int len, char *line)
         rr(a, b);
     else if (!ft_strcmp(line, "rrr"))
         rrr(a, b);
-    print_all(*a, *b);
 }

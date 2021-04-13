@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   initial.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:46:37 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 11:26:24 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 23:37:05 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_all *initial(int ac, char **av, t_all *all)
+t_all *initial(int ac,t_all *all)
 {
     if (!(all = (t_all *)malloc(sizeof(t_all))))
         exit(1);
@@ -20,5 +20,6 @@ t_all *initial(int ac, char **av, t_all *all)
     all->b = NULL;
     all->len = 0;
     all->line = NULL;
+    all->split = NULL;
     return (all);
 }

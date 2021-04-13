@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 20:28:17 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/13 23:36:25 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_all
 {
     char *line;
     int len;
+    char **split;
 
     t_stack *a;
     t_stack *b;
@@ -41,7 +42,7 @@ t_stack *put_in_list(t_all *all, char **av);
 t_stack *creat_stack(char *av, t_stack *a);
 t_stack *add_back(t_stack **head, t_stack *new, char *av);
 t_stack *dup_list(t_stack *head);
-t_all   *initial(int ac, char **av, t_all *all);
+t_all   *initial(int ac,  t_all *all);
 
 void add_back1(t_stack **head, t_stack *new, int k);
 void add_front(t_stack **head, t_stack *new_node);
@@ -56,7 +57,7 @@ int get_min(t_stack *a);
 
 long long my_atoi(const char *str);
 /**********************ERRORS*********************/
-int first_errors(int ac, char **av);
+void check_replicat(char **av);
 int check_ascii(char **av);
 /**********************FREE*********************/
 void free_arg(char **arg);
