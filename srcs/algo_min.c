@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/12 18:27:43 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 09:23:40 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,23 @@ void sort_min(t_stack **a, t_stack **b, int len)
         while (size > 3)
         {
             m = get_min(*a);
+            tmp = (*a)->next;
+            if ((*a)->number != max && tmp && tmp->number == min)
+                switch_case(a, b, 8);
             while (m != (*a)->number)
             {
-                proximity = size / 2;
+                proximity = size_list(*a) / 2;
                 index = get_index(*a, m);
-                if (proximity <= index)
-                    switch_case(a, b, 3);
-                else
+                if (proximity >= index)
                     switch_case(a, b, 2);
+                else
+                    switch_case(a, b, 3);
             }
-            switch_case(a, b, 1);
-            size--;
+            if (m == (*a)->number)
+            {
+                switch_case(a, b, 1);
+                size--;
+            }
         }
         sort_a_3(a, b, 3);
         while ((*b))

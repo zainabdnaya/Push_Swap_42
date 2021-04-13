@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/12 09:03:25 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 09:20:49 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ t_stack *put_in_list(char **av)
     int i;
 
     i = 1;
-    a = (t_stack *)malloc(sizeof(t_stack));
-    a = NULL;
     tmp = NULL;
     str = NULL;
+    a = (t_stack *)malloc(sizeof(t_stack));
+    a = NULL;
     while (av[i])
     {
         str = ft_strdup(av[i]);
@@ -32,6 +32,7 @@ t_stack *put_in_list(char **av)
         free_arg(&str);
         i++;
     }
+    // print_list(a);
     return (a);
 }
 
