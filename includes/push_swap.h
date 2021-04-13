@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 08:59:11 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 11:15:55 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "../libft/libft.h"
-#define BUFFER 10
+#include "./get_next_line.h"
+#define BUFFER_SIZE 2048
 
 typedef struct s_stack
 {
@@ -36,12 +37,13 @@ typedef struct s_all
 } t_all;
 
 /**********************LIST*******************/
-t_stack *put_in_list(char **av);
+t_stack *put_in_list(t_all *all, char **av);
 t_stack *creat_stack(char *av, t_stack *a);
 t_stack *add_back(t_stack **head, t_stack *new, char *av);
 t_stack *dup_list(t_stack *head);
+t_all   *initial(int ac, char **av, t_all *all);
 
-void add_back1(t_stack **head, t_stack *new);
+void add_back1(t_stack **head, t_stack *new, int k);
 void add_front(t_stack **head, t_stack *new_node);
 int node_nbr(t_stack **head, int index);
 /**********************TOOlS*******************/
@@ -60,6 +62,7 @@ int check_ascii(char **av);
 void free_arg(char **arg);
 void free_stack(t_stack **stack);
 void free_single_stack(t_stack **stack);
+void the_end(t_stack **a, t_stack **b, char **line, int len);
 /********************** MOVES*******************/
 void swap_stack(t_stack **head);
 void r_stack(t_stack **head);
@@ -83,7 +86,7 @@ int get_index(t_stack *a, int pivot);
 int get_index_max(t_stack *a, int pivot);
 int get_max(t_stack *b);
 void algo_min(t_stack **a, t_stack **b, int len);
-
+void checker_pars(t_stack *a, t_stack *b, int len, char *line);
 /********************** Test  *******************/
 
 void le_vide_vider(t_stack **a, t_stack **b);

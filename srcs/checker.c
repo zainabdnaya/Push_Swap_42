@@ -6,12 +6,11 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:49:27 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 13:42:35 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void the_end(t_stack **a, t_stack **b, char **line, int len)
 {
@@ -20,72 +19,42 @@ void the_end(t_stack **a, t_stack **b, char **line, int len)
     free_arg(line);
     exit(0);
 }
+t_stack *put_in_list1(char **av)
+{
+    t_stack *a;
+    t_stack *tmp;
+    char *str;
+    int i;
+
+    i = 1;
+    tmp = NULL;
+    str = NULL;
+    a = (t_stack *)malloc(sizeof(t_stack));
+    a = NULL;
+    while (av[i])
+    {
+        str = ft_strdup(av[i]);
+        add_back(&a, tmp, str);
+        free_stack(&tmp);
+        free_arg(&str);
+        i++;
+    }
+    // print_list(a);
+    return (a);
+}
 
 int main(int ac, char **av)
 {
-    t_stack *a;
-    t_stack *b;
-    char *line;
-    t_stack *C;
-    int len;
-    int m;
+    t_all *all;
 
-    line = NULL;
-    a = NULL;
-    b= NULL;
-    C = NULL;
-    m = 0;
     if (first_errors(ac, av) && check_ascii(av))
+        all = initial(ac, av, all);
+    all->a = put_in_list(all, av);
+    all->len = size_list(all->a);
+    while (get_next_line(0, &all->line) == 1)
     {
-        a = put_in_list(av);
-        C = put_in_list(av);
-    }
-    // sort(C);
-    // ft_putstr_fd("-----sorted---\n", 0);
-    // print_list(C);
-    // ft_putstr_fd("-----sorted---\n", 0);
-    len = size_list(a);
-    while (1)
-    {
-        line = (char *)malloc(sizeof(char) * (BUFFER));
-        read(0, line, BUFFER);
-        if (line[0] == '\0' || line[0] == '\n')
-        {
-            if (check_sort(&a, len) == 1)
-                ft_putstr_fd("OK\n", 1);
-            else
-                ft_putstr_fd("KO\n", 1);
-            the_end(&a, &b, &line, len);
-        }
-        if (!ft_strcmp(line, "sa\n"))
-            swap_stack(&a);
-        if (!ft_strcmp(line, "ra\n"))
-            r_stack(&a);
-        if (!ft_strcmp(line, "rra\n"))
-            rr_stack(&a);
-        if (!ft_strcmp(line, "sb\n"))
-            swap_stack(&b);
-        if (!ft_strcmp(line, "rb\n"))
-            r_stack(&b);
-        if (!ft_strcmp(line, "rrb\n"))
-            rr_stack(&b);
-        if (!ft_strcmp(line, "pb\n"))
-            push_stack(&a, &b);
-        if (!ft_strcmp(line, "pa\n"))
-            push_stack(&b, &a);
-        if (!ft_strcmp(line, "ss\n"))
-            ss(&a, &b);
-        if (!ft_strcmp(line, "rr\n"))
-            rr(&a, &b);
-        if (!ft_strcmp(line, "rrr\n"))
-            rrr(&a, &b);
-        // if (check_sort(&a, len) == 1)
-        // {
-        //     ft_putstr_fd("OK\n", 1);
-        //     the_end(&a, &b, &line, len);
-        // }
-        free_arg(&line);
-        // print_all(a, B);
+        checker_pars(all->a, all->b, all->len, all->line);
+        free_arg(&(all->line));
     }
 }
 

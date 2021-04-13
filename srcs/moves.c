@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:39:14 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 11:51:35 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,18 @@ void swap_stack(t_stack **head)
 void r_stack(t_stack **head)
 {
     t_stack *tmp2;
-
+    int k;
+    tmp2 = NULL;
     if (*head)
     {
-        tmp2 = NULL;
-        tmp2 = (t_stack *)malloc(sizeof(t_stack));
-        tmp2->number = (*head)->number;
-        tmp2->next = NULL;
-        tmp2->previous = NULL;
-        (*head) = (*head)->next;
-        add_back1(&(*head), tmp2);
+        k = (*head)->number;
+        *head = (*head)->next;
+        // print_list(*head);
+        add_back1(head, tmp2, k);
     }
+    else
+        return;
+
 }
 
 t_stack *rr_part1(t_stack *head)
@@ -71,7 +72,7 @@ void rr_stack(t_stack **head)
     tmp = rr_part1(a);
     while ((*head))
     {
-        if ( (*head)->next->next == NULL)
+        if ((*head)->next->next == NULL)
             break;
         *head = (*head)->next;
     }
@@ -114,4 +115,3 @@ void push_stack(t_stack **a, t_stack **b)
             return;
     }
 }
-

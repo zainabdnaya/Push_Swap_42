@@ -6,15 +6,14 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 09:20:49 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 11:54:11 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *put_in_list(char **av)
+t_stack *put_in_list(t_all *all,char **av)
 {
-    t_stack *a;
     t_stack *tmp;
     char *str;
     int i;
@@ -22,18 +21,18 @@ t_stack *put_in_list(char **av)
     i = 1;
     tmp = NULL;
     str = NULL;
-    a = (t_stack *)malloc(sizeof(t_stack));
-    a = NULL;
+    all->a = (t_stack *)malloc(sizeof(t_stack));
+    all->a = NULL;
     while (av[i])
     {
         str = ft_strdup(av[i]);
-        add_back(&a, tmp, str);
+        add_back(&all->a, tmp, str);
         free_stack(&tmp);
         free_arg(&str);
         i++;
     }
     // print_list(a);
-    return (a);
+    return (all->a);
 }
 
 int get_pivot(t_stack *c)

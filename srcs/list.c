@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/12 08:57:20 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/13 11:51:26 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,23 @@ t_stack *add_back(t_stack **head, t_stack *new, char *av)
     return (*head);
 }
 
-void add_back1(t_stack **head, t_stack *new)
+void add_back1(t_stack **head, t_stack *new, int k)
 {
     t_stack *tmp;
 
-    if (!head)
-        *head = new;
-    else
+    tmp = NULL;
+    if (!(new = (t_stack *)malloc(sizeof(t_stack))))
     {
-        tmp = *head;
-        if (new)
-        {
-            while (tmp->next)
-                tmp = tmp->next;
-            tmp->next = new;
-            new->previous = tmp;
-        }
+        ft_putstr_fd("Error:\n", 0);
+        exit(1);
     }
+    tmp = *head;
+    while (tmp->next)
+        tmp = tmp->next;
+    tmp->next = new;
+    new->number = k;
+    new->previous = tmp;
+    new->next = NULL;
 }
 
 void add_front(t_stack **head, t_stack *new_node)
