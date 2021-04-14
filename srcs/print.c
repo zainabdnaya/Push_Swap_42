@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/10 14:38:37 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/14 13:27:53 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,17 @@ void print_list(t_stack *ptr)
 {
     t_stack *tmp;
     tmp = ptr;
+    char *s1;
+    char *s2;
+
+    s1 = "A";
+    s2 = "B";
+
     while (ptr)
     {
-        ft_putstr_fd("[", 1);
+        ft_putstr_fd("{", 1);
         ft_putnbr_fd(ptr->number, 1);
-        ft_putstr_fd("]-->", 1);
+        ft_putstr_fd("}⇄", 1);
         ptr = ptr->next;
     }
     ft_putstr_fd("\n", 1);

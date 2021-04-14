@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 11:51:35 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/14 17:00:59 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void r_stack(t_stack **head)
     {
         k = (*head)->number;
         *head = (*head)->next;
-        // print_list(*head);
         add_back1(head, tmp2, k);
     }
     else
@@ -69,7 +68,7 @@ void rr_stack(t_stack **head)
     t_stack *a;
 
     a = *head;
-    tmp = rr_part1(a);
+    tmp = rr_part1(*head);
     while ((*head))
     {
         if ((*head)->next->next == NULL)
@@ -79,6 +78,7 @@ void rr_stack(t_stack **head)
     (*head)->next = NULL;
     *head = a;
     add_front(head, tmp);
+    // free_stack(&tmp);
 }
 
 void push_stack(t_stack **a, t_stack **b)

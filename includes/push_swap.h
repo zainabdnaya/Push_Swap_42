@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 12:06:55 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/14 17:16:10 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ typedef struct s_all
 /**********************LIST*******************/
 t_stack *put_in_list(t_all *all, char **av);
 t_stack *creat_stack(char *av, t_stack *a);
-t_stack *add_back(t_stack **head, t_stack *new, char *av);
 t_stack *dup_list(t_stack *head);
 t_all   *initial(int ac,  t_all *all);
+
+void add_back(t_stack **head, t_stack *new, char *av);
 void add_back1(t_stack **head, t_stack *new, int k);
 void add_front(t_stack **head, t_stack *new_node);
 int node_nbr(t_stack **head, int index);
@@ -62,7 +63,7 @@ int check_ascii(char **av);
 void free_arg(char **arg);
 void free_stack(t_stack **stack);
 void free_single_stack(t_stack **stack);
-void the_end(t_stack **a, t_stack **b, char **line, int len);
+void the_end(t_stack **a, t_stack **b, char **line,t_all *all);
 /********************** MOVES*******************/
 void swap_stack(t_stack **head);
 void r_stack(t_stack **head);

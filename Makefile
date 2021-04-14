@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
+#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/14 01:48:48 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/14 17:15:44 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,22 +33,23 @@ SRC_NAME1= 	checker.c\
 			get_next_line.c\
 			get_next_line_utils.c\
 
-SRC_NAME2=  swap.c\
-			moves.c\
-			list.c\
-			to_use.c\
-			simple_free.c\
-			print.c\
-			gen_sort.c\
-			algo.c\
-			algo_use.c\
-			ok_ko.c\
-			list_op.c\
-			algo_500.c\
-			algo_min.c\
-			errors.c\
-			swap_case.c\
-			initial.c\
+SRC_NAME2=  
+			# swap.c\
+# 			moves.c\
+# 			list.c\
+# 			to_use.c\
+# 			simple_free.c\
+# 			print.c\
+# 			gen_sort.c\
+# 			algo.c\
+# 			algo_use.c\
+# 			ok_ko.c\
+# 			list_op.c\
+# 			algo_500.c\
+# 			algo_min.c\
+# 			errors.c\
+# 			swap_case.c\
+# 			initial.c\
 
 HDR_NAME= push_swap.h
 
@@ -73,8 +74,8 @@ all: lib  $(NAME1) $(NAME2)
 
 $(NAME1) : $(LIB_PATH)/$(LIB) $(OBJ1)
 	@rm -rf $(NAME1)
-	@$(COMP) $(H_FLAG) $(LLIB_FLAG) $(OBJ1) -o $@
-	@echo "	Compilation of $(NAME1):  \033[1;32mOK\033[m"
+	@$(COMP) $(H_FLAG) $(LLIB_FLAG)  $(OBJ1) -o $@
+	@echo "	Compilation of  $(NAME1):  \033[1;32mOK\033[m"
 
 $(NAME2) : $(LIB_PATH)/$(LIB) $(OBJ2)
 	@rm -rf $(NAME2)

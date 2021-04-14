@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_rd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:15:44 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 00:26:34 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/14 13:37:48 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ void checker_pars(t_stack **a, t_stack **b, int len, char *line)
         rr(a, b);
     else if (!ft_strcmp(line, "rrr"))
         rrr(a, b);
-    // print_list(*a);
+    else if (line[0] != '\0' || line[0] != '\n')
+    {
+        ft_putstr_fd("Error\n", 1);
+        exit(1);
+    }
 }

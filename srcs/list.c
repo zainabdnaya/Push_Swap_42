@@ -6,19 +6,20 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 11:51:26 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/14 17:15:21 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *add_back(t_stack **head, t_stack *new, char *av)
+void    add_back(t_stack **head, t_stack *new, char *av)
 {
     t_stack *tmp;
 
-    new = (t_stack *)malloc(sizeof(t_stack));
+    if (!(new = (t_stack *)malloc(sizeof(t_stack))))
+        exit(1);
     new->number = my_atoi(av);
-    if (new->number > 32767 || new->number < -32768)
+    if (new->number > 2147483647 || new->number < -2147483647)
     {
         ft_putstr_fd("Error:\n", 2);
         exit(1);
@@ -26,9 +27,7 @@ t_stack *add_back(t_stack **head, t_stack *new, char *av)
     new->next = NULL;
     new->previous = NULL;
     if (*head == NULL)
-    {
         *head = new;
-    }
     else
     {
         tmp = *head;
@@ -37,7 +36,7 @@ t_stack *add_back(t_stack **head, t_stack *new, char *av)
         tmp->next = new;
         new->previous = tmp;
     }
-    return (*head);
+    // return (*head);
 }
 
 void add_back1(t_stack **head, t_stack *new, int k)
