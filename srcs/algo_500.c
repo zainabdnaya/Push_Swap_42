@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_500.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:38:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 09:23:06 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/14 01:04:03 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void algo(t_stack **a, t_stack **b, int len)
     proximity = 0;
     m = 0;
     size = len;
-    part_1(a, b, len, m); //put size*4/5 in b
-    part_2(a, b, index, size_list(*a)); //sort_a==>push to b
-    part_3(a, b, index, proximity); //sort_pushb
+    part_1(a, b, len, m); 
+    part_2(a, b, index, size_list(*a));
+    part_3(a, b, index, proximity); 
 }

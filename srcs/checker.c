@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 00:27:24 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/14 12:07:07 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,27 @@ void the_end(t_stack **a, t_stack **b, char **line, int len)
 int main(int ac, char **av)
 {
     t_all *all;
-    int i;
 
     if (ac < 2)
         exit(1);
     else
     {
         all = initial(ac, all);
-        if (ac == 2)
-            all->split = ft_split(av[1], ' ');
+        if (!ft_strcmp(av[1], "-v"))
+        {
+            all->print = 1;
+            if (ac == 3)
+                all->split = ft_split(av[2], ' ');
+            else
+                all->split = &av[2];
+        }
         else
-            all->split = &av[1];
+        {
+            if (ac == 2)
+                all->split = ft_split(av[1], ' ');
+            else
+                all->split = &av[1];
+        }
         check_replicat(all->split);
         check_ascii(all->split);
         all->a = put_in_list(all, all->split);
@@ -42,6 +52,8 @@ int main(int ac, char **av)
         {
             checker_pars(&all->a, &all->b, all->len, all->line);
             free_arg(&(all->line));
+            if (all->print == 1)
+                print_all(all->a, all->b);
         }
     }
     if (all->line[0] == '\0' || all->line[0] == '\n')

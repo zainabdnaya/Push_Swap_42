@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 23:44:03 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/14 12:06:55 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ typedef struct s_stack
 typedef struct s_all
 {
     char *line;
-    int len;
     char **split;
-
+    int len;
+    int print;
     t_stack *a;
     t_stack *b;
 } t_all;
@@ -43,7 +43,6 @@ t_stack *creat_stack(char *av, t_stack *a);
 t_stack *add_back(t_stack **head, t_stack *new, char *av);
 t_stack *dup_list(t_stack *head);
 t_all   *initial(int ac,  t_all *all);
-
 void add_back1(t_stack **head, t_stack *new, int k);
 void add_front(t_stack **head, t_stack *new_node);
 int node_nbr(t_stack **head, int index);
@@ -79,7 +78,6 @@ void sort_result(t_stack *a, int len);
 void algo(t_stack **a, t_stack **b, int len);
 void switch_case(t_stack **a, t_stack **b, int w);
 void algo_1(t_stack **a, t_stack **b, int len);
-
 int check_sort(t_stack **a, int len);
 int get_pivot(t_stack *a);
 int node_nbr(t_stack **head, int index);
@@ -87,7 +85,9 @@ int get_index(t_stack *a, int pivot);
 int get_index_max(t_stack *a, int pivot);
 int get_max(t_stack *b);
 void algo_min(t_stack **a, t_stack **b, int len);
-void checker_pars(t_stack **a, t_stack **b, int len, char *line);/********************** Test  *******************/
+void checker_pars(t_stack **a, t_stack **b, int len, char *line);
+void sort_a_3(t_stack **a, t_stack **b, int len);
+void sort_min(t_stack **a, t_stack **b, int len);
 
 void le_vide_vider(t_stack **a, t_stack **b);
 void print_all(t_stack *a, t_stack *b);

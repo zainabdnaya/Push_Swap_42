@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:46:37 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 23:37:05 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/14 01:47:06 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_all *initial(int ac,t_all *all)
     all->len = 0;
     all->line = NULL;
     all->split = NULL;
+    all->print = 0;
     return (all);
 }
