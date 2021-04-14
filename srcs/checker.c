@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 23:39:48 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/14 00:27:24 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,37 +23,34 @@ void the_end(t_stack **a, t_stack **b, char **line, int len)
 int main(int ac, char **av)
 {
     t_all *all;
+    int i;
+
     if (ac < 2)
         exit(1);
     else
     {
-        int i;
-
-        i = 1;
         all = initial(ac, all);
-        while (av[i])
-        {
-            all->split = ft_split(av[i], ' ');
-            i++;
-        }
+        if (ac == 2)
+            all->split = ft_split(av[1], ' ');
+        else
+            all->split = &av[1];
         check_replicat(all->split);
         check_ascii(all->split);
         all->a = put_in_list(all, all->split);
         all->len = size_list(all->a);
-        while ((get_next_line(0, &all->line)) == 1)
+        while ((get_next_line(0, &all->line)))
         {
-            if (all->line[0] == '\0' || all->line[0] == '\n')
-            {
-                if (check_sort(&all->a, all->len) == 1)
-                    ft_putstr_fd("OK\n", 1);
-                else
-                    ft_putstr_fd("KO\n", 1);
-                the_end(&all->a, &all->b, &all->line, all->len);
-            }
-            else
-                checker_pars(&all->a, &all->b, all->len, all->line);
+            checker_pars(&all->a, &all->b, all->len, all->line);
             free_arg(&(all->line));
         }
+    }
+    if (all->line[0] == '\0' || all->line[0] == '\n')
+    {
+        if (check_sort(&all->a, all->len) == 1)
+            ft_putstr_fd("OK\n", 1);
+        else
+            ft_putstr_fd("KO\n", 1);
+        the_end(&all->a, &all->b, &all->line, all->len);
     }
 }
 
