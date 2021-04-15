@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/15 01:17:58 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/15 16:37:59 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,31 @@ int main(int ac, char **av)
                 all->split = &av[2];
             check_replicat(all->split);
             check_ascii(all->split);
+            // all->a = put_in_list(all, all->split);
+            // all->len = size_list(all->a);
+            // if (all->len <= 10)
+            //     sort_min_sh(&(all->a), &(all->b), all->len);
+            // else if (all->len > 10 && all->len < 200)
+            //     algo_1_sh(&(all->a), &(all->b), all->len);
+            // else
+            //     algo_(&(all->a), &(all->b), all->len);
+        }
+        if (!ft_strcmp(av[1], "-sh"))
+        {
+            if (ac == 3)
+                all->split = ft_split(av[2], ' ');
+            else
+                all->split = &av[2];
+            check_replicat(all->split);
+            check_ascii(all->split);
             all->a = put_in_list(all, all->split);
             all->len = size_list(all->a);
             if (all->len <= 10)
-                sort_min_c(&(all->a), &(all->b), all->len);
+                sort_min(&(all->a), &(all->b), all->len);
             else if (all->len > 10 && all->len < 200)
-                algo_1_c(&(all->a), &(all->b), all->len);
+                algo_1(&(all->a), &(all->b), all->len);
             else
-                algo_c(&(all->a), &(all->b), all->len);
+                algo(&(all->a), &(all->b), all->len);
         }
         else
         {
