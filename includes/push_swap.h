@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/15 01:17:06 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/15 15:08:08 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 #define CYN "\e[0;36mrrb"
 #define WHT "\e[0;37mpb"
 #define BHBLK "\e[1;90msb"
-
-
-
+#define YELHB "\e[0;103mss"
+#define CYNHB "\e[0;106mrr"
+#define GRNHB "\e[0;102mrrr"
 typedef struct s_stack
 {
     int number;
