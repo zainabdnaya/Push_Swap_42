@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
+#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/14 17:15:44 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/15 01:18:49 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,23 +33,25 @@ SRC_NAME1= 	checker.c\
 			get_next_line.c\
 			get_next_line_utils.c\
 
-SRC_NAME2=  
-			# swap.c\
-# 			moves.c\
-# 			list.c\
-# 			to_use.c\
-# 			simple_free.c\
-# 			print.c\
-# 			gen_sort.c\
-# 			algo.c\
-# 			algo_use.c\
-# 			ok_ko.c\
-# 			list_op.c\
-# 			algo_500.c\
-# 			algo_min.c\
-# 			errors.c\
-# 			swap_case.c\
-# 			initial.c\
+SRC_NAME2=  swap.c\
+			moves.c\
+			list.c\
+			to_use.c\
+			simple_free.c\
+			print.c\
+			gen_sort.c\
+			algo.c\
+			algo_use.c\
+			ok_ko.c\
+			list_op.c\
+			algo_500.c\
+			algo_min.c\
+			errors.c\
+			swap_case.c\
+			initial.c\
+			algo_min_c.c\
+			algo_c.c\
+			algo_500_c.c\
 
 HDR_NAME= push_swap.h
 

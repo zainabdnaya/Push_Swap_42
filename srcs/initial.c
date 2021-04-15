@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initial.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:46:37 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 15:03:29 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/14 23:24:35 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ t_all *initial(int ac,t_all *all)
     all->line = NULL;
     all->split = NULL;
     all->print = 0;
+    all->color = 0;
     return (all);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 17:12:19 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/14 23:29:47 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ t_stack *put_in_list(t_all *all,char **split)
         i++;
     }
     free_stack(&tmp);
+    if (all->color == 1)
+        all->a->color = 1;
     // free_stack(&all->a);
     return (all->a);
 }

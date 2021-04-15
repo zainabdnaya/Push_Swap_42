@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 17:16:10 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/15 01:17:06 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,21 @@
 #include "../libft/libft.h"
 #include "./get_next_line.h"
 #define BUFFER_SIZE 2048
+#define RED "\e[0;31msa"
+#define GRN "\e[0;32mra"
+#define YEL "\e[0;33mrra"
+#define BLU "\e[0;34mpa"
+#define MAG "\e[0;35mrb"
+#define CYN "\e[0;36mrrb"
+#define WHT "\e[0;37mpb"
+#define BHBLK "\e[1;90msb"
+
+
 
 typedef struct s_stack
 {
     int number;
+    int color;
     struct s_stack *next;
     struct s_stack *previous;
 } t_stack;
@@ -33,6 +44,7 @@ typedef struct s_all
     char **split;
     int len;
     int print;
+    int color;
     t_stack *a;
     t_stack *b;
 } t_all;
@@ -93,5 +105,11 @@ void sort_min(t_stack **a, t_stack **b, int len);
 void le_vide_vider(t_stack **a, t_stack **b);
 void print_all(t_stack *a, t_stack *b);
 void print_list(t_stack *ptr);
-
+t_stack *bottom(t_stack *a);
+/********************** color  *******************/
+void switch_case_color(t_stack **a, t_stack **b, int w);
+void sort_a_3_c(t_stack **a, t_stack **b, int len);
+void sort_min_c(t_stack **a, t_stack **b, int len);
+void algo_1_c(t_stack **a, t_stack **b, int len);
+void algo_c(t_stack **a, t_stack **b, int len);
 #endif
