@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_case.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:08:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 01:14:34 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/16 13:51:01 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ void switch_case_color(t_stack **a, t_stack **b, int w)
 
 void display(t_stack *a, t_stack *b)
 {
+    int len;
+
+    len = size_list(a);
     system("clear");
     ft_putstr_fd("\n\t-------------------------------\n", 1);
     ft_putstr_fd("        \tA         \tB         ", 1);
@@ -69,19 +72,24 @@ void display(t_stack *a, t_stack *b)
         if ((a))
             ft_putnbr_fd((a)->number, 1);
         else
-            ft_putstr_fd("\t   ", 1);
+            ft_putstr_fd("   ", 1);
         ft_putstr_fd("\t        ", 1);
         if (b)
             ft_putnbr_fd((b)->number, 1);
         else
-            ft_putstr_fd("\t   ", 1);
+            ft_putstr_fd("   ", 1);
         ft_putstr_fd("\n", 1);
         if (a)
             (a) = (a)->next;
         if (b)
             b = (b)->next;
     }
-    sleep(1);
+    if ( len <= 10)
+    usleep(10000000);
+    else if(len > 10 && len <= 100)
+        usleep(1000000);
+    else  if ( len > 100)
+        usleep(100000);
 }
 
 void s_c_display(t_stack **a, t_stack **b, int w)
