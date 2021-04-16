@@ -6,7 +6,7 @@
 #    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/15 23:45:41 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/16 00:40:11 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME2= push_swap
 SRC_PATH= srcs
 HDR_PATH= includes
 OBJ_PATH= obj
-LIB_PATH= libft
+# LIB_PATH= libft
 
 SRC_NAME1= 	checker.c\
 			errors.c\
@@ -30,8 +30,8 @@ SRC_NAME1= 	checker.c\
 			list_op.c\
 			checker_rd.c\
 			initial.c\
-			get_next_line.c\
-			get_next_line_utils.c\
+			use_libft1.c\
+			use_libft.c\
 
 SRC_NAME2=  swap.c\
 			moves.c\
@@ -55,6 +55,8 @@ SRC_NAME2=  swap.c\
 			algo_disp.c\
 			algo_min_d.c\
 			algo_d.c\
+			use_libft1.c\
+			use_libft.c\
 
 HDR_NAME= push_swap.h
 
@@ -67,40 +69,33 @@ OBJ2= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME2))
 SRC2= $(addprefix $(SRC_PATH)/,$(SRC_NAME2))
 
 HDR= $(addprefix $(HDR_PATH)/,$(HDR_NAME))
-
-LIB= libft.a
 # FLAGS= -Wall -Wextra -Werror
-LLIB_FLAG= -L$(LIB_PATH) libft/libft.a
 H_FLAG= -I $(HDR_PATH)
 
 COMP= gcc
 
-all: lib  $(NAME1) $(NAME2)
+all: $(NAME1) $(NAME2)
 
-$(NAME1) : $(LIB_PATH)/$(LIB) $(OBJ1)
+$(NAME1) :  $(OBJ1)
 	@rm -rf $(NAME1)
-	@$(COMP) $(H_FLAG) $(LLIB_FLAG)  $(OBJ1) -o $@
+	@$(COMP) $(H_FLAG) $(OBJ1) -o $@
 	@echo "	Compilation of  $(NAME1):  \033[1;32mOK\033[m"
 
-$(NAME2) : $(LIB_PATH)/$(LIB) $(OBJ2)
+$(NAME2) : $(OBJ2)
 	@rm -rf $(NAME2)
-	@$(COMP) $(H_FLAG) $(LLIB_FLAG) $(OBJ2) -o $@
+	@$(COMP) $(H_FLAG) $(OBJ2) -o $@
 	@echo "	Compilation of $(NAME2):  \033[1;32mOK\033[m"
 
 $(OBJ_PATH)/%.o:  $(SRC_PATH)/%.c $(HDR)
 	@mkdir -p $(OBJ_PATH) 
 	@$(COMP) $(FLAGS) $(H_FLAG)  -o $@ -c $<
-lib:
-	@make -sC $(LIB_PATH)
 
 clean:
 	@rm -rf $(OBJ_PATH)
-	@make clean -C $(LIB_PATH)
 	@echo "\033[1;33m>> all .o files are deleted.\033[0m" 
 
 fclean: clean
 	@rm -rf $(NAME1)
-	@make fclean -C $(LIB_PATH)
 	@echo "\033[0;31m>> $(NAME1)all obbjects are deleted.\033[0m" 
 	@rm -rf $(NAME2)
 	@echo "\033[0;31m>> $(NAME2) all obbjects are deleted.\033[0m" 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ok_ko.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/12 14:58:28 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 01:09:11 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,42 @@ int check_sort(t_stack **a, int len)
             return (0);
     }
   return (1);
+}
+char	*ft_strdup(const char *src)
+{
+	char			*dup;
+	int				i;
+
+	i = 0;
+	while (src[i])
+		i++;
+	dup = (char *)malloc(sizeof(char) * i + 1);
+	if (dup == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	int				i;
+	char			*ptr;
+
+	i = 0;
+	ptr = (void *)malloc(count * size);
+	if (ptr == NULL)
+		return (NULL);
+	i = (size * count) - 1;
+	while (i >= 0)
+	{
+		ptr[i] = '\0';
+		i--;
+	}
+	return (ptr);
 }

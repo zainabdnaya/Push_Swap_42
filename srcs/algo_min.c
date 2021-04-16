@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/15 22:36:58 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/16 01:13:12 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void sort_a_3(t_stack **a, t_stack **b, int len)
     bottom1 = bottom(*a);
     while (check_sort(a, len) == 0)
     {
+
         if ((*a)->number < (*a)->next->number && bottom1->number == min)
             switch_case(a, b, 3);
         else if ((*a)->number > (*a)->next->number && bottom1->number == min)
@@ -94,6 +95,7 @@ void sort_min(t_stack **a, t_stack **b, int len)
         while ((*b))
             switch_case(a, b, 4);
     }
+
     // free_stack(a);
     // free_stack(b);
 }

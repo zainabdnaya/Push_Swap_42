@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/15 23:45:58 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/16 01:09:29 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "../libft/libft.h"
-#include "./get_next_line.h"
 #define BUFFER_SIZE 2048
 #define RED "\e[0;31msa"
 #define GRN "\e[0;32mra"
@@ -116,4 +114,13 @@ void s_c_display(t_stack **a, t_stack **b, int w);
 void algo_1_d(t_stack **a, t_stack **b, int len);
 void sort_min_d(t_stack **a, t_stack **b, int len);
 void algo_d(t_stack **a, t_stack **b, int len);
+/*****************************************************/
+char				**ft_split(char const *s, char c);
+void		ft_putnbr_fd(int n, int fd);
+void		ft_putstr_fd(char *s, int fd);
+int		ft_isalpha(int c);
+void	ft_putchar_fd(char c, int fd);
+void		ft_putendl_fd(char *s, int fd);
+char	*ft_strdup(const char *src);
+void	*ft_calloc(size_t count, size_t size);
 #endif

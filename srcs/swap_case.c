@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:08:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 00:02:36 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/16 01:14:34 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void switch_case_color(t_stack **a, t_stack **b, int w)
         ft_putendl_fd(YEL, 1);
         rr_stack(a);
     }
-    else if (w == 4)
+    else if (w == 4  && size_list(*a) > 0)
     {
         ft_putendl_fd(BLU, 1);
         push_stack(b, a);
@@ -92,7 +92,7 @@ void s_c_display(t_stack **a, t_stack **b, int w)
         r_stack(a);
     else if (w == 3 && size_list(*a) > 1)
         rr_stack(a);
-    else if (w == 4 && size_list(*b) >= 1)
+    else if (w == 4 && size_list(*b) > 0)
         push_stack(b, a);
     else if (w == 5 && size_list(*b) > 1)
         r_stack(b);
@@ -123,7 +123,7 @@ void switch_case(t_stack **a, t_stack **b, int w)
         ft_putstr_fd("rra\n", 1);
         rr_stack(a);
     }
-    else if (w == 4 && size_list(*b) > 1)
+    else if (w == 4 && size_list(*b) > 0)
     {
         ft_putstr_fd("pa\n", 1);
         push_stack(b, a);

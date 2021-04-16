@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 16:07:52 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 01:09:47 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int main(int ac, char **av)
 {
@@ -54,15 +53,17 @@ int main(int ac, char **av)
             free_arg(all->split);
             all->split = NULL;
         }
-        while ((get_next_line(0, &all->line)))
+        all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
+        while (read(0, all->line, BUFFER_SIZE))
         {
             checker_pars(&all->a, &all->b, all->len, all->line);
-            free_arg(&(all->line));
             if (all->print == 1)
             {
                 system("clear");
                 print_all(all->a, all->b);
             }
+            free_arg(&(all->line));
+            all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
         }
         if (all->line[0] == '\0' || all->line[0] == '\n')
         {
