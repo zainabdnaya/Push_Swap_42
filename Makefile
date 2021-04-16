@@ -6,7 +6,7 @@
 #    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/15 01:18:49 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/15 23:45:41 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,9 @@ SRC_NAME2=  swap.c\
 			algo_min_c.c\
 			algo_c.c\
 			algo_500_c.c\
+			algo_disp.c\
+			algo_min_d.c\
+			algo_d.c\
 
 HDR_NAME= push_swap.h
 

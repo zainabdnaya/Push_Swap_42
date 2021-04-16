@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/15 15:08:08 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/15 23:45:58 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,14 @@ void le_vide_vider(t_stack **a, t_stack **b);
 void print_all(t_stack *a, t_stack *b);
 void print_list(t_stack *ptr);
 t_stack *bottom(t_stack *a);
-/********************** color  *******************/
+/********************** color && display  *******************/
 void switch_case_color(t_stack **a, t_stack **b, int w);
 void sort_a_3_c(t_stack **a, t_stack **b, int len);
 void sort_min_c(t_stack **a, t_stack **b, int len);
 void algo_1_c(t_stack **a, t_stack **b, int len);
 void algo_c(t_stack **a, t_stack **b, int len);
+void s_c_display(t_stack **a, t_stack **b, int w);
+void algo_1_d(t_stack **a, t_stack **b, int len);
+void sort_min_d(t_stack **a, t_stack **b, int len);
+void algo_d(t_stack **a, t_stack **b, int len);
 #endif
