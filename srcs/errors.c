@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/13 23:35:38 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/16 15:29:21 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void check_replicat(char **av)
 
     i = 0;
     j = 0;
+    if (!av[i])
+    {
+        ft_putstr_fd("Error: fill stack A!", 0);
+        exit(1);
+    }
     while (av[i])
     {
         replica = ft_strdup(av[i]);

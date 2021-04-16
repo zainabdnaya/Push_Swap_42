@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 01:09:29 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/16 15:19:44 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,5 @@ void	ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 char	*ft_strdup(const char *src);
 void	*ft_calloc(size_t count, size_t size);
+char *ft_strjoin(char const *s1, char const *s2);
 #endif

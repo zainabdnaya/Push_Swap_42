@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 17:00:59 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 14:09:50 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void r_stack(t_stack **head)
     }
     else
         return;
-
 }
 
 t_stack *rr_part1(t_stack *head)

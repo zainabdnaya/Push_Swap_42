@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:08:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 13:51:01 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 14:28:27 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void display(t_stack *a, t_stack *b)
             b = (b)->next;
     }
     if ( len <= 10)
-    usleep(10000000);
+    usleep(100000);
     else if(len > 10 && len <= 100)
         usleep(1000000);
     else  if ( len > 100)
@@ -116,7 +116,7 @@ void s_c_display(t_stack **a, t_stack **b, int w)
 void switch_case(t_stack **a, t_stack **b, int w)
 {
 
-    if (w == 1 && size_list(*a) > 0)
+    if (w == 1 )
     {
         ft_putstr_fd("pb\n", 1);
         push_stack(a, b);
@@ -131,7 +131,7 @@ void switch_case(t_stack **a, t_stack **b, int w)
         ft_putstr_fd("rra\n", 1);
         rr_stack(a);
     }
-    else if (w == 4 && size_list(*b) > 0)
+    else if (w == 4 )
     {
         ft_putstr_fd("pa\n", 1);
         push_stack(b, a);
