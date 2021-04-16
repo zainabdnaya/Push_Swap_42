@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:15:44 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 16:07:43 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:35:07 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ void checker_pars_v(t_stack **a, t_stack **b, int len, char *line)
 
 void checker_pars(t_stack **a, t_stack **b, int len, char *line)
 {
-    // printf("==>%s<==\n", line);
-
     if (!ft_strcmp(line, "sa") && size_list(*a) > 1)
         swap_stack(a);
     else if (!ft_strcmp(line, "ra") && size_list(*a) > 1)
@@ -69,9 +67,9 @@ void checker_pars(t_stack **a, t_stack **b, int len, char *line)
         rr(a, b);
     else if (!ft_strcmp(line, "rrr") && size_list(*b) > 1 && size_list(*a) > 1)
         rrr(a, b);
-    else if (line[0] != '\0')
+    else 
     {
-        ft_putstr_fd("Error1\n", 1);
+        ft_putstr_fd("Error\n", 1);
         exit(1);
     }
 }

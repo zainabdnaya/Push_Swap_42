@@ -6,11 +6,28 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 16:08:19 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 17:00:13 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_all *fill_in(t_all *all)
+{
+    check_replicat(all->split);
+    check_ascii(all->split);
+    all->a = put_in_list(all, all->split);
+    all->len = size_list(all->a);
+    return (all);
+}
+void checker_sort(t_all *all)
+{
+    if (check_sort(&all->a, all->len) == 1)
+        ft_putstr_fd("OK\n", 1);
+    else
+        ft_putstr_fd("KO\n", 1);
+    the_end(&all->a, &all->b, &all->line, all);
+}
 
 void option_v(t_all *all, int ac, char **av)
 {
@@ -18,10 +35,7 @@ void option_v(t_all *all, int ac, char **av)
         all->split = ft_split(av[2], ' ');
     else
         all->split = &av[2];
-    check_replicat(all->split);
-    check_ascii(all->split);
-    all->a = put_in_list(all, all->split);
-    all->len = size_list(all->a);
+    all = fill_in(all);
     while (1)
     {
         all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
@@ -32,14 +46,7 @@ void option_v(t_all *all, int ac, char **av)
         free_arg(&(all->line));
     }
     if (all->line[0] == '\0' || all->line[0] == '\n')
-    {
-        if (check_sort(&all->a, all->len) == 1)
-            ft_putstr_fd("OK\n", 1);
-        else
-            ft_putstr_fd("KO\n", 1);
-        free_stack(&all->a);
-        the_end(&all->a, &all->b, &all->line, all);
-    }
+        checker_sort(all);
 }
 
 char **normal(t_all *all, int ac, char **av)
@@ -51,14 +58,33 @@ char **normal(t_all *all, int ac, char **av)
     return (all->split);
 }
 
-// t_stack *fill_in(t_all *all)
-// {
-//     check_replicat(all->split);
-//     check_ascii(all->split);
-//     all->a = put_in_list(all, all->split);
-//     all->len = size_list(all->a);
+void checker(t_all *all, char *str, char **line)
+{
+    int i;
 
-// }
+    i = 0;
+    all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
+    while (read(0, all->line, BUFFER_SIZE))
+    {
+        if (str == NULL)
+            str = ft_strdup(all->line);
+        else
+            str = ft_strjoin(str, all->line);
+    }
+    if (!ft_strcmp(all->line, "\0"))
+        checker_sort(all);
+    line = ft_split(str, '\n');
+    while (line[i])
+    {
+        if (!ft_strcmp(line[i], "\0"))
+            checker_sort(all);
+        checker_pars(&all->a, &all->b, all->len, line[i]);
+        i++;
+    }
+    // if (!ft_strcmp(line[i], "\0"))
+    //     checker_sort(all);
+}
+
 int main(int ac, char **av)
 {
     t_all *all;
@@ -77,44 +103,8 @@ int main(int ac, char **av)
         else
         {
             all->split = normal(all, ac, av);
-            // printf("%s\n", all->split)
-            check_replicat(all->split);
-            check_ascii(all->split);
-            all->a = put_in_list(all, all->split);
-            all->len = size_list(all->a);
-            all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
-            while (read(0, all->line, BUFFER_SIZE))
-            {
-                if (str == NULL)
-                    str = ft_strdup(all->line);
-                else
-                    str = ft_strjoin(str, all->line);
-            }
-            line = ft_split(str, '\n');
-            // free_arg(&all->line);
-            int i = 0;
-            while (line[i])
-            {
-                checker_pars(&all->a, &all->b, all->len, line[i]);
-                if (all->print == 1)
-                {
-                    system("clear");
-                    puts("here");
-                    print_all(all->a, all->b);
-                }
-                if (!ft_strcmp(line[i], "\0"))
-                {
-                    if (check_sort(&all->a, all->len) == 1)
-                        ft_putstr_fd("OK\n", 1);
-                    else
-                        ft_putstr_fd("KO\n", 1);
-                }
-                i++;
-            }
-            if (check_sort(&all->a, all->len) == 1)
-                ft_putstr_fd("OK\n", 1);
-            else
-                ft_putstr_fd("KO\n", 1);
+            all = fill_in(all);
+            checker(all, str, line);
         }
     }
 }

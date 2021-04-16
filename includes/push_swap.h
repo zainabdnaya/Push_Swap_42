@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 16:08:44 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 16:57:22 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,11 @@ void s_c_display(t_stack **a, t_stack **b, int w);
 void algo_1_d(t_stack **a, t_stack **b, int len);
 void sort_min_d(t_stack **a, t_stack **b, int len);
 void algo_d(t_stack **a, t_stack **b, int len);
+void swap_(t_all *all, int ac, char **av);
+void swap_c(t_all *all, int ac, char **av);
+void swap_sh(t_all *all, int ac, char **av);
 /*****************************************************/
-char				**ft_split(char const *s, char c);
+char **ft_split(char const *s, char c);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
 int		ft_isalpha(int c);

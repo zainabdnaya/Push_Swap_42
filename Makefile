@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
+#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/16 00:40:11 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/16 16:58:39 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC_NAME2=  swap.c\
 			algo_d.c\
 			use_libft1.c\
 			use_libft.c\
+			swap_op.c\
 
 HDR_NAME= push_swap.h
 
