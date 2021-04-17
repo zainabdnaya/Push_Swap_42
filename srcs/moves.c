@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 03:03:22 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 04:49:19 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ void swap_stack(t_stack **head)
     }
 }
 
-void r_stack(t_stack **head)
+void r_stack(t_stack **head, t_stack *tmp2)
 {
-    t_stack *tmp2;
     int k;
     tmp2 = NULL;
     if (*head)
     {
         k = (*head)->number;
         *head = (*head)->next;
+        if (!(tmp2 = (t_stack *)malloc(sizeof(t_stack))))
+            return;
         add_back1(head, tmp2, k);
     }
-    free_stack(&tmp2);
 }
 
 t_stack *rr_part1(t_stack *head, t_stack *tmp)
@@ -56,15 +56,8 @@ t_stack *rr_part1(t_stack *head, t_stack *tmp)
     return (tmp);
 }
 
-void rr_stack(t_stack **head, t_stack *tmp)
+void botom(t_stack **head)
 {
-    t_stack *new_node;
-    t_stack *a;
-
-    a = *head;
-    if (!(tmp = (t_stack *)malloc(sizeof(t_stack))))
-        return;
-    tmp = rr_part1(*head, tmp);
     while ((*head))
     {
         if ((*head)->next->next == NULL)
@@ -72,11 +65,29 @@ void rr_stack(t_stack **head, t_stack *tmp)
         *head = (*head)->next;
     }
     (*head)->next = NULL;
-    *head = a;
-    head = add_front(head, tmp);
+}
+void rr_stack(t_stack **head, t_stack *tmp)
+{
+    t_stack *new_node;
+    t_stack *a;
+
+    a = NULL;
+    tmp = NULL;
+    if (*head)
+    {
+        if (!(tmp = (t_stack *)malloc(sizeof(t_stack))))
+            return;
+        tmp = rr_part1(*head, tmp);
+        a = *head;
+        botom(head);
+        *head = a;
+        add_front(head, tmp);
+    }
+    // free(tmp);
+    // tmp = NULL;
 }
 
-void push_stack(t_stack **a, t_stack **b,t_stack *new)
+void push_stack(t_stack **a, t_stack **b, t_stack *new)
 {
     // t_stack *new;
     t_stack **tmp;
@@ -101,7 +112,7 @@ void push_stack(t_stack **a, t_stack **b,t_stack *new)
             new->next = NULL;
             new->previous = NULL;
             tmp = (b);
-            b = add_front(tmp, new);
+            add_front(b, new);
             (*a) = (*a)->next;
             // print_list(new);
             // while ((*b)->previous != NULL)

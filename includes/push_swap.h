@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 02:54:29 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 04:49:14 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_all   *initial(int ac,  t_all *all);
 
 void add_back(t_stack **head, t_stack *new, char *av);
 void add_back1(t_stack **head, t_stack *new, int k);
-t_stack **add_front(t_stack **head,t_stack *new_node);
+void add_front(t_stack **head,t_stack *new_node);
 int node_nbr(t_stack **head, int index);
 /**********************TOOlS*******************/
 int ft_strcmp(const char *s1, const char *s2);
@@ -77,7 +77,7 @@ void the_end(t_stack **a, t_stack **b, char **line,t_all *all);
 void    ft_free_split(char **split);
 /********************** MOVES*******************/
 void swap_stack(t_stack **head);
-void r_stack(t_stack **head);
+void r_stack(t_stack **head,t_stack *tmp);
 void rr_stack(t_stack **head,t_stack *tmp);
 void push_stack(t_stack **a, t_stack **b,t_stack *new);
 void ss(t_stack **a, t_stack **b);

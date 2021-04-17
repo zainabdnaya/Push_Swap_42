@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 02:41:01 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 04:44:38 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int main(int ac, char **av)
         //     swap_sh(all, ac, av);
         // else
             swap_(all, ac, av);
-        free_stack(&all->a);
-        free_stack(&all->b);
+        free(all->a);
+        all->a = NULL;
+        // free(all->b);
+        // all->b = NULL;
         free(all);
         all = NULL;
     }

@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:48:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 02:50:47 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 04:44:47 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void swap_(t_all *all, int ac, char **av)
 {
     t_stack *new;
-    
+
     new = NULL;
     if (ac == 2)
         all->split = ft_split(av[1], ' ');
@@ -23,7 +23,7 @@ void swap_(t_all *all, int ac, char **av)
         all->split = &av[1];
     check_replicat(all->split);
     check_ascii(all->split);
-    put_in_list(all, all->split,new);
+    put_in_list(all, all->split, new);
     free_stack(&new);
     all->len = size_list(all->a);
     if (all->len <= 10)
@@ -37,7 +37,20 @@ void swap_(t_all *all, int ac, char **av)
     //     free(new);
     //     new = NULL;
     // }
-    the_end(&(all->a), &(all->b),&all->line, all);
+    while (all->a)
+    {
+        new = all->a->next;
+        free(all->a);
+        all->a = NULL;
+        all->a = new;
+    }
+    free(all->a);
+    all->a = NULL;
+ 
+    free_arg(&all->line);
+    if (ac == 2)
+        ft_free_split(all->split);
+    // the_end(&(all->a), &(all->b),&all->line, all);
 }
 
 // void swap_c(t_all *all, int ac, char **av)

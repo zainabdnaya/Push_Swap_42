@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:08:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 02:59:38 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 04:50:15 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,35 +122,43 @@ void switch_case(t_stack **a, t_stack **b, int w)
     {
         ft_putstr_fd("pb\n", 1);
         push_stack(a, b, tmp);
-        free_stack(&tmp);
+        free(tmp);
+        tmp = NULL;
     }
     else if (w == 2)
     {
         ft_putstr_fd("ra\n", 1);
-        r_stack(a);
+        r_stack(a,tmp);
+        free(tmp);
+        tmp = NULL;
     }
     else if (w == 3 && size_list(*a) > 1)
     {
         ft_putstr_fd("rra\n", 1);
         rr_stack(a, tmp);
-        free_stack(&tmp);
+        free(tmp);
+        tmp = NULL;
     }
     else if (w == 4)
     {
         ft_putstr_fd("pa\n", 1);
-        push_stack(b, a,tmp);
-        free_stack(&tmp);
+        push_stack(b, a, tmp);
+        free(tmp);
+        tmp = NULL;
     }
     else if (w == 5 && size_list(*b) > 1)
     {
         ft_putstr_fd("rb\n", 1);
-        r_stack(b);
+        r_stack(b,tmp);
+        free(tmp);
+        tmp = NULL;
     }
     else if (w == 6 && size_list(*b) > 1)
     {
         ft_putstr_fd("rrb\n", 1);
         rr_stack(b, tmp);
-        free_stack(&tmp);
+        free(tmp);
+        tmp = NULL;
     }
     else if (w == 7 && size_list(*b) > 1)
     {

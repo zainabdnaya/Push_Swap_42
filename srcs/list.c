@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 02:28:08 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 04:47:34 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void add_back1(t_stack **head, t_stack *new, int k)
     t_stack *tmp;
 
     tmp = NULL;
-    if (!(new = (t_stack *)malloc(sizeof(t_stack))))
-        return;
+
     tmp = *head;
     while (tmp->next)
         tmp = tmp->next;
@@ -56,7 +55,7 @@ void add_back1(t_stack **head, t_stack *new, int k)
     new->next = NULL;
 }
 
-t_stack **add_front(t_stack **head, t_stack *new_node)
+void add_front(t_stack **head, t_stack *new_node)
 {
     new_node->next = (*head);
     new_node->previous = NULL;
@@ -64,7 +63,7 @@ t_stack **add_front(t_stack **head, t_stack *new_node)
     if ((*head) != NULL)
         (*head)->previous = new_node;
     (*head) = new_node;
-    return (head);
+    // return (head);
 }
 
 int node_nbr(t_stack **head, int index)
