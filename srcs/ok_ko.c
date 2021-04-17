@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/16 01:09:11 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 21:31:52 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,38 @@ void	*ft_calloc(size_t count, size_t size)
 		i--;
 	}
 	return (ptr);
+}
+int ft_strlen(char *s1)
+{
+    int k;
+
+    k = 0;
+    while (s1[k])
+        k++;
+    return (k);
+}
+
+char *ft_strjoin(char const *s1, char const *s2)
+{
+    char *s3;
+    char *str1;
+    char *str2;
+    unsigned int len;
+
+    if (!s1 || !s2)
+    {
+        return (NULL);
+    }
+    str1 = (char *)s1;
+    str2 = (char *)s2;
+    len = 0;
+    s3 = (char *)malloc(ft_strlen(str1) + ft_strlen(str2) + 1);
+    if (s3 == NULL)
+        return (NULL);
+    while (*str1)
+        s3[len++] = *(str1++);
+    while (*str2)
+        s3[len++] = *(str2++);
+    s3[len] = '\0';
+    return (s3);
 }

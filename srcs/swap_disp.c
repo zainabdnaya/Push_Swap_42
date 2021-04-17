@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_disp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:27:40 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 16:56:10 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 21:41:20 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,20 @@ void switch_case_color(t_stack **a, t_stack **b, int w)
     {
         ft_putendl_fd(WHT, 1);
         push_stack(a, b, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 2)
     {
         ft_putendl_fd(GRN, 1);
         r_stack(a, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 3 && size_list(*a) > 1)
     {
         ft_putendl_fd(YEL, 1);
         rr_stack(a, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else
         switch_norm(a, b, w, tmp);
+    free_stack(&tmp);
 }
 
 void s_c_display(t_stack **a, t_stack **b, int w)
@@ -86,38 +81,26 @@ void s_c_display(t_stack **a, t_stack **b, int w)
     if (w == 1)
     {
         push_stack(a, b, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 2)
     {
         r_stack(a, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 3 && size_list(*a) > 1)
     {
         rr_stack(a, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 4)
     {
         push_stack(b, a, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 5 && size_list(*b) > 1)
     {
         r_stack(b, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 6 && size_list(*b) > 1)
     {
         rr_stack(b, tmp);
-        free(tmp);
-        tmp = NULL;
     }
     else if (w == 7 && size_list(*b) > 1)
     {
@@ -126,5 +109,6 @@ void s_c_display(t_stack **a, t_stack **b, int w)
     }
     else if (w == 8 && size_list(*a) > 1)
         swap_stack(a);
+    free_stack(&tmp);
     display(*a, *b);
 }

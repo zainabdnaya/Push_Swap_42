@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
+#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/17 16:28:45 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/17 21:31:01 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME2= push_swap
 SRC_PATH= srcs
 HDR_PATH= includes
 OBJ_PATH= obj
-# LIB_PATH= libft
 
 SRC_NAME1= errors.c\
 			use_libft1.c\
@@ -24,14 +23,14 @@ SRC_NAME1= errors.c\
 			to_use.c\
 			ok_ko.c\
 			checker.c\
-			# list.c\
-			# moves.c\
-			# orderby.c\
-			# gen_sort.c\
-			# print.c\
-			# list_op.c\
-			# checker_rd.c\
-			# initial.c\
+			initial.c\
+			list.c\
+			list_op.c\
+			moves.c\
+			orderby.c\
+			gen_sort.c\
+			print.c\
+			checker_rd.c\
 
 SRC_NAME2=  swap.c\
 			moves.c\

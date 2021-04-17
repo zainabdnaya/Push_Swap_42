@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:48:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 17:23:21 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 21:48:01 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void swap_(t_all *all, int ac, char **av)
         algo_1(&(all->a), &(all->b), all->len);
     else
         algo(&(all->a), &(all->b), all->len);
-    free_stack(new);
     free_stack(&all->a);
     free_arg(&all->line);
     if (ac == 2)
@@ -59,7 +58,6 @@ void swap_c(t_all *all, int ac, char **av)
         algo_1_c(&(all->a), &(all->b), all->len);
     else
         algo_c(&(all->a), &(all->b), all->len);
-    free_stack(new);
     free_stack(&all->a);
     free_arg(&all->line);
     if (ac == 2)
@@ -86,7 +84,7 @@ void swap_sh(t_all *all, int ac, char **av)
         algo_1_d(&(all->a), &(all->b), all->len);
     else
         algo_d(&(all->a), &(all->b), all->len);
-    free_stack(new);
+    free_stack(&new);
     free_stack(&all->a);
     free_arg(&all->line);
     if (ac == 2)
