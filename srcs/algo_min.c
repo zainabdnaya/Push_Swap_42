@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 04:44:11 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 17:07:19 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void sort_a_3(t_stack **a, t_stack **b, int len)
             switch_case(a, b, 2);
         }
     }
-
 }
 
 void sort_min(t_stack **a, t_stack **b, int len)
@@ -96,13 +95,6 @@ void sort_min(t_stack **a, t_stack **b, int len)
         while ((*b))
             switch_case(a, b, 4);
     }
-      while (*b)
-    {
-        tmp = (*b)->next;
-        free(*b);
-        (*b) = NULL;
-        (*b) = tmp;
-    }
-    free(*b);
-    (*b) = NULL;
+    free_stack(a);
+    free_stack(b);
 }

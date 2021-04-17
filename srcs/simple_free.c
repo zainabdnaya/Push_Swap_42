@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:45:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 23:34:01 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 17:20:06 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void ft_free_split(char **split)
 	}
 	free(*split);
 	*split = NULL;
-	// return(split);
 }
+
 void free_single_stack(t_stack **stack)
 {
     free(*stack);

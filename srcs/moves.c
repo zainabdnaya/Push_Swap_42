@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 04:49:19 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 16:21:16 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void r_stack(t_stack **head, t_stack *tmp2)
             return;
         add_back1(head, tmp2, k);
     }
+    
 }
 
 t_stack *rr_part1(t_stack *head, t_stack *tmp)
@@ -83,8 +84,6 @@ void rr_stack(t_stack **head, t_stack *tmp)
         *head = a;
         add_front(head, tmp);
     }
-    // free(tmp);
-    // tmp = NULL;
 }
 
 void push_stack(t_stack **a, t_stack **b, t_stack *new)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
+#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/17 02:02:51 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/17 16:28:45 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,15 +23,15 @@ SRC_NAME1= errors.c\
 			simple_free.c\
 			to_use.c\
 			ok_ko.c\
-	checker.c\
-# 			list.c\
-# 			moves.c\
-# 			orderby.c\
-# 			gen_sort.c\
-# 			print.c\
-# 			list_op.c\
-# 			checker_rd.c\
-# 			initial.c\
+			checker.c\
+			# list.c\
+			# moves.c\
+			# orderby.c\
+			# gen_sort.c\
+			# print.c\
+			# list_op.c\
+			# checker_rd.c\
+			# initial.c\
 
 SRC_NAME2=  swap.c\
 			moves.c\
@@ -52,12 +52,13 @@ SRC_NAME2=  swap.c\
 			use_libft1.c\
 			use_libft.c\
 			swap_op.c\
-			# algo_min_c.c\
-			# algo_c.c\
-			# algo_500_c.c\
-			# algo_disp.c\
-			# algo_min_d.c\
-			# algo_d.c\
+			algo_min_c.c\
+			algo_c.c\
+			algo_500_c.c\
+			algo_disp.c\
+			algo_min_d.c\
+			algo_d.c\
+			swap_disp.c\
 
 HDR_NAME= push_swap.h
 

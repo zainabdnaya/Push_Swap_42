@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 01:55:50 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 17:33:44 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// t_all *fill_in(t_all *all)
-// {
-//     check_replicat(all->split);
-//     check_ascii(all->split);
-//     all->a = put_in_list(all, all->split);
-//     all->len = size_list(all->a);
-//     return (all);
-// }
+t_all *fill_in(t_all *all)
+{
+    t_stack *new;
+
+    check_replicat(all->split);
+    check_ascii(all->split);
+    all->a = put_in_list(all, all->split,new);
+    all->len = size_list(all->a);
+    free_stack(&new);
+    return (all);
+}
 // void checker_sort(t_all *all)
 // {
 //     if (check_sort(&all->a, all->len) == 1)
@@ -125,17 +128,17 @@ int main(int ac, char **av)
         exit(1);
     else
     {
-        // all = initial(ac, all);
+        all = initial(ac, all);
         // if (!ft_strcmp(av[1], "-v"))
         //     option_v(all, ac, av);
         // else
-        {
-            // all->split = normal(all, ac, av);
-            // all = fill_in(all);
-            // checker(all, str, line);
-        }
-        // the_end(&all->a, &all->b, &all->line, all);
-        // free(all);
-        // all = NULL;
+        // {
+        //     all->split = normal(all, ac, av);
+        //     all = fill_in(all);
+        //     checker(all, str, line);
+        // }
+        the_end(&all->a, &all->b, &all->line, all);
+        free(all);
+        all = NULL;
     }
 }

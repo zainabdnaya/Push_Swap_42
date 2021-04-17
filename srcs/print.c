@@ -6,11 +6,46 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 13:27:53 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 16:34:08 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void display(t_stack *a, t_stack *b)
+{
+    int len;
+
+    len = size_list(a);
+    system("clear");
+    ft_putstr_fd("\n\t-------------------------------\n", 1);
+    ft_putstr_fd("        \tA         \tB         ", 1);
+    ft_putstr_fd("\n\t-------------------------------\n", 1);
+    while ((a) || (b))
+    {
+        ft_putstr_fd("\t        ", 1);
+        if ((a))
+            ft_putnbr_fd((a)->number, 1);
+        else
+            ft_putstr_fd("   ", 1);
+        ft_putstr_fd("\t        ", 1);
+        if (b)
+            ft_putnbr_fd((b)->number, 1);
+        else
+            ft_putstr_fd("   ", 1);
+        ft_putstr_fd("\n", 1);
+        if (a)
+            (a) = (a)->next;
+        if (b)
+            b = (b)->next;
+    }
+    if (len <= 10)
+        usleep(100000);
+    else if (len > 10 && len <= 100)
+        usleep(1000000);
+    else if (len > 100)
+        usleep(100000);
+}
 
 void print_list(t_stack *ptr)
 {
