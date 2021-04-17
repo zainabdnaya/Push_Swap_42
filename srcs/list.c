@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 17:15:21 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 02:28:08 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    add_back(t_stack **head, t_stack *new, char *av)
+void add_back(t_stack **head, t_stack *new, char *av)
 {
     t_stack *tmp;
 
-    if (!(new = (t_stack *)malloc(sizeof(t_stack))))
-        exit(1);
-    new->number = my_atoi(av);
-    if (new->number > 2147483647 || new->number < -2147483647)
-    {
-        ft_putstr_fd("Error:\n", 2);
-        exit(1);
-    }
-    new->next = NULL;
-    new->previous = NULL;
+    // if (!(new = (t_stack *)malloc(sizeof(t_stack))))
+    //     return;
+    // new->number = my_atoi(av);
+    // if (new->number > 2147483647 || new->number < -2147483647)
+    // {
+    //     ft_putstr_fd("Error:\n", 2);
+    //     exit(1);
+    // }
+    // new->next = NULL;
+    // new->previous = NULL;
+
     if (*head == NULL)
         *head = new;
     else
@@ -36,7 +37,7 @@ void    add_back(t_stack **head, t_stack *new, char *av)
         tmp->next = new;
         new->previous = tmp;
     }
-    // return (*head);
+    // free_stack(&new);
 }
 
 void add_back1(t_stack **head, t_stack *new, int k)
@@ -45,10 +46,7 @@ void add_back1(t_stack **head, t_stack *new, int k)
 
     tmp = NULL;
     if (!(new = (t_stack *)malloc(sizeof(t_stack))))
-    {
-        ft_putstr_fd("Error:\n", 0);
-        exit(1);
-    }
+        return;
     tmp = *head;
     while (tmp->next)
         tmp = tmp->next;
@@ -58,7 +56,7 @@ void add_back1(t_stack **head, t_stack *new, int k)
     new->next = NULL;
 }
 
-void add_front(t_stack **head, t_stack *new_node)
+t_stack **add_front(t_stack **head, t_stack *new_node)
 {
     new_node->next = (*head);
     new_node->previous = NULL;
@@ -66,6 +64,7 @@ void add_front(t_stack **head, t_stack *new_node)
     if ((*head) != NULL)
         (*head)->previous = new_node;
     (*head) = new_node;
+    return (head);
 }
 
 int node_nbr(t_stack **head, int index)

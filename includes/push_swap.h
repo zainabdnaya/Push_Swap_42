@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 16:57:22 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 02:54:29 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@
 #define YELHB "\e[0;103mss"
 #define CYNHB "\e[0;106mrr"
 #define GRNHB "\e[0;102mrrr"
+
 typedef struct s_stack
 {
     int number;
-    int color;
     struct s_stack *next;
     struct s_stack *previous;
 } t_stack;
@@ -48,14 +48,14 @@ typedef struct s_all
 } t_all;
 
 /**********************LIST*******************/
-t_stack *put_in_list(t_all *all, char **av);
+t_stack *put_in_list(t_all *all, char **av,t_stack *new);
 t_stack *creat_stack(char *av, t_stack *a);
 t_stack *dup_list(t_stack *head);
 t_all   *initial(int ac,  t_all *all);
 
 void add_back(t_stack **head, t_stack *new, char *av);
 void add_back1(t_stack **head, t_stack *new, int k);
-void add_front(t_stack **head, t_stack *new_node);
+t_stack **add_front(t_stack **head,t_stack *new_node);
 int node_nbr(t_stack **head, int index);
 /**********************TOOlS*******************/
 int ft_strcmp(const char *s1, const char *s2);
@@ -74,11 +74,12 @@ void free_arg(char **arg);
 void free_stack(t_stack **stack);
 void free_single_stack(t_stack **stack);
 void the_end(t_stack **a, t_stack **b, char **line,t_all *all);
+void    ft_free_split(char **split);
 /********************** MOVES*******************/
 void swap_stack(t_stack **head);
 void r_stack(t_stack **head);
-void rr_stack(t_stack **head);
-void push_stack(t_stack **a, t_stack **b);
+void rr_stack(t_stack **head,t_stack *tmp);
+void push_stack(t_stack **a, t_stack **b,t_stack *new);
 void ss(t_stack **a, t_stack **b);
 void rrr(t_stack **a, t_stack **b);
 void rr(t_stack **a, t_stack **b);

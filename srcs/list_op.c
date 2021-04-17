@@ -6,30 +6,36 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/14 23:29:47 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/17 02:56:56 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *put_in_list(t_all *all,char **split)
+t_stack *put_in_list(t_all *all, char **split, t_stack *new)
 {
     t_stack *tmp;
-    // t_stack *a;
+    // t_stack *new;
     int i;
 
     i = 0;
-    tmp = NULL;
     while (split[i])
     {
-        add_back(&all->a, tmp, split[i]);
-        free_stack(&tmp);
+        if (!(new = malloc(sizeof(t_stack))))
+            return (NULL);
+        new->number = my_atoi(split[i]);
+        if (new->number > 2147483647 || new->number < -2147483647)
+        {
+            ft_putstr_fd("Error:\n", 2);
+            exit(1);
+        }
+        new->next = NULL;
+        new->previous = NULL;
+        add_back(&all->a, new, split[i]);
+        new = NULL;
         i++;
     }
-    free_stack(&tmp);
-    if (all->color == 1)
-        all->a->color = 1;
-    // free_stack(&all->a);
+    free_stack(&new);
     return (all->a);
 }
 

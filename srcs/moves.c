@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 14:09:50 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 03:03:22 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,11 @@ void r_stack(t_stack **head)
         *head = (*head)->next;
         add_back1(head, tmp2, k);
     }
-    else
-        return;
+    free_stack(&tmp2);
 }
 
-t_stack *rr_part1(t_stack *head)
+t_stack *rr_part1(t_stack *head, t_stack *tmp)
 {
-    t_stack *tmp;
-
-    tmp = (t_stack *)malloc(sizeof(t_stack));
     while (head->next)
         head = head->next;
     tmp->number = head->number;
@@ -60,14 +56,15 @@ t_stack *rr_part1(t_stack *head)
     return (tmp);
 }
 
-void rr_stack(t_stack **head)
+void rr_stack(t_stack **head, t_stack *tmp)
 {
-    t_stack *tmp;
     t_stack *new_node;
     t_stack *a;
 
     a = *head;
-    tmp = rr_part1(*head);
+    if (!(tmp = (t_stack *)malloc(sizeof(t_stack))))
+        return;
+    tmp = rr_part1(*head, tmp);
     while ((*head))
     {
         if ((*head)->next->next == NULL)
@@ -76,15 +73,16 @@ void rr_stack(t_stack **head)
     }
     (*head)->next = NULL;
     *head = a;
-    add_front(head, tmp);
-    // free_stack(&tmp);
+    head = add_front(head, tmp);
 }
 
-void push_stack(t_stack **a, t_stack **b)
+void push_stack(t_stack **a, t_stack **b,t_stack *new)
 {
-    t_stack *new;
-    t_stack *tmp;
+    // t_stack *new;
+    t_stack **tmp;
 
+    new = NULL;
+    tmp = NULL;
     if (*b == NULL && *a)
     {
         *b = (t_stack *)malloc(sizeof(t_stack));
@@ -98,19 +96,21 @@ void push_stack(t_stack **a, t_stack **b)
     {
         if (*a)
         {
-            new = malloc(sizeof(t_stack));
+            new = (t_stack *)malloc(sizeof(t_stack));
             new->number = (*a)->number;
             new->next = NULL;
             new->previous = NULL;
+            tmp = (b);
+            b = add_front(tmp, new);
             (*a) = (*a)->next;
-            tmp = (*b);
-            while ((*b)->previous != NULL)
-                (*b) = (*b)->previous;
-            (*b) = new;
-            new->next = (tmp);
-            new->previous = NULL;
+            // print_list(new);
+            // while ((*b)->previous != NULL)
+            //     (*b) = (*b)->previous;
+            // (*b) = new;
+            // new->next = (tmp);
+            // new->previous = NULL;
+            // free(new);
+            // new = NULL;
         }
-        else
-            return;
     }
 }

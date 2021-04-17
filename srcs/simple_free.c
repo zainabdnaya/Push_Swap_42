@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:45:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 16:47:55 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/16 23:34:01 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ void free_arg(char **arg)
     *arg = NULL;
 }
 
+void ft_free_split(char **split)
+{
+	int		i;
+
+	i = 0;
+	while (split[i])
+	{
+		free_arg(&(split[i]));
+		i++;
+	}
+	free(*split);
+	*split = NULL;
+	// return(split);
+}
 void free_single_stack(t_stack **stack)
 {
     free(*stack);
@@ -41,6 +55,7 @@ void free_stack(t_stack **stack)
         *stack = NULL;
     }
 }
+
 
 void the_end(t_stack **a, t_stack **b, char **line, t_all *all)
 {
