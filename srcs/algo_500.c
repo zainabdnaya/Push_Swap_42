@@ -6,11 +6,12 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:38:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/18 23:04:59 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/18 23:47:41 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void part_1(t_stack **a, t_stack **b, int len, int m)
 {
     int index;
