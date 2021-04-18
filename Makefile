@@ -79,17 +79,17 @@ all: $(NAME1) $(NAME2)
 
 $(NAME1) :  $(OBJ1)
 	@rm -rf $(NAME1)
-	@$(COMP) $(H_FLAG) $(OBJ1) -o $@
+	@$(COMP) -g $(H_FLAG) $(OBJ1) -o $@
 	@echo "	Compilation of  $(NAME1):  \033[1;32mOK\033[m"
 
 $(NAME2) : $(OBJ2)
 	@rm -rf $(NAME2)
-	@$(COMP) $(H_FLAG) $(OBJ2) -o $@
+	@$(COMP) -g $(H_FLAG) $(OBJ2) -o $@
 	@echo "	Compilation of $(NAME2):  \033[1;32mOK\033[m"
 
 $(OBJ_PATH)/%.o:  $(SRC_PATH)/%.c $(HDR)
 	@mkdir -p $(OBJ_PATH) 
-	@$(COMP) $(FLAGS) $(H_FLAG)  -o $@ -c $<
+	@$(COMP) -g $(FLAGS) $(H_FLAG)  -o $@ -c $<
 
 clean:
 	@rm -rf $(OBJ_PATH)

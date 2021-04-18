@@ -24,16 +24,18 @@ void swap_(t_all *all, int ac, char **av)
     check_replicat(all->split);
     check_ascii(all->split);
     put_in_list(all, all->split, new);
-    free_stack(&new);
+    // free_stack(&new);
     all->len = size_list(all->a);
     if (all->len <= 10)
         sort_min(&(all->a), &(all->b), all->len);
-    else if (all->len > 10 && all->len < 200)
-        algo_1(&(all->a), &(all->b), all->len);
-    else
-        algo(&(all->a), &(all->b), all->len);
+    // else if (all->len > 10 && all->len < 200)
+    //     algo_1(&(all->a), &(all->b), all->len);
+    // else
+    //     algo(&(all->a), &(all->b), all->len);
     free_stack(&all->a);
+    free_stack(&all->b);
     free_arg(&all->line);
+    free(all);
     if (ac == 2)
         ft_free_split(all->split);
 }

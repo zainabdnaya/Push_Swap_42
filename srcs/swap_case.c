@@ -70,8 +70,8 @@ void switch_case(t_stack **a, t_stack **b, int w)
     {
         ft_putstr_fd("rra\n", 1);
         rr_stack(a, tmp);
-        free(tmp);
-        tmp = NULL;
+        // free(tmp);
+        // tmp = NULL;
     }
     else
         switch_case_norm(a, b, w, tmp);

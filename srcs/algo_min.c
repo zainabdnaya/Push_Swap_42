@@ -87,14 +87,22 @@ void sort_min(t_stack **a, t_stack **b, int len)
             }
             if (m == (*a)->number)
             {
+                t_stack *ss = *a;
                 switch_case(a, b, 1);
+                free(ss);
                 size--;
             }
         }
         sort_a_3(a, b, 3);
         while ((*b))
+        {
+            t_stack *ss = *b;
             switch_case(a, b, 4);
+            free(ss);
+        }
+        free_stack(b);
     }
-    free_stack(a);
-    free_stack(b);
+    // free_stack(a);
+    // free(*a);
+    // free(*b);
 }

@@ -43,16 +43,18 @@ void add_back(t_stack **head, t_stack *new, char *av)
 void add_back1(t_stack **head, t_stack *new, int k)
 {
     t_stack *tmp;
+    t_stack *tmps;
 
     tmp = NULL;
 
     tmp = *head;
+    tmps = (*head)->previous;
     while (tmp->next)
         tmp = tmp->next;
-    tmp->next = new;
-    new->number = k;
-    new->previous = tmp;
-    new->next = NULL;
+    tmp->next = tmps;
+    // new->number = k;
+    tmp->next->previous = tmp;
+    tmp->next->next = NULL;
 }
 
 void add_front(t_stack **head, t_stack *new_node)

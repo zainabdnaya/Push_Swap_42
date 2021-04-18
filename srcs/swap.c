@@ -29,11 +29,11 @@ int main(int ac, char **av)
             swap_sh(all, ac, av);
         else
             swap_(all, ac, av);
-        free(all->a);
-        all->a = NULL;
-        free(all->b);
-        all->b = NULL;
-        free(all);
-        all = NULL;
+        // free(all->a);
+        // all->a = NULL;
+        // free(all->b);
+        // all->b = NULL;
+        // free(all);
+        // all = NULL;
     }
 }

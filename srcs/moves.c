@@ -39,8 +39,6 @@ void r_stack(t_stack **head, t_stack *tmp2)
     {
         k = (*head)->number;
         *head = (*head)->next;
-        if (!(tmp2 = (t_stack *)malloc(sizeof(t_stack))))
-            return;
         add_back1(head, tmp2, k);
     }
     
@@ -65,6 +63,7 @@ void botom(t_stack **head)
             break;
         *head = (*head)->next;
     }
+    free((*head)->next);
     (*head)->next = NULL;
 }
 void rr_stack(t_stack **head, t_stack *tmp)

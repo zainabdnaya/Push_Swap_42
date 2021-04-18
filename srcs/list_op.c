@@ -34,7 +34,6 @@ t_stack *put_in_list(t_all *all, char **split, t_stack *new)
         new = NULL;
         i++;
     }
-    free_stack(&new);
     return (all->a);
 }
 
