@@ -15,6 +15,7 @@
 void part1_1_d(t_stack **a, t_stack **b, int len, int m)
 {
     int index;
+    t_stack *tmp;
     int proximity;
     int size;
 

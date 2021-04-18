@@ -45,7 +45,7 @@ int size_list(t_stack *a)
 {
     int len;
 
-    len = 0 ;
+    len = 0;
     while(a)
     {
         len++;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
+#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/18 16:10:48 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/17 21:31:01 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC_PATH= srcs
 HDR_PATH= includes
 OBJ_PATH= obj
 
-SRC_NAME1=  errors.c\
+SRC_NAME1= errors.c\
 			use_libft1.c\
 			use_libft.c\
 			simple_free.c\
@@ -43,21 +43,21 @@ SRC_NAME2=  swap.c\
 			algo_use.c\
 			ok_ko.c\
 			list_op.c\
+			algo_500.c\
+			algo_min.c\
 			errors.c\
 			swap_case.c\
 			initial.c\
 			use_libft1.c\
 			use_libft.c\
 			swap_op.c\
-			# algo_min.c\
-			# algo_min_c.c\
-			# algo_c.c\
-			# algo_500.c\
-			# algo_500_c.c\
-			# algo_disp.c\
-			# algo_min_d.c\
-			# algo_d.c\
-			# swap_disp.c\
+			algo_min_c.c\
+			algo_c.c\
+			algo_500_c.c\
+			algo_disp.c\
+			algo_min_d.c\
+			algo_d.c\
+			swap_disp.c\
 
 HDR_NAME= push_swap.h
 

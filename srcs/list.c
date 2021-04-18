@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/18 16:33:24 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 04:47:34 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int		i;
+	char				*str;
+
+	i = 0;
+	str = s;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+}
 
 void add_back(t_stack **head, t_stack *new, char *av)
 {
@@ -91,23 +105,20 @@ t_stack *dup_list(t_stack *head)
     t_stack *tmp;
     t_stack *tmp2;
 
-    if (head)
+    tmp2 = malloc(sizeof(t_stack));
+    ft_bzero(tmp2,sizeof(t_stack));
+    tmp = tmp2;
+    while (head)
     {
-        tmp2 = malloc(sizeof(t_stack));
-        tmp = tmp2;
-        while (head)
+        tmp2->number = head->number;
+        if (head->next)
         {
-            tmp2->number = head->number;
-            if (head->next)
-            {
-                tmp2->next = malloc(sizeof(t_stack));
-                tmp2 = tmp2->next;
-            }
-            head = head->next;
+            tmp2->next = malloc(sizeof(t_stack));
+            ft_bzero(tmp2->next,sizeof(t_stack));
+            tmp2 = tmp2->next;
         }
-        tmp2 = tmp;
-
-        return (tmp2);
+        head = head->next;
     }
-    return (NULL);
+    tmp2 = tmp;
+    return (tmp2);
 }

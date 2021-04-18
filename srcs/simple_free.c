@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:45:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/18 16:42:36 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 17:20:06 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void free_stack(t_stack **stack)
 {
     t_stack *tmp;
 
-    tmp = NULL;
     if (*stack)
     {
         while (*stack)
         {
             tmp = (*stack)->next;
             free(*stack);
+            *stack = NULL;
             (*stack) = tmp;
         }
         free(*stack);

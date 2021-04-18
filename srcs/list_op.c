@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/18 16:16:10 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/17 17:20:26 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int get_pivot(t_stack *c)
     int k;
 
     t_stack *l;
+    result = NULL;
+    len = 0;
+    m = 0;
     k = 0;
-    // t_stack *tmp1;
-    
-    // tmp1 = dup_list(c);
     len = size_list(c);
     result = sort(c);
     if (len <= 12)

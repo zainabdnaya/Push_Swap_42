@@ -27,7 +27,10 @@ t_stack *sort(t_stack *head)
     t_stack *tmp2;
     t_stack *min;
 
+    start = NULL;
     start = head;
+    tmp2 = NULL;
+    min = NULL;
     while (start->next)
     {
         min = start;
