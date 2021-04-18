@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_disp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:27:40 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 21:41:20 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/18 16:09:47 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,68 +47,68 @@ void switch_norm(t_stack **a, t_stack **b, int w,t_stack *tmp)
         swap_stack(a);
     }
 }
-void switch_case_color(t_stack **a, t_stack **b, int w)
-{
-    t_stack *tmp;
+// void switch_case_color(t_stack **a, t_stack **b, int w)
+// {
+//     t_stack *tmp;
 
-    tmp = NULL;
+//     tmp = NULL;
 
-    if (w == 1 && size_list(*a) > 0)
-    {
-        ft_putendl_fd(WHT, 1);
-        push_stack(a, b, tmp);
-    }
-    else if (w == 2)
-    {
-        ft_putendl_fd(GRN, 1);
-        r_stack(a, tmp);
-    }
-    else if (w == 3 && size_list(*a) > 1)
-    {
-        ft_putendl_fd(YEL, 1);
-        rr_stack(a, tmp);
-    }
-    else
-        switch_norm(a, b, w, tmp);
-    free_stack(&tmp);
-}
+//     if (w == 1 && size_list(*a) > 0)
+//     {
+//         ft_putendl_fd(WHT, 1);
+//         push_stack(a, b, tmp);
+//     }
+//     else if (w == 2)
+//     {
+//         ft_putendl_fd(GRN, 1);
+//         r_stack(a, tmp);
+//     }
+//     else if (w == 3 && size_list(*a) > 1)
+//     {
+//         ft_putendl_fd(YEL, 1);
+//         rr_stack(a, tmp);
+//     }
+//     else
+//         switch_norm(a, b, w, tmp);
+//     free_stack(&tmp);
+// }
 
-void s_c_display(t_stack **a, t_stack **b, int w)
-{
-    t_stack *tmp;
+// void s_c_display(t_stack **a, t_stack **b, int w)
+// {
+//     t_stack *tmp;
 
-    tmp = NULL;
-    if (w == 1)
-    {
-        push_stack(a, b, tmp);
-    }
-    else if (w == 2)
-    {
-        r_stack(a, tmp);
-    }
-    else if (w == 3 && size_list(*a) > 1)
-    {
-        rr_stack(a, tmp);
-    }
-    else if (w == 4)
-    {
-        push_stack(b, a, tmp);
-    }
-    else if (w == 5 && size_list(*b) > 1)
-    {
-        r_stack(b, tmp);
-    }
-    else if (w == 6 && size_list(*b) > 1)
-    {
-        rr_stack(b, tmp);
-    }
-    else if (w == 7 && size_list(*b) > 1)
-    {
-        ft_putstr_fd("sb\n", 1);
-        swap_stack(b);
-    }
-    else if (w == 8 && size_list(*a) > 1)
-        swap_stack(a);
-    free_stack(&tmp);
-    display(*a, *b);
-}
+//     tmp = NULL;
+//     if (w == 1)
+//     {
+//         push_stack(a, b, tmp);
+//     }
+//     else if (w == 2)
+//     {
+//         r_stack(a, tmp);
+//     }
+//     else if (w == 3 && size_list(*a) > 1)
+//     {
+//         rr_stack(a, tmp);
+//     }
+//     else if (w == 4)
+//     {
+//         push_stack(b, a, tmp);
+//     }
+//     else if (w == 5 && size_list(*b) > 1)
+//     {
+//         r_stack(b, tmp);
+//     }
+//     else if (w == 6 && size_list(*b) > 1)
+//     {
+//         rr_stack(b, tmp);
+//     }
+//     else if (w == 7 && size_list(*b) > 1)
+//     {
+//         ft_putstr_fd("sb\n", 1);
+//         swap_stack(b);
+//     }
+//     else if (w == 8 && size_list(*a) > 1)
+//         swap_stack(a);
+//     free_stack(&tmp);
+//     display(*a, *b);
+// }

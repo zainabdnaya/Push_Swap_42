@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 01:01:02 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/15 01:05:40 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/18 16:07:18 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ void algo_1_c(t_stack **a, t_stack **b, int len)
     m = 0;
     size = len;
     part1_1_c(a, b, len, m);
-    part1_2_c(a, b, index, size_list(*a));
-    part1_3_c(a, b, index, proximity);
+    // part1_2_c(a, b, index, size_list(*a));
+    // part1_3_c(a, b, index, proximity);
     free_stack(a);
     free_stack(b);
 }

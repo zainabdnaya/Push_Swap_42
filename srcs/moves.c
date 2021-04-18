@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 16:21:16 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/18 14:51:57 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ t_stack *rr_part1(t_stack *head, t_stack *tmp)
     tmp->number = head->number;
     tmp->next = NULL;
     tmp->previous = NULL;
-
     return (tmp);
 }
 
