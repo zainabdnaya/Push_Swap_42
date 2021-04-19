@@ -6,7 +6,7 @@
 #    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/17 21:31:01 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/19 06:50:29 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,50 +15,40 @@ NAME2= push_swap
 SRC_PATH= srcs
 HDR_PATH= includes
 OBJ_PATH= obj
+SHARED_PATH= $(OBJ_PATH)/shared
 
-SRC_NAME1= errors.c\
-			use_libft1.c\
-			use_libft.c\
-			simple_free.c\
-			to_use.c\
-			ok_ko.c\
-			checker.c\
-			initial.c\
-			list.c\
-			list_op.c\
-			moves.c\
-			orderby.c\
-			gen_sort.c\
-			print.c\
-			checker_rd.c\
 
-SRC_NAME2=  swap.c\
-			moves.c\
-			list.c\
-			to_use.c\
-			simple_free.c\
-			print.c\
-			gen_sort.c\
-			algo.c\
-			algo_use.c\
-			ok_ko.c\
-			list_op.c\
-			algo_500.c\
-			algo_min.c\
-			errors.c\
-			swap_case.c\
-			initial.c\
-			use_libft1.c\
-			use_libft.c\
-			swap_op.c\
-			algo_min_c.c\
-			algo_c.c\
-			algo_500_c.c\
-			algo_disp.c\
-			algo_min_d.c\
-			algo_d.c\
-			swap_disp.c\
-
+SRC_SHARED= shared/errors.c\
+			shared/simple_free.c\
+			shared/use_libft1.c\
+			shared/use_libft.c\
+			shared/list_op.c\
+			shared/to_use.c\
+			shared/initial.c\
+			shared/gen_sort.c\
+			shared/list.c\
+			shared/moves.c\
+			shared/ok_ko.c\
+			shared/algo_d.c\
+		  	shared/algo_disp.c\
+		  	shared/algo_min_d.c\
+		  	shared/print.c\
+		  	shared/swap_disp.c\
+            shared/algo_500_c.c\
+			shared/algo_min_c.c\
+			shared/algo_c.c\
+			shared/orderby.c\
+			shared/checker_rd.c\
+			shared/algo.c\
+			shared/algo_use.c\
+			shared/algo_500.c\
+			shared/algo_min.c\
+			shared/swap_case.c\
+			shared/swap_op.c\
+			shared/option_v.c\
+				
+SRC_NAME1= checker.c  $(SRC_SHARED)
+SRC_NAME2=  swap.c $(SRC_SHARED)
 HDR_NAME= push_swap.h
 
 OBJ_NAME1= $(SRC_NAME1:.c=.o)
@@ -88,7 +78,7 @@ $(NAME2) : $(OBJ2)
 	@echo "	Compilation of $(NAME2):  \033[1;32mOK\033[m"
 
 $(OBJ_PATH)/%.o:  $(SRC_PATH)/%.c $(HDR)
-	@mkdir -p $(OBJ_PATH) 
+	@mkdir -p $(OBJ_PATH) $(SHARED_PATH) 
 	@$(COMP) -g $(FLAGS) $(H_FLAG)  -o $@ -c $<
 
 clean:

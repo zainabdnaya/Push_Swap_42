@@ -6,11 +6,44 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/17 21:31:52 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 07:28:09 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+t_all *fill_in(t_all *all)
+{
+    t_stack *new;
+
+    check_replicat(all->split);
+    check_ascii(all->split);
+    all->a = put_in_list(all, all->split, new);
+    all->len = size_list(all->a);
+    return (all);
+}
+
+void checker_sort(t_all *all)
+{
+    if (check_sort(&all->a, all->len) == 1)
+        {
+            free_stack(&all->a);
+            free_stack(&all->b);
+            free(all);
+            all = NULL;
+            ft_putstr_fd("OK\n", 1);
+
+        }
+    else
+        {
+            free_stack(&all->a);
+            free_stack(&all->b);
+            free(all);
+            all = NULL;
+            ft_putstr_fd("KO\n", 1);
+       }
+}
 
 int check_sort(t_stack **a, int len)
 {
