@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 21:44:52 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 01:16:09 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ t_all *fill_in(t_all *all)
 
     check_replicat(all->split);
     check_ascii(all->split);
-    all->a = put_in_list(all, all->split,new);
+    all->a = put_in_list(all, all->split, new);
     all->len = size_list(all->a);
-    free_stack(&new);
     return (all);
 }
 void checker_sort(t_all *all)
@@ -42,13 +41,24 @@ void option_v(t_all *all, int ac, char **av)
     {
         all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
         read(0, all->line, BUFFER_SIZE);
-        checker_pars_v(&all->a, &all->b, all->len, all->line);
+        if (all->line[0] == '\0' || all->line[0] == '\n')
+        {
+            checker_sort(all);
+            the_end(&all->a, &all->b, &all->line, all);
+            free(all);
+        }
+        else
+            checker_pars_v(&all->a, &all->b, all->len, all->line);
         system("clear");
         print_all(all->a, all->b);
         free_arg(&(all->line));
     }
     if (all->line[0] == '\0' || all->line[0] == '\n')
+    {
         checker_sort(all);
+        the_end(&all->a, &all->b, &all->line, all);
+        free(all);
+    }
 }
 
 char **normal(t_all *all, int ac, char **av)
