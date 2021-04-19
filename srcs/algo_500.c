@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -23,7 +24,7 @@ void part_1(t_stack **a, t_stack **b, int len, int m)
     size = len;
     while (size >= val_aprox(len / 8))
     {
-        tmps=dup_list(*a);
+        tmps = dup_list(*a);
         m = get_pivot(tmps);
         while (check_under_pivot((*a), m) && (*a))
         {
@@ -54,7 +55,7 @@ void part_2(t_stack **a, t_stack **b, int index, int size)
     t_stack *tmp;
     t_stack *tmps;
     int min;
-    
+
     while (*a && !check_sort(a, size))
     {
         min = get_min(*a);
@@ -99,12 +100,12 @@ void part_3(t_stack **a, t_stack **b, int index, int proximity)
                 switch_case(a, b, 7);
             while (((*b)->number != max) && *b)
             {
-                    index = get_index_max((*b), max);
-                    proximity = val_aprox((size_list((*b)) / 2));
-                    if (proximity > index && *b)
-                        switch_case(a, b, 5);
-                    else if (*b)
-                        switch_case(a, b, 6);
+                index = get_index_max((*b), max);
+                proximity = val_aprox((size_list((*b)) / 2));
+                if (proximity > index && *b)
+                    switch_case(a, b, 5);
+                else if (*b)
+                    switch_case(a, b, 6);
             }
             while (*b && (*b)->number == max)
             {

@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 23:42:09 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/15 23:46:27 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 00:47:17 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,22 @@ void part_1_d(t_stack **a, t_stack **b, int len, int m)
     int index;
     int proximity;
     int size;
+    t_stack *tmp;
+    t_stack *tmps;
 
     size = len;
     while (size >= val_aprox(len / 8))
     {
-        m = get_pivot(((*a)));
+        tmps = dup_list(*a);
+        m = get_pivot(tmps);
         while (check_under_pivot((*a), m) && (*a))
         {
             if ((*a)->number <= m)
             {
+                tmp = *a;
                 s_c_display(a, b, 1);
                 size--;
+                free(tmp);
             }
             else
             {
@@ -39,25 +44,30 @@ void part_1_d(t_stack **a, t_stack **b, int len, int m)
                     s_c_display(a, b, 3);
             }
         }
+        // free(tmps);
+        free_stack(&tmps);
     }
 }
 void part_2_d(t_stack **a, t_stack **b, int index, int size)
 {
     int proximity;
     t_stack *tmp;
+    t_stack *tmps;
     int min;
 
     while (*a && !check_sort(a, size))
     {
         min = get_min(*a);
         tmp = (*a)->next;
-        if ((*a)->number != min && tmp && tmp->number == min)
+        while ((*a)->number != min && tmp && tmp->number == min)
             s_c_display(a, b, 8);
         while (size_list(*a) && check_under_pivot((*a), min))
         {
             if ((*a)->number == min)
             {
+                tmps = *a;
                 s_c_display(a, b, 1);
+                free(tmps);
                 size--;
             }
             else
@@ -76,6 +86,7 @@ void part_2_d(t_stack **a, t_stack **b, int index, int size)
 void part_3_d(t_stack **a, t_stack **b, int index, int proximity)
 {
     t_stack *tmp;
+    t_stack *tmps;
 
     while (*b)
     {
@@ -84,7 +95,7 @@ void part_3_d(t_stack **a, t_stack **b, int index, int proximity)
         {
             max = get_max(*b);
             tmp = (*b)->next;
-            if ((*b)->number != max && tmp && tmp->number == max)
+            while ((*b)->number != max && tmp && tmp->number == max)
                 s_c_display(a, b, 7);
             while (((*b)->number != max) && *b)
             {
@@ -97,8 +108,10 @@ void part_3_d(t_stack **a, t_stack **b, int index, int proximity)
             }
             while (*b && (*b)->number == max)
             {
+                tmps = *b;
                 s_c_display(a, b, 4);
                 max = get_max(*b);
+                free(tmps);
             }
         }
     }
@@ -115,7 +128,9 @@ void algo_d(t_stack **a, t_stack **b, int len)
     proximity = 0;
     m = 0;
     size = len;
-    part_1_d(a, b, len, m); 
+    part_1_d(a, b, len, m);
     part_2_d(a, b, index, size_list(*a));
-    part_3_d(a, b, index, proximity); 
+    part_3_d(a, b, index, proximity);
+    free_stack(a);
+    free_stack(b);
 }

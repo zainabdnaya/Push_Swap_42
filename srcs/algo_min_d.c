@@ -6,13 +6,13 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 22:09:10 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/15 22:23:57 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/18 23:55:29 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_a_d(t_stack **a, t_stack **b, int len)
+void sort_a_3_d(t_stack **a, t_stack **b, int len)
 {
     t_stack *bottom1;
     int min;
@@ -22,6 +22,7 @@ void sort_a_d(t_stack **a, t_stack **b, int len)
     bottom1 = bottom(*a);
     while (check_sort(a, len) == 0)
     {
+
         if ((*a)->number < (*a)->next->number && bottom1->number == min)
             s_c_display(a, b, 3);
         else if ((*a)->number > (*a)->next->number && bottom1->number == min)
@@ -56,7 +57,7 @@ void sort_min_d(t_stack **a, t_stack **b, int len)
 
     size = len;
     if (len == 3)
-        sort_a_d(a, b, len);
+        sort_a_3_d(a, b, len);
     else if (len > 3)
     {
         while (size > 3)
@@ -76,14 +77,22 @@ void sort_min_d(t_stack **a, t_stack **b, int len)
             }
             if (m == (*a)->number)
             {
+                t_stack *ss = *a;
                 s_c_display(a, b, 1);
+                free(ss);
                 size--;
             }
         }
-        sort_a_d(a, b, 3);
+        sort_a_3_d(a, b, 3);
         while ((*b))
+        {
+            t_stack *ss = *b;
             s_c_display(a, b, 4);
+            free(ss);
+        }
+        free_stack(b);
     }
     // free_stack(a);
-    // free_stack(b);
+    // free(*a);
+    // free(*b);
 }

@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 01:01:02 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/15 01:05:40 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 00:12:04 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,45 @@
 
 void part1_1_c(t_stack **a, t_stack **b, int len, int m)
 {
-    int index;
+      int index;
     int proximity;
     int size;
+    t_stack *tmp;
+    t_stack *tmps;
 
     size = len;
     while (size >= val_aprox(len / 4))
     {
-        m = get_pivot(dup_list(*a));
+        tmps=dup_list(*a);
+        m = get_pivot(tmps);
         while (check_under_pivot((*a), m) && (*a))
         {
             if ((*a)->number <= m)
             {
-                switch_case_color(a, b, 1);
+                tmp = *a;
+                switch_case(a, b, 1);
                 size--;
+                free(tmp);
             }
             else
             {
                 index = get_index((*a), m);
                 proximity = (size_list((*a)) / 2);
                 if (proximity > index)
-                    switch_case_color(a, b, 2);
+                    switch_case(a, b, 2);
                 else
-                    switch_case_color(a, b, 3);
+                    switch_case(a, b, 3);
             }
         }
+        // free(tmps);
+        free_stack(&tmps);
     }
 }
 void part1_2_c(t_stack **a, t_stack **b, int index, int size)
 {
-    int proximity;
+       int proximity;
     t_stack *tmp;
+    t_stack *tmps;
     int min;
     
     while (*a && !check_sort(a, size))
@@ -52,12 +60,14 @@ void part1_2_c(t_stack **a, t_stack **b, int index, int size)
         min = get_min(*a);
         tmp = (*a)->next;
         while ((*a)->number != min && tmp && tmp->number == min)
-            switch_case_color(a, b, 8);
+            switch_case(a, b, 8);
         while (size_list(*a) && check_under_pivot((*a), min))
         {
             if ((*a)->number == min)
             {
-                switch_case_color(a, b, 1);
+                tmps = *a;
+                switch_case(a, b, 1);
+                free(tmps);
                 size--;
             }
             else
@@ -65,9 +75,9 @@ void part1_2_c(t_stack **a, t_stack **b, int index, int size)
                 index = get_index((*a), min);
                 proximity = (size_list((*a)) / 2);
                 if (proximity > index)
-                    switch_case_color(a, b, 2);
+                    switch_case(a, b, 2);
                 else
-                    switch_case_color(a, b, 3);
+                    switch_case(a, b, 3);
             }
         }
     }
@@ -75,7 +85,8 @@ void part1_2_c(t_stack **a, t_stack **b, int index, int size)
 
 void part1_3_c(t_stack **a, t_stack **b, int index, int proximity)
 {
-    t_stack *tmp;
+        t_stack *tmp;
+    t_stack *tmps;
 
     while (*b)
     {
@@ -85,20 +96,22 @@ void part1_3_c(t_stack **a, t_stack **b, int index, int proximity)
             max = get_max(*b);
             tmp = (*b)->next;
             while ((*b)->number != max && tmp && tmp->number == max)
-                switch_case_color(a, b, 7);
+                switch_case(a, b, 7);
             while (((*b)->number != max) && *b)
             {
                     index = get_index_max((*b), max);
                     proximity = val_aprox((size_list((*b)) / 2));
                     if (proximity > index && *b)
-                        switch_case_color(a, b, 5);
+                        switch_case(a, b, 5);
                     else if (*b)
-                        switch_case_color(a, b, 6);
+                        switch_case(a, b, 6);
             }
             while (*b && (*b)->number == max)
             {
-                switch_case_color(a, b, 4);
+                tmps = *b;
+                switch_case(a, b, 4);
                 max = get_max(*b);
+                free(tmps);
             }
         }
     }
