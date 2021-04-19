@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 17:41:19 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/19 17:46:02 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,7 @@ void checker(t_all *all, char *str, char **line)
         }
         i++;
     }
-    // ft_free_split(line);
-    i = 0;
-    while (line[i])
-    {
-        free(line[i]);
-        i++;
-    }
-    free(line);
+    ft_free_split(line);
     checker_sort(all);
 }
 
