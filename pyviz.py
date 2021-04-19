@@ -217,7 +217,7 @@ class PsGui:
         self.PauseCtl.config(text='>')
 
 
-root = Tk()
+root = root = tkinter.Tk()
 root.resizable(width=False, height=False)
 gui = PsGui(root)
 root.mainloop()

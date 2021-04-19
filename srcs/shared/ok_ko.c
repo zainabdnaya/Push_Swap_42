@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ok_ko.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 07:28:09 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 17:38:28 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_all *fill_in(t_all *all)
     check_replicat(all->split);
     check_ascii(all->split);
     all->a = put_in_list(all, all->split, new);
+    // free_stack(&new);
     all->len = size_list(all->a);
     return (all);
 }

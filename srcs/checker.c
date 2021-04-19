@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 07:40:10 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 17:41:19 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,11 @@ void checker(t_all *all, char *str, char **line)
             str = ft_strdup(all->line);
         else
             str = ft_strjoin(str, all->line);
-        free(tmp);
-        tmp = NULL;
+        if (tmp)
+        {
+            free(tmp);
+            tmp = NULL;
+        }
     }
     if (!ft_strcmp(all->line, "\0"))
         checker_sort(all);
@@ -78,7 +81,14 @@ void checker(t_all *all, char *str, char **line)
         }
         i++;
     }
-    ft_free_split(line);
+    // ft_free_split(line);
+    i = 0;
+    while (line[i])
+    {
+        free(line[i]);
+        i++;
+    }
+    free(line);
     checker_sort(all);
 }
 
@@ -102,6 +112,8 @@ int main(int ac, char **av)
             all->split = normal(all, ac, av);
             all = fill_in(all);
             checker(all, str, line);
+            // if (ac == 2)
+            //     ft_free_split(all->split);
         }
     }
 }

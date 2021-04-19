@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:45:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 17:20:06 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/19 17:39:43 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void ft_free_split(char **split)
 	i = 0;
 	while (split[i])
 	{
-		free_arg(&(split[i]));
-		i++;
-	}
-	free(*split);
-	*split = NULL;
+        free(split[i]);
+        i++;
+    }
+	// free(*split);
+	// *split = NULL;
 }
 
 void free_single_stack(t_stack **stack)

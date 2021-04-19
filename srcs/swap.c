@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 06:47:45 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 17:22:43 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void swap_(t_all *all, int ac, char **av)
     check_replicat(all->split);
     check_ascii(all->split);
     put_in_list(all, all->split, new);
+    free_stack(&new);
     all->len = size_list(all->a);
     if (all->len <= 10)
         sort_min(&(all->a), &(all->b), all->len);
@@ -34,6 +35,7 @@ void swap_(t_all *all, int ac, char **av)
         algo(&(all->a), &(all->b), all->len);
     if (ac == 2)
         ft_free_split(all->split);
+        // free
 }
 
 int main(int ac, char **av)

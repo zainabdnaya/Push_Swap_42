@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 06:34:35 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 17:23:06 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void sort_a_3(t_stack **a, t_stack **b, int len)
     while (check_sort(a, len) == 0)
     {
 
-        if ((*a)->number < (*a)->next->number && bottom1->number == min)
-            switch_case(a, b, 3);
-        else if ((*a)->number > (*a)->next->number && bottom1->number == min)
+         if ((*a)->number > (*a)->next->number && bottom1->number == min)
         {
-            switch_case(a, b, 8);
             switch_case(a, b, 3);
+            switch_case(a, b, 8); 
         }
+        else if((*a)->number < (*a)->next->number && bottom1->number == min)
+            switch_case(a, b, 3);
         else if ((*a)->next->number == min)
         {
             if ((*a)->number > (*a)->next->number && (*a)->number < bottom1->number)
@@ -102,7 +102,5 @@ void sort_min(t_stack **a, t_stack **b, int len)
         }
         free_stack(b);
     }
-    // free_stack(a);
-    // free(*a);
-    // free(*b);
+    free_stack(a);
 }
