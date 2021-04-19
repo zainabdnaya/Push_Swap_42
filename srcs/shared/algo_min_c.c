@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 00:56:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 00:09:49 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 21:31:29 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,5 @@ void sort_min_c(t_stack **a, t_stack **b, int len)
         }
         free_stack(b);
     }
-    // free_stack(a);
-    // free(*a);
-    // free(*b);
+    free_stack(a);
 }

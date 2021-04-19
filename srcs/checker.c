@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 17:46:02 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/19 21:20:19 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,6 @@ int main(int ac, char **av)
             all->split = normal(all, ac, av);
             all = fill_in(all);
             checker(all, str, line);
-            // if (ac == 2)
-            //     ft_free_split(all->split);
         }
     }
 }

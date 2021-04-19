@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 16:57:54 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/19 21:30:32 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,14 +112,6 @@ void push_stack(t_stack **a, t_stack **b, t_stack *new)
             tmp = (b);
             add_front(b, new);
             (*a) = (*a)->next;
-            // print_list(new);
-            // while ((*b)->previous != NULL)
-            //     (*b) = (*b)->previous;
-            // (*b) = new;
-            // new->next = (tmp);
-            // new->previous = NULL;
-            // free(new);
-            // new = NULL;
         }
     }
 }

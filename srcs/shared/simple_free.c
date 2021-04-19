@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:45:17 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 17:45:29 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/19 21:30:25 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,28 +65,4 @@ void the_end(t_stack **a, t_stack **b, char **line, t_all *all)
     free(all);
     all = NULL;
     exit(0);
-    /******free****/
-    // if (ac == 2 || ac == 3)
-    // {
-    //     while (all->split[i])
-    //     {
-    //         free_arg(&all->split[i]);
-    //         all->split[i] = NULL;
-    //         i++;
-    //     }
-    //     free_arg(all->split);
-    //     all->split = NULL;
-    // }
-    // print_list(all->a);
-    // if (ac == 2)
-    // {
-    //     while (all->split[i])
-    //     {
-    //         free_arg(&all->split[i]);
-    //         all->split[i] = NULL;
-    //         i++;
-    //     }
-    //     free_arg(all->split);
-    //     all->split = NULL;
-    // }
 }

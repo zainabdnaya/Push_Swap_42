@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 04:47:34 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 21:30:40 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,6 @@ void add_back(t_stack **head, t_stack *new, char *av)
 {
     t_stack *tmp;
 
-    // if (!(new = (t_stack *)malloc(sizeof(t_stack))))
-    //     return;
-    // new->number = my_atoi(av);
-    // if (new->number > 2147483647 || new->number < -2147483647)
-    // {
-    //     ft_putstr_fd("Error:\n", 2);
-    //     exit(1);
-    // }
-    // new->next = NULL;
-    // new->previous = NULL;
-
     if (*head == NULL)
         *head = new;
     else
@@ -51,7 +40,6 @@ void add_back(t_stack **head, t_stack *new, char *av)
         tmp->next = new;
         new->previous = tmp;
     }
-    // free_stack(&new);
 }
 
 void add_back1(t_stack **head, t_stack *new, int k)

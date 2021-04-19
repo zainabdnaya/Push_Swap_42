@@ -6,18 +6,19 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 22:01:00 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 00:47:14 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 21:38:48 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void part1_1_d(t_stack **a, t_stack **b, int len, int m)
+void part1_1_d(t_stack **a, t_stack **b, int len, int k)
 {
     int index;
     t_stack *tmp;
     int proximity;
     int size;
+    int m;
 
     size = len;
     while (size >= val_aprox(len / 4))
@@ -42,11 +43,12 @@ void part1_1_d(t_stack **a, t_stack **b, int len, int m)
         }
     }
 }
-void part1_2_d(t_stack **a, t_stack **b, int index, int size)
+void part1_2_d(t_stack **a, t_stack **b, int k, int size)
 {
     int proximity;
     t_stack *tmp;
     int min;
+     int index;
     
     while (*a && !check_sort(a, size))
     {
@@ -74,10 +76,11 @@ void part1_2_d(t_stack **a, t_stack **b, int index, int size)
     }
 }
 
-void part1_3_d(t_stack **a, t_stack **b, int index, int proximity)
+void part1_3_d(t_stack **a, t_stack **b, int k, int proximity)
 {
     t_stack *tmp;
-
+     int index;
+     
     while (*b)
     {
         int max = get_max(*b);
