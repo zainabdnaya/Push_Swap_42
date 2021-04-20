@@ -12,49 +12,45 @@
 
 #include "push_swap.h"
 
-void rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
-
-    tmp = NULL;
-    r_stack(a);
-    r_stack(b);
+	r_stack(a);
+	r_stack(b);
 }
 
-void ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b)
 {
-    swap_stack(a);
-    swap_stack(b);
+	swap_stack(a);
+	swap_stack(b);
 }
 
-void rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    tmp = NULL;
-    rr_stack(a,tmp);
-    rr_stack(b,tmp);
+	tmp = NULL;
+	rr_stack(a, tmp);
+	rr_stack(b, tmp);
 }
 
-int avreage(t_stack *a)
+int	avreage(t_stack *a)
 {
-    int k;
-    int i;
-    int avg;
-    t_stack *tmp;
+	    int	k;
+	    int	i;
+	    int	avg;
+	t_stack	*tmp;
 
-    i = 0;
-    k = 0;
-    avg = 0;
-    tmp = a;
-    while (a != NULL)
-    {
-        k += a->number;
-        i++;
-        a = a->next;
-    }
-    a = tmp;
-    avg = (int)(k / i);
-    return (avg);
+	i = 0;
+	k = 0;
+	avg = 0;
+	tmp = a;
+	while (a != NULL)
+	{
+		k += a->number;
+		i++;
+		a = a->next;
+	}
+	a = tmp;
+	avg = (int)(k / i);
+	return (avg);
 }
-
