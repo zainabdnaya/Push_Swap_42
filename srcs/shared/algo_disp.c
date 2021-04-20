@@ -6,30 +6,33 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 22:01:00 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 21:38:48 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:03:34 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void part1_1_d(t_stack **a, t_stack **b, int len, int k)
+void part1_1_d(t_stack **a, t_stack **b, int len,int m)
 {
     int index;
-    t_stack *tmp;
     int proximity;
     int size;
-    int m;
+    t_stack *tmp;
+    t_stack *tmps;
 
     size = len;
     while (size >= val_aprox(len / 4))
     {
-        m = get_pivot(dup_list(*a));
+        tmps=dup_list(*a);
+        m = get_pivot(tmps);
         while (check_under_pivot((*a), m) && (*a))
         {
             if ((*a)->number <= m)
             {
+                tmp = *a;
                 s_c_display(a, b, 1);
                 size--;
+                free(tmp);
             }
             else
             {
@@ -41,13 +44,13 @@ void part1_1_d(t_stack **a, t_stack **b, int len, int k)
                     s_c_display(a, b, 3);
             }
         }
+        free_stack(&tmps);
     }
 }
-void part1_2_d(t_stack **a, t_stack **b, int k, int size)
+void part1_2_d(t_stack **a, t_stack **b, int min, int size)
 {
     int proximity;
     t_stack *tmp;
-    int min;
      int index;
     
     while (*a && !check_sort(a, size))
@@ -76,10 +79,9 @@ void part1_2_d(t_stack **a, t_stack **b, int k, int size)
     }
 }
 
-void part1_3_d(t_stack **a, t_stack **b, int k, int proximity)
+void part1_3_d(t_stack **a, t_stack **b, int index, int proximity)
 {
     t_stack *tmp;
-     int index;
      
     while (*b)
     {

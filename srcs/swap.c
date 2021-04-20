@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 23:57:17 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:08:31 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int main(int ac, char **av)
         exit(1);
     else
     {
-        all = initial(ac, all);
+        all = initial(all);
         if (!ft_strcmp(av[1], "-c"))
             swap_c(all, ac, av);
         else if (!ft_strcmp(av[1], "-sh"))

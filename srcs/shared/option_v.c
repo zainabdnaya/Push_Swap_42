@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 06:49:20 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 06:51:26 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:08:25 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void option_v(t_all *all, int ac, char **av)
             free(all);
         }
         else
-            checker_pars_v(&all->a, &all->b, all->len, all->line);
+            checker_pars_v(&all->a, &all->b, all->line);
         system("clear");
         print_all(all->a, all->b);
         free_arg(&(all->line));

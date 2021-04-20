@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 00:10:17 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 03:53:32 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-void add_back(t_stack **head, t_stack *new, char *av)
+void add_back(t_stack **head, t_stack *new)
 {
     t_stack *tmp;
 
@@ -42,7 +42,7 @@ void add_back(t_stack **head, t_stack *new, char *av)
     }
 }
 
-void add_back1(t_stack **head, t_stack *new, int k)
+void add_back1(t_stack **head)
 {
     t_stack *tmp;
     t_stack *tmps;

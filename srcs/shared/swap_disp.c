@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:27:40 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 21:41:20 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:04:36 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void switch_norm(t_stack **a, t_stack **b, int w,t_stack *tmp)
     else if (w == 5 && size_list(*b) > 1)
     {
         ft_putendl_fd(MAG, 1);
-        r_stack(b, tmp);
+        r_stack(b);
         free(tmp);
         tmp = NULL;
     }
@@ -61,7 +61,7 @@ void switch_case_color(t_stack **a, t_stack **b, int w)
     else if (w == 2)
     {
         ft_putendl_fd(GRN, 1);
-        r_stack(a, tmp);
+        r_stack(a);
     }
     else if (w == 3 && size_list(*a) > 1)
     {
@@ -84,7 +84,7 @@ void s_c_display(t_stack **a, t_stack **b, int w)
     }
     else if (w == 2)
     {
-        r_stack(a, tmp);
+        r_stack(a);
     }
     else if (w == 3 && size_list(*a) > 1)
     {
@@ -96,7 +96,7 @@ void s_c_display(t_stack **a, t_stack **b, int w)
     }
     else if (w == 5 && size_list(*b) > 1)
     {
-        r_stack(b, tmp);
+        r_stack(b);
     }
     else if (w == 6 && size_list(*b) > 1)
     {

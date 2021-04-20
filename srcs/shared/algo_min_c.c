@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 00:56:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 21:31:29 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:05:02 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void sort_min_c(t_stack **a, t_stack **b, int len)
     int max;
 
     size = len;
+    min = 0;
+    max = 0;
     if (len == 3)
         sort_a_3_c(a, b, len);
     else if (len > 3)

@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 21:20:29 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 03:54:53 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_all *fill_in(t_all *all)
 {
     t_stack *new;
 
+    new = NULL;
     check_replicat(all->split);
     check_ascii(all->split);
     all->a = put_in_list(all, all->split, new);

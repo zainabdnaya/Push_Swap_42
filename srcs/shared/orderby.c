@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   orderby.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:47:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/17 17:10:50 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 04:05:20 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void rr(t_stack **a, t_stack **b)
     t_stack *tmp;
 
     tmp = NULL;
-    r_stack(a,tmp);
-    r_stack(b,tmp);
+    r_stack(a);
+    r_stack(b);
 }
 
 void ss(t_stack **a, t_stack **b)

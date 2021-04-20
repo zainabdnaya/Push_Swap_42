@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:08:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 23:55:59 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:08:11 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void switch_case_norm(t_stack **a, t_stack **b, int w, t_all *all)
     else if (w == 5 && size_list(*b) > 1)
     {
         ft_putstr_fd("rb\n", all->fd);
-        r_stack(b, tmp);
+        r_stack(b);
         free(tmp);
         tmp = NULL;
     }
@@ -65,7 +65,7 @@ void switch_case(t_stack **a, t_stack **b, int w, t_all *all)
     else if (w == 2)
     {
             ft_putstr_fd("ra\n", all->fd);
-            r_stack(a, tmp);
+            r_stack(a);
             free(tmp);
             tmp = NULL;
     }

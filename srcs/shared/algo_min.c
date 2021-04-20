@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 23:55:40 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:07:55 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void sort_min(t_stack **a, t_stack **b, int len, t_all *all)
     int proximity;
     int size;
     int m;
-    int min;
     int max;
 
     size = len;
+    max = 0;
     if (len == 3)
         sort_a_3(a, b, len,all);
     else if (len > 3)
@@ -73,7 +73,7 @@ void sort_min(t_stack **a, t_stack **b, int len, t_all *all)
         {
             m = get_min(*a);
             tmp = (*a)->next;
-            if ((*a)->number != max && tmp && tmp->number == min)
+            if ((*a)->number != max && tmp && tmp->number == m)
                 switch_case(a, b, 8,all);
             while (m != (*a)->number)
             {

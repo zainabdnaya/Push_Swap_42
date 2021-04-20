@@ -6,7 +6,7 @@
 #    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/19 23:14:37 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/20 00:48:05 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ OBJ2= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME2))
 SRC2= $(addprefix $(SRC_PATH)/,$(SRC_NAME2))
 
 HDR= $(addprefix $(HDR_PATH)/,$(HDR_NAME))
-# FLAGS= -Wall -Wextra -Werror
+FLAGS= -Wall -Wextra -Werror
 H_FLAG= -I $(HDR_PATH)
 
 COMP= gcc

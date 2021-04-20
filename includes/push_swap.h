@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 00:04:31 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:08:13 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ typedef struct s_all
 } t_all;
 long long my_atoi(const char *str);
 
-void add_back(t_stack **head, t_stack *new, char *av);
-void add_back1(t_stack **head, t_stack *new, int k);
+void add_back(t_stack **head, t_stack *new);
+void add_back1(t_stack **head);
 void add_front(t_stack **head, t_stack *new_node);
 void checker_sort(t_all *all);
 void check_replicat(char **av);
 void swap_stack(t_stack **head);
-void r_stack(t_stack **head, t_stack *tmp);
+void r_stack(t_stack **head);
 void rr_stack(t_stack **head, t_stack *tmp);
 void push_stack(t_stack **a, t_stack **b, t_stack *new);
 void ss(t_stack **a, t_stack **b);
@@ -67,7 +67,7 @@ void algo(t_stack **a, t_stack **b, int len,t_all *all);
 void switch_case(t_stack **a, t_stack **b, int w,t_all *all);
 void algo_1(t_stack **a, t_stack **b, int len,t_all *all);
 void algo_min(t_stack **a, t_stack **b, int len,int k);
-void checker_pars(t_stack **a, t_stack **b, int len, char *line);
+void checker_pars(t_stack **a, t_stack **b,char *line);
 void sort_a_3(t_stack **a, t_stack **b, int len,t_all *all);
 void sort_min(t_stack **a, t_stack **b, int len,t_all *all);
 void le_vide_vider(t_stack **a, t_stack **b);
@@ -90,7 +90,7 @@ void ft_putstr_fd(char *s, int fd);
 void ft_putchar_fd(char c, int fd);
 void ft_putendl_fd(char *s, int fd);
 void *ft_calloc(size_t count, size_t size);
-void checker_pars_v(t_stack **a, t_stack **b, int len, char *line);
+void checker_pars_v(t_stack **a, t_stack **b, char *line);
 void display(t_stack *a, t_stack *b);
 void option_v(t_all *all, int ac, char **av);
 void free_arg(char **arg);
@@ -126,7 +126,7 @@ t_stack *creat_stack(char *av, t_stack *a);
 t_stack *dup_list(t_stack *head);
 
 t_all *fill_in(t_all *all);
-t_all *initial(int ac, t_all *all);
+t_all *initial(t_all *all);
 t_all *fill_ps(t_all *all);
 
 #endif

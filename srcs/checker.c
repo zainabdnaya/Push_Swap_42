@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 21:20:19 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 04:07:00 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char **normal(t_all *all, int ac, char **av)
     return (all->split);
 }
 
-int condition(t_stack **a, t_stack **b, char *line)
+int condition(char *line)
 {
     if (!ft_strcmp(line, "sa") || !ft_strcmp(line, "ra"))
         return (1);
@@ -67,8 +67,8 @@ void checker(t_all *all, char *str, char **line)
     free_arg(&str);
     while (line[i])
     {
-        if (condition(&all->a, &all->b, line[i]) == 1)
-            checker_pars(&all->a, &all->b, all->len, line[i]);
+        if (condition(line[i]) == 1)
+            checker_pars(&all->a, &all->b,line[i]);
         else
         {
             ft_free_split(line);
@@ -76,7 +76,7 @@ void checker(t_all *all, char *str, char **line)
             free_stack(&all->b);
             free(all);
             all = NULL;
-            ft_putstr_fd("Error\n", 1);
+            ft_putstr_fd("Error\n", 0);
             exit(1);
         }
         i++;
@@ -93,11 +93,12 @@ int main(int ac, char **av)
 
     str = NULL;
     line = NULL;
+    all = NULL;
     if (ac < 2)
         exit(1);
     else
     {
-        all = initial(ac, all);
+        all = initial(all);
         if (!ft_strcmp(av[1], "-v"))
             option_v(all, ac, av);
         else

@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 00:38:49 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 03:49:36 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_stack *put_in_list(t_all *all, char **split, t_stack *new)
 {
-    t_stack *tmp;
     int i;
 
     i = 0;
@@ -30,7 +29,7 @@ t_stack *put_in_list(t_all *all, char **split, t_stack *new)
         }
         new->next = NULL;
         new->previous = NULL;
-        add_back(&all->a, new, split[i]);
+        add_back(&all->a, new);
         new = NULL;
         i++;
     }
@@ -44,11 +43,10 @@ int get_pivot(t_stack *c)
     int m;
     int k;
 
-    t_stack *l;
-    result = NULL;
-    len = 0;
     m = 0;
     k = 0;
+    len = 0;
+    result = NULL;
     len = size_list(c);
     result = sort(c);
     if (len <= 12)
@@ -96,6 +94,8 @@ int get_max(t_stack *b)
     int max;
     t_stack *tmp;
 
+    max = 0;
+    tmp = NULL;
     if (b)
     {
         max = b->number;

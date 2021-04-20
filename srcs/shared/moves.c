@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 00:10:01 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 03:54:33 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,12 @@ void swap_stack(t_stack **head)
     }
 }
 
-void r_stack(t_stack **head, t_stack *tmp2)
+void r_stack(t_stack **head)
 {
-    int k;
-    tmp2 = NULL;
     if (*head)
     {
-        k = (*head)->number;
         *head = (*head)->next;
-        add_back1(head, tmp2, k);
+        add_back1(head);
     }
     
 }
@@ -68,7 +65,6 @@ void botom(t_stack **head)
 }
 void rr_stack(t_stack **head, t_stack *tmp)
 {
-    t_stack *new_node;
     t_stack *a;
 
     a = NULL;
