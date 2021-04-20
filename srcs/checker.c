@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 17:09:05 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 17:55:23 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,39 @@ void checker(t_all *all, char *str, char **line)
 
     i = 0;
     line = checker_norm(all, str, line);
-    while (line[i])
+    while(line[i])
     {
         if (condition(line[i]) == 1)
-            checker_pars(&all->a, &all->b, line[i]);
+            i++;
         else
         {
             ft_free_split(line);
             free_stack(&all->a);
             free_stack(&all->b);
             free(all);
-            all = NULL;
-            ft_putstr_fd("Error\n", 1);
+            // all = NULL;
+            ft_putstr_fd("Error\n", 2);
             exit(1);
         }
-        i++;
+    }
+    i = 0;
+    while (line[i])
+    {
+        if (condition(line[i]) == 1)
+        {
+            checker_pars(&all->a, &all->b, line[i]);
+            i++;
+        }
+        else
+        {
+            ft_free_split(line);
+            free_stack(&all->a);
+            free_stack(&all->b);
+            free(all);
+            // all = NULL;
+            ft_putstr_fd("Error\n", 2);
+            exit(1);
+        }
     }
     ft_free_split(line);
     checker_sort(all);
