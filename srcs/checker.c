@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 04:07:00 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 11:49:51 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void checker(t_all *all, char *str, char **line)
             free_stack(&all->b);
             free(all);
             all = NULL;
-            ft_putstr_fd("Error\n", 0);
+            ft_putstr_fd("Error\n", 1);
             exit(1);
         }
         i++;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
+#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/20 00:48:05 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/20 12:19:22 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,17 +69,17 @@ all: $(NAME1) $(NAME2)
 
 $(NAME1) :  $(OBJ1)
 	@rm -rf $(NAME1)
-	@$(COMP) -g $(H_FLAG) $(OBJ1) -o $@
+	@$(COMP) $(H_FLAG) $(OBJ1) -o $@
 	@echo "	Compilation of  $(NAME1):  \033[1;32mOK\033[m"
 
 $(NAME2) : $(OBJ2)
 	@rm -rf $(NAME2)
-	@$(COMP) -g $(H_FLAG) $(OBJ2) -o $@
+	@$(COMP)  $(H_FLAG) $(OBJ2) -o $@
 	@echo "	Compilation of $(NAME2):  \033[1;32mOK\033[m"
 
 $(OBJ_PATH)/%.o:  $(SRC_PATH)/%.c $(HDR)
 	@mkdir -p $(OBJ_PATH) $(SHARED_PATH) 
-	@$(COMP) -g $(FLAGS) $(H_FLAG)  -o $@ -c $<
+	@$(COMP)  $(FLAGS) $(H_FLAG)  -o $@ -c $<
 
 clean:
 	@rm -rf $(OBJ_PATH)
