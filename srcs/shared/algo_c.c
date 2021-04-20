@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 01:01:02 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/19 22:46:29 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 00:10:23 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void part1_1_c(t_stack **a, t_stack **b, int len, int m)
                     switch_case_color(a, b, 3);
             }
         }
-        // free(tmps);
         free_stack(&tmps);
     }
 }

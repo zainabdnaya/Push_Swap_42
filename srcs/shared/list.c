@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 21:30:40 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 00:10:17 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void add_back1(t_stack **head, t_stack *new, int k)
     while (tmp->next)
         tmp = tmp->next;
     tmp->next = tmps;
-    // new->number = k;
     tmp->next->previous = tmp;
     tmp->next->next = NULL;
 }
@@ -67,7 +66,6 @@ void add_front(t_stack **head, t_stack *new_node)
     if ((*head) != NULL)
         (*head)->previous = new_node;
     (*head) = new_node;
-    // return (head);
 }
 
 int node_nbr(t_stack **head, int index)

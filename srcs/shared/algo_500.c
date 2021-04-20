@@ -46,7 +46,6 @@ void part_1(t_stack **a, t_stack **b, int len, t_all *all)
                     switch_case(a, b, 3,all);
             }
         }
-        // free(tmps);
         free_stack(&tmps);
     }
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/16 15:29:21 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 00:37:19 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void check_replicat(char **av)
     j = 0;
     if (!av[i])
     {
-        ft_putstr_fd("Error: fill stack A!", 0);
+        ft_putstr_fd("Error: fill stack A with Integers!", 1);
         exit(1);
     }
     while (av[i])
@@ -35,7 +35,7 @@ void check_replicat(char **av)
                 j++;
             else if (ft_strcmp(replica, av[j]) == 0)
             {
-                ft_putstr_fd("Error: Imposter!", 0);
+                ft_putstr_fd("Error:\n", 1);
                 free_arg(&replica);
                 exit(1);
             }
@@ -52,15 +52,17 @@ int check_ascii(char **av)
     int i;
     int j;
 
-    i = 1;
+    i = 0;
     while (av[i])
     {
         j = 0;
         while (av[i][j])
         {
-            if (ft_isalpha(av[i][j]) == 1 || av[i][j] == '.')
+            if (ft_isalpha(av[i][j]) == 1 || av[i][j] == '.' 
+            || ((av[i][j]) == '-' && (av[i][j + 1]) == '\0' ) 
+            || ((av[i][j]) == '+' && (av[i][j + 1]) == '\0'))
             {
-                ft_putstr_fd("Error: Imposter!", 0);
+                ft_putstr_fd("Error:\n", 1);
                 exit(1);
             }
 

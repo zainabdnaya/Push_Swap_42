@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 21:30:32 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 00:10:01 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void rr_stack(t_stack **head, t_stack *tmp)
 
 void push_stack(t_stack **a, t_stack **b, t_stack *new)
 {
-    // t_stack *new;
     t_stack **tmp;
 
     new = NULL;
