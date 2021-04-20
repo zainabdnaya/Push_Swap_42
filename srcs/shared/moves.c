@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:59:39 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 03:54:33 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 16:11:18 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void r_stack(t_stack **head)
         *head = (*head)->next;
         add_back1(head);
     }
-    
 }
 
 t_stack *rr_part1(t_stack *head, t_stack *tmp)
@@ -81,32 +80,3 @@ void rr_stack(t_stack **head, t_stack *tmp)
     }
 }
 
-void push_stack(t_stack **a, t_stack **b, t_stack *new)
-{
-    t_stack **tmp;
-
-    new = NULL;
-    tmp = NULL;
-    if (*b == NULL && *a)
-    {
-        *b = (t_stack *)malloc(sizeof(t_stack));
-        (*b)->previous = NULL;
-        (*b)->number = (*a)->number;
-        (*b)->next = NULL;
-        (*a) = (*a)->next;
-        (*a)->previous = NULL;
-    }
-    else
-    {
-        if (*a)
-        {
-            new = (t_stack *)malloc(sizeof(t_stack));
-            new->number = (*a)->number;
-            new->next = NULL;
-            new->previous = NULL;
-            tmp = (b);
-            add_front(b, new);
-            (*a) = (*a)->next;
-        }
-    }
-}

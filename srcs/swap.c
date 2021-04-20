@@ -6,32 +6,19 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 14:49:33 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 16:46:40 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_all *fill_ps(t_all *all)
-{
-    t_stack *new;
-
-    new = NULL;
-    check_replicat(all->split);
-    check_ascii(all->split);
-    all->a = put_in_list(all, all->split, new);
-    all->len = size_list(all->a);
-    free_stack(&new);
-    return (all);
-}
-
-void swap_(t_all *all, int ac, char **av)
+char **fill_ps(t_all *all,int ac,char **av)
 {
     if (!ft_strcmp(av[1], "-s"))
-    { 
-        all->fd = open("swap.log", O_CREAT | O_RDWR ,0666);
-            if (all->fd == -1)
-            ft_putstr_fd("Error! opening file",1);
+    {
+        all->fd = open("swap.log", O_CREAT | O_RDWR, 0666);
+        if (all->fd == -1)
+            ft_putstr_fd("Error! opening file", 1);
         if (ac == 3)
             all->split = ft_split(av[2], ' ');
         else
@@ -45,7 +32,20 @@ void swap_(t_all *all, int ac, char **av)
         else
             all->split = &av[1];
     }
-    all = fill_in(all);
+    return (all->split);
+}
+
+void swap_(t_all *all, int ac, char **av)
+{
+    t_stack *new;
+
+    new = NULL;
+    all->split = fill_ps(all,ac,av);
+    check_replicat(all->split);
+    check_ascii(all->split);
+    all->a = put_in_list(all, all->split, new);
+    all->len = size_list(all->a);
+    free_stack(&new);
     if (all->len <= 10)
         sort_min(&(all->a), &(all->b), all->len,all);
     else if (all->len > 10 && all->len < 200)

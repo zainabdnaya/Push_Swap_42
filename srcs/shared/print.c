@@ -6,17 +6,24 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 14:41:22 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 16:24:10 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void display_norm(t_stack *a, t_stack *b, int len)
+{
+    if (len <= 10)
+        usleep(1000000);
+    else if (len > 10 && len <= 100)
+        usleep(100000);
+    else if (len > 100)
+        usleep(10000);
+}
+
 void display(t_stack *a, t_stack *b)
 {
-    int len;
-
-    len = size_list(a);
     system("clear");
     ft_putstr_fd("\n\t-------------------------------\n", 1);
     ft_putstr_fd("        \tA         \tB         ", 1);
@@ -39,12 +46,7 @@ void display(t_stack *a, t_stack *b)
         if (b)
             b = (b)->next;
     }
-    if (len <= 10)
-        usleep(1000000);
-    else if (len > 10 && len <= 100)
-        usleep(100000);
-    else if (len > 100)
-        usleep(10000);
+    display_norm(a, b, size_list(a));
 }
 
 void print_list(t_stack *ptr)

@@ -3,28 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:07:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 03:53:32 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 16:08:11 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned int		i;
-	char				*str;
-
-	i = 0;
-	str = s;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-}
 
 void add_back(t_stack **head, t_stack *new)
 {

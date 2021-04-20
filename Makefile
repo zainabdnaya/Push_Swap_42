@@ -6,7 +6,7 @@
 #    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/20 15:09:09 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/20 16:13:42 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC_SHARED= shared/errors.c\
 			shared/swap_op.c\
 			shared/option_v.c\
 			shared/algo_norm.c\
+			shared/moves_nor.c\
 				
 SRC_NAME1= checker.c  $(SRC_SHARED)
 SRC_NAME2=  swap.c $(SRC_SHARED)

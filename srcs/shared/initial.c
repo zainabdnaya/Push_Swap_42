@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initial.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:46:37 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 03:44:38 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 16:07:33 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,18 @@ t_all *initial(t_all *all)
     all->print = 0;
     all->color = 0;
     return (all);
+}
+
+void ft_bzero(void *s, size_t n)
+{
+    unsigned int i;
+    char *str;
+
+    i = 0;
+    str = s;
+    while (i < n)
+    {
+        str[i] = '\0';
+        i++;
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 14:31:32 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 16:46:41 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,18 @@ void option_v(t_all *all, int ac, char **av);
 void free_arg(char **arg);
 void free_stack(t_stack **stack);
 void free_single_stack(t_stack **stack);
-void the_end(t_stack **a, t_stack **b, char **line, t_all *all);
 void ft_free_split(char **split);
 void norm_part1(t_stack **a, t_stack **b, t_all *all, int m);
 void norm_part3(t_stack **a, t_stack **b, t_all *all, int max);
 void norm_part3_c(t_stack **a, t_stack **b, int max, int k);
 void norm_part1_c(t_stack **a, t_stack **b, int m, int k);
+void ft_bzero(void *s, size_t n);
+
+
 char **ft_split(char const *s, char c);
 char *ft_strdup(const char *src);
 char *ft_strjoin(char const *s1, char const *s2);
+char **fill_ps(t_all *all,int ac,char **av);
 
 int ft_isalpha(int c);
 int check_sort(t_stack **a, int len);
@@ -130,6 +133,5 @@ t_stack *dup_list(t_stack *head);
 
 t_all *fill_in(t_all *all);
 t_all *initial(t_all *all);
-t_all *fill_ps(t_all *all);
 
 #endif

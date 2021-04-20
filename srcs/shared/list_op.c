@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 13:24:21 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 16:07:50 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack *put_in_list(t_all *all, char **split, t_stack *new)
         new->number = my_atoi(split[i]);
         if (new->number >= 2147483647 || new->number <= -2147483647)
         {
-            ft_putstr_fd("Error:\n", 1);
+            ft_putstr_fd("Error:\n", 2);
             exit(1);
         }
         new->next = NULL;
