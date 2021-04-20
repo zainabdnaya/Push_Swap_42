@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 23:46:36 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/19 23:57:17 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ t_all *fill_ps(t_all *all)
 void swap_(t_all *all, int ac, char **av)
 {
     if (!ft_strcmp(av[1], "-s"))
-    {
-        all->save = 1;
+    { 
+        all->fd = open("swap.log", O_CREAT | O_RDWR ,0666);
+            if (all->fd == -1)
+            ft_putstr_fd("Error! opening file",1);
         if (ac == 3)
             all->split = ft_split(av[2], ' ');
         else
@@ -37,6 +39,7 @@ void swap_(t_all *all, int ac, char **av)
     }
     else
     {
+        all->fd = 1;
         if (ac == 2)
             all->split = ft_split(av[1], ' ');
         else
@@ -44,13 +47,14 @@ void swap_(t_all *all, int ac, char **av)
     }
     all = fill_in(all);
     if (all->len <= 10)
-        sort_min(&(all->a), &(all->b), all->len,all->save);
-    // else if (all->len > 10 && all->len < 200)
-    //     algo_1(&(all->a), &(all->b), all->len,all->save);
-    // else
-    //     algo(&(all->a), &(all->b), all->len,all->save);
+        sort_min(&(all->a), &(all->b), all->len,all);
+    else if (all->len > 10 && all->len < 200)
+        algo_1(&(all->a), &(all->b), all->len,all);
+    else
+        algo(&(all->a), &(all->b), all->len,all);
     if (ac == 2)
         ft_free_split(all->split);
+    close(all->fd);
 }
 
 int main(int ac, char **av)

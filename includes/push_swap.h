@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 22:43:40 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 00:04:31 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_all
     int len;
     int print;
     int color;
-    int save;
+    int fd;
     t_stack *a;
     t_stack *b;
 } t_all;
@@ -63,13 +63,13 @@ void ss(t_stack **a, t_stack **b);
 void rrr(t_stack **a, t_stack **b);
 void rr(t_stack **a, t_stack **b);
 void sort_result(t_stack *a, int len);
-void algo(t_stack **a, t_stack **b, int len,int k);
-void switch_case(t_stack **a, t_stack **b, int w,int k);
-void algo_1(t_stack **a, t_stack **b, int len,int k);
+void algo(t_stack **a, t_stack **b, int len,t_all *all);
+void switch_case(t_stack **a, t_stack **b, int w,t_all *all);
+void algo_1(t_stack **a, t_stack **b, int len,t_all *all);
 void algo_min(t_stack **a, t_stack **b, int len,int k);
 void checker_pars(t_stack **a, t_stack **b, int len, char *line);
-void sort_a_3(t_stack **a, t_stack **b, int len,int k);
-void sort_min(t_stack **a, t_stack **b, int len,int k);
+void sort_a_3(t_stack **a, t_stack **b, int len,t_all *all);
+void sort_min(t_stack **a, t_stack **b, int len,t_all *all);
 void le_vide_vider(t_stack **a, t_stack **b);
 void print_all(t_stack *a, t_stack *b);
 void print_list(t_stack *ptr);
