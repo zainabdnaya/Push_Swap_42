@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 11:49:51 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 17:09:05 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,8 @@ int condition(char *line)
         return (0);
 }
 
-void checker(t_all *all, char *str, char **line)
+char **checker_norm(t_all *all,char *str,char **line)
 {
-    int i;
-
-    i = 0;
     char *tmp;
 
     all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
@@ -63,12 +60,25 @@ void checker(t_all *all, char *str, char **line)
     if (!ft_strcmp(all->line, "\0"))
         checker_sort(all);
     free_arg(&all->line);
-    line = ft_split(str, '\n');
-    free_arg(&str);
+    if (str)
+    {
+        line = ft_split(str, '\n');
+        free_arg(&str);
+    }
+    else
+        exit(1);
+    return (line);
+}
+void checker(t_all *all, char *str, char **line)
+{
+    int i;
+
+    i = 0;
+    line = checker_norm(all, str, line);
     while (line[i])
     {
         if (condition(line[i]) == 1)
-            checker_pars(&all->a, &all->b,line[i]);
+            checker_pars(&all->a, &all->b, line[i]);
         else
         {
             ft_free_split(line);
