@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
@@ -20,9 +20,9 @@ int		ft_isalpha(int c)
 		return (0);
 }
 
-void		ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int			i;
+	int	i;
 
 	i = 0;
 	if (!s)
@@ -31,7 +31,7 @@ void		ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i++], 1);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{
@@ -56,13 +56,12 @@ void		ft_putnbr_fd(int n, int fd)
 	}
 }
 
-
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void		ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);

@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-static int			is_compere(int c, int o)
+static int	is_compere(int c, int o)
 {
 	return (c == o || c == '\0');
 }
 
-static int			y_tab_len(const char *str, int c)
+static int	y_tab_len(const char *str, int c)
 {
-	int len;
-	int i;
+	int	len;
+	int	i;
 
 	len = 0;
 	i = 0;
@@ -33,10 +33,10 @@ static int			y_tab_len(const char *str, int c)
 	return (len);
 }
 
-static int			x_tab_len(const char *str, int c)
+static int	x_tab_len(const char *str, int c)
 {
-	int				len;
-	int				i;
+	int	len;
+	int	i;
 
 	len = 0;
 	i = 0;
@@ -45,11 +45,11 @@ static int			x_tab_len(const char *str, int c)
 	return (len);
 }
 
-static void			*fill(const char *str, char **tab, int len_y, int c)
+static void	*fill(const char *str, char **tab, int len_y, int c)
 {
-	int len_x;
-	int x;
-	int y;
+	int	len_x;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < len_y)
@@ -69,12 +69,12 @@ static void			*fill(const char *str, char **tab, int len_y, int c)
 		tab[y][x] = '\0';
 		y++;
 	}
-	return ((void*)1);
+	return ((void *)1);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int		len_y;
+	 int	len_y;
 	char	**tab;
 	void	*check;
 
@@ -82,7 +82,7 @@ char				**ft_split(char const *s, char c)
 		return (0);
 	len_y = 0;
 	len_y = y_tab_len(s, c);
-	tab = malloc(sizeof(char*) * (len_y + 1));
+	tab = malloc(sizeof(char *) * (len_y + 1));
 	if (tab == NULL)
 	{
 		free(tab);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_rd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:15:44 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 16:08:13 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 20:06:36 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void checker_pars(t_stack **a, t_stack **b,  char *line)
         r_stack(b);
     else if (!ft_strcmp(line, "rrb") && size_list(*b) > 1)
         rr_stack(b,tmp);
-    else if (!ft_strcmp(line, "pb"))
+    else if (!ft_strcmp(line, "pb")  && size_list(*b) > 1)
         push_stack(a, b,tmp);
-    else if (!ft_strcmp(line, "pa"))
+    else if (!ft_strcmp(line, "pa") && size_list(*a) > 1)
         push_stack(b, a,tmp);
     else if (!ft_strcmp(line, "ss") && size_list(*b) > 1 && size_list(*a) > 1)
         ss(a, b);
