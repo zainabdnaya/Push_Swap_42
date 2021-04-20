@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_disp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:27:40 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 04:04:36 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 15:21:22 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void switch_norm(t_stack **a, t_stack **b, int w,t_stack *tmp)
 {
 
-    if (w == 4 && size_list(*a) > 0)
+    if (w == 4 && size_list(*b) > 0)
     {
         ft_putendl_fd(BLU, 1);
         push_stack(b, a, tmp);

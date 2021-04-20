@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:48:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/19 21:26:23 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 15:23:59 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void swap_c(t_all *all, int ac, char **av)
         algo_c(&(all->a), &(all->b), all->len);
     free_stack(&all->a);
     free_arg(&all->line);
-    if (ac == 2)
+    if (ac == 3)
         ft_free_split(all->split);
 }
 void swap_sh(t_all *all, int ac, char **av)
@@ -55,6 +55,6 @@ void swap_sh(t_all *all, int ac, char **av)
     free_stack(&new);
     free_stack(&all->a);
     free_arg(&all->line);
-    if (ac == 2)
+    if (ac == 3)
         ft_free_split(all->split);
 }

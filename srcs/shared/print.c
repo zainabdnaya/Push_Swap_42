@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 12:17:36 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 14:41:22 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void display(t_stack *a, t_stack *b)
             b = (b)->next;
     }
     if (len <= 10)
-        usleep(100000);
-    else if (len > 10 && len <= 100)
         usleep(1000000);
-    else if (len > 100)
+    else if (len > 10 && len <= 100)
         usleep(100000);
+    else if (len > 100)
+        usleep(10000);
 }
 
 void print_list(t_stack *ptr)

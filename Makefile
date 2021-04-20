@@ -6,7 +6,7 @@
 #    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/20 12:19:22 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/20 15:09:09 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRC_SHARED= shared/errors.c\
 			shared/swap_case.c\
 			shared/swap_op.c\
 			shared/option_v.c\
+			shared/algo_norm.c\
 				
 SRC_NAME1= checker.c  $(SRC_SHARED)
 SRC_NAME2=  swap.c $(SRC_SHARED)
@@ -60,10 +61,10 @@ OBJ2= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME2))
 SRC2= $(addprefix $(SRC_PATH)/,$(SRC_NAME2))
 
 HDR= $(addprefix $(HDR_PATH)/,$(HDR_NAME))
-FLAGS= -Wall -Wextra -Werror
+# FLAGS= -Wall -Wextra -Werror
 H_FLAG= -I $(HDR_PATH)
 
-COMP= gcc
+COMP= gcc -g
 
 all: $(NAME1) $(NAME2)
 

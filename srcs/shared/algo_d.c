@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   algo_d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 23:42:09 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/20 00:10:09 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 15:27:38 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void part_1_d(t_stack **a, t_stack **b, int len, int m)
+void part_1_d(t_stack **a, t_stack **b, int len)
 {
-    int index;
-    int proximity;
     int size;
+    int m;
     t_stack *tmp;
     t_stack *tmps;
 
@@ -35,25 +34,17 @@ void part_1_d(t_stack **a, t_stack **b, int len, int m)
                 free(tmp);
             }
             else
-            {
-                index = get_index((*a), m);
-                proximity = (size_list((*a)) / 2);
-                if (proximity > index)
-                    s_c_display(a, b, 2);
-                else
-                    s_c_display(a, b, 3);
-            }
+                norm_part1_c(a, b, m, 0);
         }
         free_stack(&tmps);
     }
 }
-void part_2_d(t_stack **a, t_stack **b, int index, int size)
+void part_2_d(t_stack **a, t_stack **b, int size)
 {
-    int proximity;
-    t_stack *tmp;
-    t_stack *tmps;
     int min;
+    t_stack *tmp;
 
+    tmp = NULL;
     while (*a && !check_sort(a, size))
     {
         min = get_min(*a);
@@ -64,32 +55,25 @@ void part_2_d(t_stack **a, t_stack **b, int index, int size)
         {
             if ((*a)->number == min)
             {
-                tmps = *a;
+                tmp = *a;
                 s_c_display(a, b, 1);
-                free(tmps);
+                free(tmp);
                 size--;
             }
             else
-            {
-                index = get_index((*a), min);
-                proximity = (size_list((*a)) / 2);
-                if (proximity > index)
-                    s_c_display(a, b, 2);
-                else
-                    s_c_display(a, b, 3);
-            }
+                norm_part1_c(a, b, min, 0);
         }
     }
 }
 
-void part_3_d(t_stack **a, t_stack **b, int index, int proximity)
+void part_3_d(t_stack **a, t_stack **b, int max)
 {
     t_stack *tmp;
-    t_stack *tmps;
 
+    tmp = NULL;
     while (*b)
     {
-        int max = get_max(*b);
+        max = get_max(*b);
         while (check_upper_pivot((*b), max))
         {
             max = get_max(*b);
@@ -97,20 +81,13 @@ void part_3_d(t_stack **a, t_stack **b, int index, int proximity)
             while ((*b)->number != max && tmp && tmp->number == max)
                 s_c_display(a, b, 7);
             while (((*b)->number != max) && *b)
-            {
-                index = get_index_max((*b), max);
-                proximity = val_aprox((size_list((*b)) / 2));
-                if (proximity > index && *b)
-                    s_c_display(a, b, 5);
-                else if (*b)
-                    s_c_display(a, b, 6);
-            }
+                norm_part3_c(a, b, max, 0);
             while (*b && (*b)->number == max)
             {
-                tmps = *b;
+                tmp = *b;
                 s_c_display(a, b, 4);
                 max = get_max(*b);
-                free(tmps);
+                free(tmp);
             }
         }
     }
@@ -118,18 +95,12 @@ void part_3_d(t_stack **a, t_stack **b, int index, int proximity)
 
 void algo_d(t_stack **a, t_stack **b, int len)
 {
-    int index;
-    int proximity;
     int m;
-    int size;
 
-    index = 0;
-    proximity = 0;
     m = 0;
-    size = len;
-    part_1_d(a, b, len, m);
-    part_2_d(a, b, index, size_list(*a));
-    part_3_d(a, b, index, proximity);
+    part_3_d(a, b, len);
+    part_2_d(a, b, len);
+    part_3_d(a, b, m);
     free_stack(a);
     free_stack(b);
 }

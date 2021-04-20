@@ -3,24 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 04:07:55 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/20 14:14:45 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *bottom(t_stack *a)
-{
-    t_stack *bottom;
 
-    bottom = a;
-    while ((bottom)->next)
-        (bottom) = (bottom)->next;
-    return (bottom);
-}
 
 void sort_a_3(t_stack **a, t_stack **b, int len, t_all *all)
 {

@@ -6,7 +6,7 @@
 /*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 12:17:58 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 14:49:33 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void swap_(t_all *all, int ac, char **av)
         algo_1(&(all->a), &(all->b), all->len,all);
     else
         algo(&(all->a), &(all->b), all->len,all);
-    if (ac == 2)
+    if (ac == 2 || ac == 3)
         ft_free_split(all->split);
     close(all->fd);
 }

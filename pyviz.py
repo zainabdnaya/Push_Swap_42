@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 from tkinter import *
 import sys
 import time
@@ -216,7 +217,7 @@ class PsGui:
         self.PauseCtl.config(text='>')
 
 
-root = root = tkinter.Tk()
+root = Tk()
 root.resizable(width=False, height=False)
 gui = PsGui(root)
 root.mainloop()

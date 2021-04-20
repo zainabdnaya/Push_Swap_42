@@ -1,18 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   algo_c.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/15 01:01:02 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/20 14:33:33 by zdnaya           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "push_swap.h"
-
-void part1_1_c(t_stack **a, t_stack **b, int len)
+void part_1_c(t_stack **a, t_stack **b, int len)
 {
     int size;
     int m;
@@ -20,7 +7,7 @@ void part1_1_c(t_stack **a, t_stack **b, int len)
     t_stack *tmps;
 
     size = len;
-    while (size >= val_aprox(len / 4))
+    while (size >= val_aprox(len / 8))
     {
         tmps = dup_list(*a);
         m = get_pivot(tmps);
@@ -34,18 +21,18 @@ void part1_1_c(t_stack **a, t_stack **b, int len)
                 free(tmp);
             }
             else
-                norm_part1_c(a, b, m,1);
+                norm_part1_c(a,b,m,1);
         }
         free_stack(&tmps);
     }
 }
 
-void part1_2_c(t_stack **a, t_stack **b, int size)
+void part_2_c(t_stack **a, t_stack **b, int size)
 {
-    int min;
     t_stack *tmp;
+    t_stack *tmps;
+    int min;
 
-    tmp = NULL;
     while (*a && !check_sort(a, size))
     {
         min = get_min(*a);
@@ -56,22 +43,22 @@ void part1_2_c(t_stack **a, t_stack **b, int size)
         {
             if ((*a)->number == min)
             {
-                tmp = *a;
+                tmps = *a;
                 switch_case_color(a, b, 1);
-                free(tmp);
+                free(tmps);
                 size--;
             }
             else
-                norm_part1_c(a, b,  min,1);
+                norm_part1_c(a, b, min,1);
         }
     }
 }
 
-void part1_3_c(t_stack **a, t_stack **b, int max)
+void part_3_c(t_stack **a, t_stack **b, int max)
 {
     t_stack *tmp;
+    t_stack *tmps;
 
-    tmp = NULL;
     while (*b)
     {
         max = get_max(*b);
@@ -85,23 +72,23 @@ void part1_3_c(t_stack **a, t_stack **b, int max)
                 norm_part3_c(a, b, max,1);
             while (*b && (*b)->number == max)
             {
-                tmp = *b;
+                tmps = *b;
                 switch_case_color(a, b, 4);
                 max = get_max(*b);
-                free(tmp);
+                free(tmps);
             }
         }
     }
 }
 
-void algo_1_c(t_stack **a, t_stack **b, int len)
+void algo_c(t_stack **a, t_stack **b, int len)
 {
     int m;
 
     m = 0;
-    part1_3_c(a, b, len);
-    part1_2_c(a, b, len);
-    part1_3_c(a, b, m);
+    part_1_c(a, b, len);
+    part_2_c(a, b, len);
+    part_3_c(a, b, m);
     free_stack(a);
     free_stack(b);
 }
