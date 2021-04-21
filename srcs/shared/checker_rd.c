@@ -1,4 +1,4 @@
-//* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   checker_rd.c                                       :+:      :+:    :+:   */
@@ -6,68 +6,43 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:15:44 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 01:21:21 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 03:29:30 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_condition_(char **str)
+void	free_condition_(char **str)
 {
-	   ft_free_split(str);
-        ft_putstr_fd("Error\n", 2);
-        exit(1);
-
-}
-int condition_(char *line)
-{
-    char **str;
-    int i;
-
-    str = ft_split(line,'\n');
-    i = 0;
-    while (str[i])
-    {
-        if (!ft_strcmp(str[i], "sa") || !ft_strcmp(str[i], "ra"))
-        {
-            i++;
-            continue;
-        }
-        else if (!ft_strcmp(str[i], "rra") || !ft_strcmp(str[i], "sb"))
-        {
-            i++;
-            continue;
-        }
-    else if (!ft_strcmp(str[i], "rb") || !ft_strcmp(str[i], "rrb"))
-        {
-            i++;
-            continue;
-        }
-    else if (!ft_strcmp(str[i], "pb") || !ft_strcmp(str[i], "pa"))
-        {
-            i++;
-            continue;
-        }
-    else if (!ft_strcmp(str[i], "pa") || !ft_strcmp(str[i], "ss"))
-        {
-            i++;
-            continue;
-        }
-    else if (!ft_strcmp(str[i], "rrr") || !ft_strcmp(str[i], "rr"))
-        {
-            i++;
-            continue;
-        }
-    else
-	free_condition_(str);
-    }
-    ft_free_split(str);
-    return (1);
+	ft_free_split(str);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
 }
 
-void checker_pars_v(t_stack **a, t_stack **b, char *line)
+int	condition_(char *line)
 {
-	t_stack *tmp;
+	char	**str;
+	 int	i;
+
+	str = ft_split(line, '\n');
+	i = 0;
+	while (str[i])
+	{
+		if (condition(str[i]) == 1)
+		{
+			i++;
+			continue ;
+		}
+		else
+			free_condition_(str);
+	}
+	ft_free_split(str);
+	return (1);
+}
+
+void	checker_pars_v(t_stack **a, t_stack **b, char *line)
+{
+	t_stack	*tmp;
 
 	tmp = NULL;
 	if (!ft_strcmp(line, "sa\n") && size_list(*a) > 1)
@@ -93,5 +68,3 @@ void checker_pars_v(t_stack **a, t_stack **b, char *line)
 	else if (!ft_strcmp(line, "rrr\n") && size_list(*b) > 1 && size_list(*a) > 1)
 		rrr(a, b);
 }
-
-

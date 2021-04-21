@@ -54,7 +54,8 @@ int	avreage(t_stack *a)
 	avg = (int)(k / i);
 	return (avg);
 }
-char **normal(t_all *all, int ac, char **av)
+
+char	**normal(t_all *all, int ac, char **av)
 {
 	if (ac == 2)
 		all->split = ft_split(av[1], ' ');

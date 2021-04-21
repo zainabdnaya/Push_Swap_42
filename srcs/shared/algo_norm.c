@@ -51,7 +51,7 @@ t_stack	*bottom(t_stack *a)
 void	norm_part1_c(t_stack **a, t_stack **b, int m, int k)
 {
 	int	index;
-	inT	proximity;
+	int	proximity;
 
 	index = get_index((*a), m);
 	proximity = (size_list((*a)) / 2);

@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -13,12 +12,12 @@
 
 #include "push_swap.h"
 
-void part_1(t_stack **a, t_stack **b, int len, t_all *all)
+void	part_1(t_stack **a, t_stack **b, int len, t_all *all)
 {
-	int size;
-	int m;
-	t_stack *tmp;
-	t_stack *tmps;
+	    int	size;
+	    int	m;
+	t_stack	*tmp;
+	t_stack	*tmps;
 
 	size = len;
 	while (size >= val_aprox(len / 8))
@@ -30,7 +29,7 @@ void part_1(t_stack **a, t_stack **b, int len, t_all *all)
 			if ((*a)->number <= m)
 			{
 				tmp = *a;
-				switch_case(a, b, 1,all);
+				switch_case(a, b, 1, all);
 				size--;
 				free(tmp);
 			}
@@ -40,24 +39,25 @@ void part_1(t_stack **a, t_stack **b, int len, t_all *all)
 		free_stack(&tmps);
 	}
 }
-void part_2(t_stack **a, t_stack **b, t_all *all, int size)
+
+void	part_2(t_stack **a, t_stack **b, t_all *all, int size)
 {
-	t_stack *tmp;
-	t_stack *tmps;
-	int min;
+	t_stack	*tmp;
+	t_stack	*tmps;
+	    int	min;
 
 	while (*a && !check_sort(a, size))
 	{
 		min = get_min(*a);
 		tmp = (*a)->next;
 		while ((*a)->number != min && tmp && tmp->number == min)
-			switch_case(a, b, 8,all);
+			switch_case(a, b, 8, all);
 		while (size_list(*a) && check_under_pivot((*a), min))
 		{
 			if ((*a)->number == min)
 			{
 				tmps = *a;
-				switch_case(a, b, 1,all);
+				switch_case(a, b, 1, all);
 				free(tmps);
 				size--;
 			}
@@ -67,10 +67,10 @@ void part_2(t_stack **a, t_stack **b, t_all *all, int size)
 	}
 }
 
-void part_3(t_stack **a, t_stack **b, t_all *all, int max)
+void	part_3(t_stack **a, t_stack **b, t_all *all, int max)
 {
-	t_stack *tmp;
-	t_stack *tmps;
+	t_stack	*tmp;
+	t_stack	*tmps;
 
 	while (*b)
 	{
@@ -80,13 +80,13 @@ void part_3(t_stack **a, t_stack **b, t_all *all, int max)
 			max = get_max(*b);
 			tmp = (*b)->next;
 			while ((*b)->number != max && tmp && tmp->number == max)
-				switch_case(a, b, 7,all);
+				switch_case(a, b, 7, all);
 			while (((*b)->number != max) && *b)
 				norm_part3(a, b, all, max);
 			while (*b && (*b)->number == max)
 			{
 				tmps = *b;
-				switch_case(a, b, 4,all);
+				switch_case(a, b, 4, all);
 				max = get_max(*b);
 				free(tmps);
 			}
@@ -94,9 +94,9 @@ void part_3(t_stack **a, t_stack **b, t_all *all, int max)
 	}
 }
 
-void algo(t_stack **a, t_stack **b, int len,t_all *all)
+void	algo(t_stack **a, t_stack **b, int len, t_all *all)
 {
-	int m;
+	int	m;
 
 	m = 0;
 	part_1(a, b, len, all);

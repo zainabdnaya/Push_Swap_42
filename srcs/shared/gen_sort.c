@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:45:52 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 01:21:27 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 03:19:25 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,23 @@ t_stack	*sort(t_stack *head)
 	return (head);
 }
 
-void checker_pars(t_stack **a, t_stack **b, char *line)
+void	checker_pars_n(t_stack **a, t_stack **b, char *line, t_stack *tmp)
 {
-	t_stack *tmp;
+	if (!ft_strcmp(line, "pb") && size_list(*b) > 1)
+		push_stack(a, b, tmp);
+	else if (!ft_strcmp(line, "pa") && size_list(*a) > 1)
+		push_stack(b, a, tmp);
+	else if (!ft_strcmp(line, "ss") && size_list(*b) > 1 && size_list(*a) > 1)
+		ss(a, b);
+	else if (!ft_strcmp(line, "rr") && size_list(*b) > 1 && size_list(*a) > 1)
+		rr(a, b);
+	else if (!ft_strcmp(line, "rrr") && size_list(*b) > 1 && size_list(*a) > 1)
+		rrr(a, b);
+}
+
+void	checker_pars(t_stack **a, t_stack **b, char *line)
+{
+	t_stack	*tmp;
 
 	tmp = NULL;
 	if (!ft_strcmp(line, "sa") && size_list(*a) > 1)
@@ -64,15 +78,7 @@ void checker_pars(t_stack **a, t_stack **b, char *line)
 		r_stack(b);
 	else if (!ft_strcmp(line, "rrb") && size_list(*b) > 1)
 		rr_stack(b, tmp);
-	else if (!ft_strcmp(line, "pb") && size_list(*b) > 1)
-		push_stack(a, b, tmp);
-	else if (!ft_strcmp(line, "pa") && size_list(*a) > 1)
-		push_stack(b, a, tmp);
-	else if (!ft_strcmp(line, "ss") && size_list(*b) > 1 && size_list(*a) > 1)
-		ss(a, b);
-	else if (!ft_strcmp(line, "rr") && size_list(*b) > 1 && size_list(*a) > 1)
-		rr(a, b);
-	else if (!ft_strcmp(line, "rrr") && size_list(*b) > 1 && size_list(*a) > 1)
-		rrr(a, b);
+	else
+		checker_pars_n(a, b, line, tmp);
 	free_stack(&tmp);
 }

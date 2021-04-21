@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 00:00:44 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 03:05:00 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ char *ft_strdup(const char *src);
 char *ft_strjoin(char const *s1, char const *s2);
 char **fill_ps(t_all *all,int ac,char **av);
 
+int condition(char *line);
 int ft_isalpha(int c);
 int check_sort(t_stack **a, int len);
 int get_pivot(t_stack *a);

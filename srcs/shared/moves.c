@@ -72,7 +72,7 @@ void	rr_stack(t_stack **head, t_stack *tmp)
 	if (*head)
 	{
 		tmp = (t_stack *)malloc(sizeof(t_stack));
-			if (tmp == NULL)
+		if (tmp == NULL)
 			return ;
 		tmp = rr_part1(*head, tmp);
 		a = *head;
