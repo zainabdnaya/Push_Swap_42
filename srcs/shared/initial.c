@@ -12,30 +12,31 @@
 
 #include "push_swap.h"
 
-t_all *initial(t_all *all)
+t_all	*initial(t_all *all)
 {
-    if (!(all = (t_all *)malloc(sizeof(t_all))))
-        exit(1);
-    all->a = NULL;
-    all->b = NULL;
-    all->len = 0;
-    all->line = NULL;
-    all->split = NULL;
-    all->print = 0;
-    all->color = 0;
-    return (all);
+	all = (t_all *)malloc(sizeof(t_all));
+		if (all == NULL)
+		exit(1);
+	all->a = NULL;
+	all->b = NULL;
+	all->len = 0;
+	all->line = NULL;
+	all->split = NULL;
+	all->print = 0;
+	all->color = 0;
+	return (all);
 }
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned int i;
-    char *str;
+	unsigned int	i;
+	        char	*str;
 
-    i = 0;
-    str = s;
-    while (i < n)
-    {
-        str[i] = '\0';
-        i++;
-    }
+	i = 0;
+	str = s;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 20:13:10 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 00:00:44 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void norm_part3_c(t_stack **a, t_stack **b, int max, int k);
 void norm_part1_c(t_stack **a, t_stack **b, int m, int k);
 void ft_bzero(void *s, size_t n);
 
-
+char **normal(t_all *all, int ac, char **av);
 char **ft_split(char const *s, char c);
 char *ft_strdup(const char *src);
 char *ft_strjoin(char const *s1, char const *s2);
@@ -124,6 +124,7 @@ int val_aprox(float m);
 int check_under_pivot(t_stack *a, int pivot);
 int check_upper_pivot(t_stack *a, int pivot);
 int get_min(t_stack *a);
+int condition_(char *line);
 
 t_stack *bottom(t_stack *a);
 t_stack *sort(t_stack *head);

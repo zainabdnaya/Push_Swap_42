@@ -12,40 +12,40 @@
 
 #include "push_swap.h"
 
-int check_under_pivot(t_stack *a, int pivot)
+int	check_under_pivot(t_stack *a, int pivot)
 {
-    while (a)
-    {
-        if (a->number <= pivot)
-            return (1);
-        a = a->next;
-    }
-    return (0);
+	while (a)
+	{
+		if (a->number <= pivot)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }
 
-int check_upper_pivot(t_stack *a, int pivot)
+int	check_upper_pivot(t_stack *a, int pivot)
 {
-    while (a)
-    {
-        if (a->number == pivot)
-            return (1);
-        a = a->next;
-    }
-    return (0);
+	while (a)
+	{
+		if (a->number == pivot)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }
 
-int get_min(t_stack *a)
+int	get_min(t_stack *a)
 {
-    int min;
-    
-    min = a->number;
-    t_stack *tmp;
-    tmp = a;
-    while (a)
-    {
-        if (a->number < min)
-            min = a->number;
-        a = a->next;
-    }
-    return (min);
+	    int	min;
+	t_stack	*tmp;
+
+	min = a->number;
+	tmp = a;
+	while (a)
+	{
+		if (a->number < min)
+			min = a->number;
+		a = a->next;
+	}
+	return (min);
 }

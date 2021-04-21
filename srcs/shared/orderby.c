@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   orderby.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:47:46 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 16:08:08 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/21 01:17:57 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,12 @@ int	avreage(t_stack *a)
 	a = tmp;
 	avg = (int)(k / i);
 	return (avg);
+}
+char **normal(t_all *all, int ac, char **av)
+{
+	if (ac == 2)
+		all->split = ft_split(av[1], ' ');
+	else
+		all->split = &av[1];
+	return (all->split);
 }

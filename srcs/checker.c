@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 17:55:23 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/20 23:59:27 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-char **normal(t_all *all, int ac, char **av)
-{
-    if (ac == 2)
-        all->split = ft_split(av[1], ' ');
-    else
-        all->split = &av[1];
-    return (all->split);
-}
 
 int condition(char *line)
 {
@@ -51,6 +42,7 @@ char **checker_norm(t_all *all,char *str,char **line)
             str = ft_strdup(all->line);
         else
             str = ft_strjoin(str, all->line);
+        condition_(all->line);
         if (tmp)
         {
             free(tmp);
@@ -85,7 +77,6 @@ void checker(t_all *all, char *str, char **line)
             free_stack(&all->a);
             free_stack(&all->b);
             free(all);
-            // all = NULL;
             ft_putstr_fd("Error\n", 2);
             exit(1);
         }
@@ -104,7 +95,6 @@ void checker(t_all *all, char *str, char **line)
             free_stack(&all->a);
             free_stack(&all->b);
             free(all);
-            // all = NULL;
             ft_putstr_fd("Error\n", 2);
             exit(1);
         }
