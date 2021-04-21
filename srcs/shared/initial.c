@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initial.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 10:46:37 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 03:04:20 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 15:35:42 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	condition(char *line)
 		return (1);
 	if (!ft_strcmp(line, "pb") || !ft_strcmp(line, "pa"))
 		return (1);
-	if (!ft_strcmp(line, "pa") || !ft_strcmp(line, "ss"))
+	if (!ft_strcmp(line, "ss"))
 		return (1);
 	if (!ft_strcmp(line, "rrr") || !ft_strcmp(line, "rr"))
 		return (1);

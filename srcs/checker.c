@@ -3,37 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 04:40:24 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 17:48:15 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*string(t_all *all, char *str, char *tmp)
+char *string(t_all *all, char *str, char *tmp)
 {
 	while (read(0, all->line, BUFFER_SIZE))
 	{
 		tmp = str;
-		condition_(all->line);
 		if (str == NULL)
 			str = ft_strdup(all->line);
 		else
 			str = ft_strjoin(str, all->line);
+		if (all->ac > 2)
+			condition_(all->line);
 		if (tmp)
 		{
 			free(tmp);
 			tmp = NULL;
 		}
+		free_arg(&all->line);
+		all->line = malloc(sizeof(char) * BUFFER_SIZE);
 	}
 	return (str);
 }
 
-char	**checker_norm(t_all *all, char *str, char **line, char *tmp)
+char **checker_norm(t_all *all, char *str, char **line, char *tmp)
 {
-	all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
+	all->line = malloc(sizeof(char) * BUFFER_SIZE);
 	str = string(all, str, tmp);
 	if (!ft_strcmp(all->line, "\0"))
 		checker_sort(all);
@@ -48,40 +51,48 @@ char	**checker_norm(t_all *all, char *str, char **line, char *tmp)
 	return (line);
 }
 
-void	checker(t_all *all, char *str, char **line)
+void checker(t_all *all, char *str, char **line)
 {
-	char	*tmp;
-	 int	i;
+	char *tmp;
+	int i;
 
 	i = 0;
 	tmp = NULL;
 	line = checker_norm(all, str, line, tmp);
 	while (line[i])
 	{
-		if (condition(line[i]) == 1)
+		if ( all->ac <= 2)
 		{
 			checker_pars(&all->a, &all->b, line[i]);
 			i++;
 		}
 		else
 		{
-			ft_free_split(line);
-			free_stack(&all->a);
-			free_stack(&all->b);
-			free(all);
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
+			if (condition(line[i]) == 1)
+			{
+				checker_pars(&all->a, &all->b, line[i]);
+				i++;
+			}
+			else
+			{
+				ft_free_split(line);
+				free_stack(&all->a);
+				free_stack(&all->b);
+				free(all);
+				ft_putstr_fd("Error\n", 2);
+				exit(1);
+			}
 		}
 	}
 	ft_free_split(line);
 	checker_sort(all);
 }
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	t_all	*all;
-	 char	**line;
-	 char	*str;
+	t_all *all;
+	char **line;
+	char *str;
 
 	str = NULL;
 	line = NULL;
@@ -91,6 +102,7 @@ int	main(int ac, char **av)
 	else
 	{
 		all = initial(all);
+		all->ac = ac;
 		if (!ft_strcmp(av[1], "-v"))
 			option_v(all, ac, av);
 		else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 13:45:52 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 03:19:25 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 17:42:30 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ t_stack	*sort(t_stack *head)
 
 void	checker_pars_n(t_stack **a, t_stack **b, char *line, t_stack *tmp)
 {
-	if (!ft_strcmp(line, "pb") && size_list(*b) > 1)
+	if (!ft_strcmp(line, "pb") && size_list(*a) > 0)
 		push_stack(a, b, tmp);
-	else if (!ft_strcmp(line, "pa") && size_list(*a) > 1)
+	else if (!ft_strcmp(line, "pa") && size_list(*b) > 0)
 		push_stack(b, a, tmp);
 	else if (!ft_strcmp(line, "ss") && size_list(*b) > 1 && size_list(*a) > 1)
 		ss(a, b);
@@ -80,5 +80,6 @@ void	checker_pars(t_stack **a, t_stack **b, char *line)
 		rr_stack(b, tmp);
 	else
 		checker_pars_n(a, b, line, tmp);
+	print_all(*a, *b);
 	free_stack(&tmp);
 }

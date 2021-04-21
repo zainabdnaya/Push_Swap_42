@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
+#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/21 04:38:52 by zainabdnaya      ###   ########.fr        #
+#    Updated: 2021/04/21 17:34:34 by zdnaya           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

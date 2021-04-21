@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ok_ko.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 18:45:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/20 23:34:48 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 17:39:00 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,10 @@ void	checker_sort(t_all *all)
 int	check_sort(t_stack **a, int len)
 {
 	t_stack	*tmp;
-	    int	i;
 
-	i = 0;
-	if (size_list(*a) != len)
-		return (0);
+	// if (size_list(*a) != len)
+	// 	return (0);
+	(void)len;
 	tmp = (*a);
 	while (tmp && tmp->next)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
+/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 04:26:06 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 17:47:31 by zdnaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# define BUFFER_SIZE 2048
+# define BUFFER_SIZE 100000
 # define RED "\e[0;31msa"
 # define GRN "\e[0;32mra"
 # define YEL "\e[0;33mrra"
@@ -42,6 +42,7 @@ typedef struct s_all
 	char			**split;
 	int				len;
 	int				print;
+	int				ac;
 	int				color;
 	int				fd;
 	t_stack			*a;
