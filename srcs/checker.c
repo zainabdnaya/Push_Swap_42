@@ -12,8 +12,11 @@
 
 #include "push_swap.h"
 
-char *string(t_all *all, char *str, char *tmp)
+char *string(t_all *all, char *tmp)
 {
+    char *str = NULL;
+	all->line = malloc(sizeof(char) * BUFFER_SIZE);
+    ft_bzero(all->line,BUFFER_SIZE);
 	while (read(0, all->line, BUFFER_SIZE))
 	{
 		tmp = str;
@@ -30,35 +33,35 @@ char *string(t_all *all, char *str, char *tmp)
 		}
 		free_arg(&all->line);
 		all->line = malloc(sizeof(char) * BUFFER_SIZE);
+        ft_bzero(all->line,BUFFER_SIZE);
 	}
 	return (str);
 }
 
-char **checker_norm(t_all *all, char *str, char **line, char *tmp)
+char **checker_norm(t_all *all, char **line, char *tmp)
 {
-	all->line = malloc(sizeof(char) * BUFFER_SIZE);
-	str = string(all, str, tmp);
-	if (!ft_strcmp(all->line, "\0"))
-		checker_sort(all);
-	free_arg(&all->line);
-	if (str)
+    char *l;
+
+	l = string(all, tmp);
+	
+	if (l)
 	{
-		line = ft_split(str, '\n');
-		free_arg(&str);
+		line = ft_split(l, '\n');
+		free_arg(&l);
 	}
 	else
 		exit(1);
 	return (line);
 }
 
-void checker(t_all *all, char *str, char **line)
+void checker(t_all *all, char **line)
 {
 	char *tmp;
 	int i;
 
 	i = 0;
 	tmp = NULL;
-	line = checker_norm(all, str, line, tmp);
+	line = checker_norm(all, line, tmp);
 	while (line[i])
 	{
 		if ( all->ac <= 2)
@@ -92,9 +95,7 @@ int main(int ac, char **av)
 {
 	t_all *all;
 	char **line;
-	char *str;
 
-	str = NULL;
 	line = NULL;
 	all = NULL;
 	if (ac < 2)
@@ -109,7 +110,7 @@ int main(int ac, char **av)
 		{
 			all->split = normal(all, ac, av);
 			all = fill_in(all);
-			checker(all, str, line);
+			checker(all, line);
 		}
 	}
 }

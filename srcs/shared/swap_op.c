@@ -14,9 +14,6 @@
 
 void	swap_c(t_all *all, int ac, char **av)
 {
-	t_stack	*new;
-
-	new = NULL;
 	if (ac == 3)
 		all->split = ft_split(av[2], ' ');
 	else

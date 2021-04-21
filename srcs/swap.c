@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 16:46:40 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/21 23:29:44 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,15 @@ void	swap_(t_all *all, int ac, char **av)
 		ft_free_split(all->split);
 	close(all->fd);
 }
-
+void text(void)
+{
+	ft_putstr_fd("\t\t \033[94m==>Help is Here \033[94m<==\n",1);
+	ft_putstr_fd("\033[92mTo run Push_swap :\033[92m\n",1);
+	ft_putstr_fd("\e[4;35m ./push_swap list_of_numbers_given_as_parameters\n",1);
+	ft_putstr_fd("\033[36mTo run Checker :\033[36m\n",1);
+	ft_putstr_fd("\e[4;35m ./push_swap number_list | ./checker number_list\n",1);
+	exit(0);
+}
 int	main(int ac, char **av)
 {
 	t_all	*all;
@@ -67,6 +75,8 @@ int	main(int ac, char **av)
 	else
 	{
 		all = initial(all);
+		if (!ft_strcmp(av[1], "-h"))
+			text();
 		if (!ft_strcmp(av[1], "-c"))
 			swap_c(all, ac, av);
 		else if (!ft_strcmp(av[1], "-sh"))

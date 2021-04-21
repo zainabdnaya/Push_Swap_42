@@ -52,12 +52,8 @@ void	display(t_stack *a, t_stack *b)
 void	print_list(t_stack *ptr)
 {
 	t_stack	*tmp;
-	   char	*s1;
-	   char	*s2;
 
 	tmp = ptr;
-	s1 = "A";
-	s2 = "B";
 	while (ptr)
 	{
 		ft_putstr_fd("{", 1);

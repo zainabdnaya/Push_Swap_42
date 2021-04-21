@@ -24,10 +24,7 @@ void	push_norm(t_stack **a, t_stack **b)
 
 void	push_stack(t_stack **a, t_stack **b, t_stack *new)
 {
-	t_stack	**tmp;
-
 	new = NULL;
-	tmp = NULL;
 	if (*b == NULL && *a)
 		push_norm(a, b);
 	else
@@ -38,7 +35,6 @@ void	push_stack(t_stack **a, t_stack **b, t_stack *new)
 			new->number = (*a)->number;
 			new->next = NULL;
 			new->previous = NULL;
-			tmp = (b);
 			add_front(b, new);
 			(*a) = (*a)->next;
 		}
