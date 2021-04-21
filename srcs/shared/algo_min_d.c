@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_min_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 22:09:10 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/20 16:07:45 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/21 04:41:09 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_norm_d(t_stack **a, t_stack **b, int len)
+void	sort_norm_d(t_stack **a, t_stack **b)
 {
 	s_c_display(a, b, 8);
 	s_c_display(a, b, 3);
@@ -30,7 +30,7 @@ void	sort_a_3_d(t_stack **a, t_stack **b, int len)
 		if ((*a)->number < (*a)->next->number && bottom1->number == min)
 			s_c_display(a, b, 3);
 		else if ((*a)->number > (*a)->next->number && bottom1->number == min)
-			sort_norm_d(a, b, len);
+			sort_norm_d(a, b);
 		else if ((*a)->next->number == min)
 		{
 			if ((*a)->number < bottom1->number)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_min_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 00:56:25 by zainabdnaya       #+#    #+#             */
-/*   Updated: 2021/04/20 16:07:43 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/21 04:42:12 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_norm_c(t_stack **a, t_stack **b, int len)
+void	sort_norm_c(t_stack **a, t_stack **b)
 {
 	switch_case_color(a, b, 8);
 	switch_case_color(a, b, 3);
@@ -30,7 +30,7 @@ void	sort_c_3(t_stack **a, t_stack **b, int len)
 		if ((*a)->number < (*a)->next->number && bottom1->number == min)
 			switch_case_color(a, b, 3);
 		else if ((*a)->number > (*a)->next->number && bottom1->number == min)
-			sort_norm_c(a, b, len);
+			sort_norm_c(a, b);
 		else if ((*a)->next->number == min)
 		{
 			if ((*a)->number < bottom1->number)

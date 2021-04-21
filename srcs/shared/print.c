@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 17:06:51 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 16:24:10 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/21 04:41:32 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	display_norm(t_stack *a, t_stack *b, int len)
+void	display_norm(int len)
 {
 	if (len <= 10)
 		usleep(1000000);
@@ -46,7 +46,7 @@ void	display(t_stack *a, t_stack *b)
 		if (b)
 			b = (b)->next;
 	}
-	display_norm(a, b, size_list(a));
+	display_norm(size_list(a));
 }
 
 void	print_list(t_stack *ptr)

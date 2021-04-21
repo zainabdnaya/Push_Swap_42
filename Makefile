@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+         #
+#    By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/02 08:58:20 by zainabdnaya       #+#    #+#              #
-#    Updated: 2021/04/20 16:13:42 by zdnaya           ###   ########.fr        #
+#    Updated: 2021/04/21 04:38:52 by zainabdnaya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ OBJ2= $(addprefix $(OBJ_PATH)/,$(OBJ_NAME2))
 SRC2= $(addprefix $(SRC_PATH)/,$(SRC_NAME2))
 
 HDR= $(addprefix $(HDR_PATH)/,$(HDR_NAME))
-# FLAGS= -Wall -Wextra -Werror
+FLAGS= -Wall -Wextra -Werror
 H_FLAG= -I $(HDR_PATH)
 
 COMP= gcc -g

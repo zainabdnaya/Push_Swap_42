@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 16:07:48 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/21 04:42:28 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_norm_3(t_stack **a, t_stack **b, int len, t_all *all)
+void	sort_norm_3(t_stack **a, t_stack **b, t_all *all)
 {
 	switch_case(a, b, 8, all);
 	switch_case(a, b, 3, all);
@@ -30,7 +30,7 @@ void	sort_a_3(t_stack **a, t_stack **b, int len, t_all *all)
 		if ((*a)->number < (*a)->next->number && bottom1->number == min)
 			switch_case(a, b, 3, all);
 		else if ((*a)->number > (*a)->next->number && bottom1->number == min)
-			sort_norm_3(a, b, len, all);
+			sort_norm_3(a, b, all);
 		else if ((*a)->next->number == min)
 		{
 			if ((*a)->number < bottom1->number)

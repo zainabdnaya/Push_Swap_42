@@ -6,13 +6,13 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 16:27:40 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/20 21:43:26 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 04:41:57 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	switch_norm1(t_stack **a, t_stack **b, int w, t_stack *tmp)
+void	switch_norm1(t_stack **b, int w, t_stack *tmp)
 {
 	if (w == 5 && size_list(*b) > 1)
 	{
@@ -55,7 +55,7 @@ void	switch_norm(t_stack **a, t_stack **b, int w, t_stack *tmp)
 		swap_stack(a);
 	}
 	else
-		switch_norm1(a, b, w, tmp);
+		switch_norm1(b, w, tmp);
 }
 
 void	switch_case_color(t_stack **a, t_stack **b, int w)

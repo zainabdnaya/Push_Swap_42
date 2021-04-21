@@ -6,13 +6,13 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 03:26:13 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 04:40:24 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*string(t_all *all, char *str, char **line, char *tmp)
+char	*string(t_all *all, char *str, char *tmp)
 {
 	while (read(0, all->line, BUFFER_SIZE))
 	{
@@ -34,7 +34,7 @@ char	*string(t_all *all, char *str, char **line, char *tmp)
 char	**checker_norm(t_all *all, char *str, char **line, char *tmp)
 {
 	all->line = ft_calloc(BUFFER_SIZE, sizeof(char));
-	str = string(all, str, line, tmp);
+	str = string(all, str, tmp);
 	if (!ft_strcmp(all->line, "\0"))
 		checker_sort(all);
 	free_arg(&all->line);
@@ -54,6 +54,7 @@ void	checker(t_all *all, char *str, char **line)
 	 int	i;
 
 	i = 0;
+	tmp = NULL;
 	line = checker_norm(all, str, line, tmp);
 	while (line[i])
 	{
