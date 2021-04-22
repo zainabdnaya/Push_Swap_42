@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/22 02:54:52 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 03:17:12 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	check_ascii(char **av)
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (s[i] != (char)c)
