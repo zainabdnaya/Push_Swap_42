@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 23:58:04 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 00:52:23 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**fill_ps(t_all *all, int ac, char **av)
 {
 	if (!ft_strcmp(av[1], "-s"))
 	{
-		all->fd = open("swap.log", O_CREAT | O_RDWR, 0666);
+		all->fd = open("swap.log", O_CREAT | O_RDWR | O_TRUNC, 0666);
 		if (all->fd == -1)
 			ft_putstr_fd("Error! opening file", 1);
 		if (ac == 3)
@@ -44,6 +44,8 @@ void	swap_(t_all *all, int ac, char **av)
 	check_replicat(all->split);
 	check_ascii(all->split);
 	all->a = put_in_list(all, all->split, new);
+	if (check_sort(&all->a, size_list(all->a)) == 1)
+		exit(0);
 	all->len = size_list(all->a);
 	free_stack(&new);
 	if (all->len <= 10)
