@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 14:34:16 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/22 00:33:40 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 02:40:01 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_stack	*put_in_list(t_all *all, char **split, t_stack *new)
 		if (new == NULL)
 			return (NULL);
 		new->number = my_atoi(split[i]);
-		if (new->number >= 2147483647 || new->number <= -2147483647)
+		if (new->number > 2147483647 || new->number < -2147483647)
 		{
-			ft_putstr_fd("Error:\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
 		new->next = NULL;

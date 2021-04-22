@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:59:35 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 00:38:33 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 02:33:43 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	check_replicat(char **av)
 				j++;
 			else if (ft_strcmp(replica, av[j]) == 0)
 			{
-				ft_putstr_fd("Error:\n", 2);
+				ft_putstr_fd("Error\n", 2);
 				free_arg(&replica);
 				exit(1);
 			}
@@ -69,7 +69,7 @@ int	check_ascii(char **av)
 			|| ((av[i][j]) == '-' && (av[i][j + 1]) == '\0')
 			|| ((av[i][j]) == '+' && (av[i][j + 1]) == '\0'))
 			{
-				ft_putstr_fd("Error:\n", 2);
+				ft_putstr_fd("Error\n", 2);
 				exit(1);
 			}
 			j++;
