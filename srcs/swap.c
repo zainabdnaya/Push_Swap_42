@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 23:29:44 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/21 23:58:04 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	swap_(t_all *all, int ac, char **av)
 		algo_1(&(all->a), &(all->b), all->len, all);
 	else
 		algo(&(all->a), &(all->b), all->len, all);
-	if (ac == 2 || ac == 3)
+	if (ac == 2 || (ac == 3 && all->fd != 1))
 		ft_free_split(all->split);
 	close(all->fd);
 }

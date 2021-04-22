@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 09:08:38 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 04:42:28 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 00:08:42 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ void	sort_min(t_stack **a, t_stack **b, int len, t_all *all)
 	t_stack	*ss;
 
 	ss = NULL;
-	if (len == 3)
+	if (len == 2 && (*a)->number > (*a)->next->number)
+			switch_case(a, b, 8, all);
+	if (len < 3)
 		sort_a_3(a, b, len, all);
 	else if (len > 3)
 	{
