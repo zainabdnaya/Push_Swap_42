@@ -30,19 +30,15 @@ void	checker_sort(t_all *all)
 	{
 		free_stack(&all->a);
 		free_stack(&all->b);
-		// free(all);
-		// all = NULL;
 		ft_putstr_fd("OK\n", 1);
-        exit(1);
+		exit(1);
 	}
 	else
 	{
 		free_stack(&all->a);
 		free_stack(&all->b);
-		// free(all);
-		// all = NULL;
 		ft_putstr_fd("KO\n", 1);
-        // exit(1);
+		exit(1);
 	}
 }
 

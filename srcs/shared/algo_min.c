@@ -78,7 +78,7 @@ void	sort_min(t_stack **a, t_stack **b, int len, t_all *all)
 
 	ss = NULL;
 	if (len == 2 && (*a)->number > (*a)->next->number)
-			switch_case(a, b, 8, all);
+		switch_case(a, b, 8, all);
 	if (len <= 3)
 		sort_a_3(a, b, len, all);
 	else if (len > 3)

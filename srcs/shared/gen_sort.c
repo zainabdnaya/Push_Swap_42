@@ -80,6 +80,5 @@ void	checker_pars(t_stack **a, t_stack **b, char *line)
 		rr_stack(b, tmp);
 	else
 		checker_pars_n(a, b, line, tmp);
-	// print_all(*a, *b);
 	free_stack(&tmp);
 }
