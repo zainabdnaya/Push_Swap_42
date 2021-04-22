@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:38:54 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/22 02:25:07 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 02:58:29 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*string(t_all *all, char *tmp)
 			str = ft_strdup(all->line);
 		else
 			str = ft_strjoin(str, all->line);
-		if (all->ac > 2)
+		if (all->ac >=  2 && !ft_strchr(all->av[1],' '))
 			condition_(all->line);
 		if (tmp)
 		{
@@ -110,6 +110,7 @@ int	main(int ac, char **av)
 	{
 		all = initial(all);
 		all->ac = ac;
+		all->av = av;
 		if (!ft_strcmp(av[1], "-v"))
 			option_v(all, ac, av);
 		else

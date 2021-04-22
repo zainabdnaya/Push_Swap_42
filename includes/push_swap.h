@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdnaya <zdnaya@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 13:49:59 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/21 17:47:31 by zdnaya           ###   ########.fr       */
+/*   Updated: 2021/04/22 02:57:55 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_all
 {
 	char			*line;
 	char			**split;
+	char			**av;
 	int				len;
 	int				print;
 	int				ac;
@@ -105,6 +106,7 @@ char		**ft_split(char const *s, char c);
 char		*ft_strdup(const char *src);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		**fill_ps(t_all *all, int ac, char **av);
+char		*ft_strchr(const char *s, int c);
 int			condition(char *line);
 int			ft_isalpha(int c);
 int			check_sort(t_stack **a, int len);

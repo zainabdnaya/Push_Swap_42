@@ -6,7 +6,7 @@
 /*   By: zainabdnayagmail.com <zainabdnayagmail.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:37:50 by zdnaya            #+#    #+#             */
-/*   Updated: 2021/04/22 01:45:28 by zainabdnaya      ###   ########.fr       */
+/*   Updated: 2021/04/22 02:44:16 by zainabdnaya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	text(void)
 {
 	char	*str;
 
-	str = "Run this command it should give OK \xE2\x9C\x85 for no Existing Errors";
+	str = "Run this command it should give OK \xE2\x9C\x85 if no Errors exist\n";
 	ft_putstr_fd("\t\033[94m\xE2\x9C\xA8Welcome to PUSH_SWAP\xE2\x9C\xA8 \033[94m\t\n", 1);
 	ft_putstr_fd("\033[36mTo run Push_swap\xE2\x9D\x97:\n", 1);
 	ft_putstr_fd("\033[35m ./push_swap list_of_numbers_given_as_parameters\n", 1);
@@ -72,7 +72,8 @@ void	text(void)
 	ft_putstr_fd("\033[35m ./checker number_list\n", 1);
 	ft_putstr_fd("\033[92m exemple (./checker 4 3 7)\n", 1);
 	ft_putstr_fd("\033[94mTo Check if push_swap work well\xF0\x9F\x91\x8C:\n", 1);
-	ft_putstr_fd("\033[94m\xF0\x9F\x8F\x83str\n", 1);
+	ft_putstr_fd("\033[94m\xF0\x9F\x8F\x83", 1);
+	ft_putstr_fd(str, 1);
 	ft_putstr_fd("\033[35m ./push_swap number_list | ./checker number_list\n", 1);
 	ft_putstr_fd("\033[92m exemple (./push_swap 4 3 7 | ./checker 4 3 7 )\n", 1);
 	ft_putstr_fd("\t\t\033[30m\033[41m Output: OK!\n", 1);
