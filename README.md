@@ -3,7 +3,8 @@ sort data on a stack, with a limited set of instructions, using the lowest possi
 
 ## Explanation about The algorithm that I use :
   <a href="https://diyanazizo13.medium.com/fastest-push-swap-algorithm-2f510028602b">algorithm push_swap </a> 
-
+## To Test
+ Try to use : ./push_swap -h "this command will show what to do " 
 ## Concept of this Project ##
 
  The idea is simple, You have two stacks called Stack A and Stack B. <br>
@@ -43,5 +44,4 @@ I use Double linked list to implement these moves :<br>
 
 <a href="https://ibb.co/Rb0SvY5"><img src="https://i.ibb.co/jfM56bp/Screen-Shot-2021-04-11-at-2-33-56-PM.png" alt="Screen-Shot-2021-04-11-at-2-33-56-PM" border="0"></a>
 
-## To Test
- Try to use : ./push_swap -h "this command will show what to do " 
+
