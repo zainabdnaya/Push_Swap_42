@@ -1,6 +1,9 @@
 # push_swap
 sort data on a stack, with a limited set of instructions, using the lowest possible number of actions
 
+## Explanation about The algorithm that I use :
+   https://diyanazizo13.medium.com/fastest-push-swap-algorithm-2f510028602b
+
 ## Concept of this Project ##
 
  The idea is simple, You have two stacks called Stack A and Stack B. <br>
