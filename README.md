@@ -2,7 +2,7 @@
 sort data on a stack, with a limited set of instructions, using the lowest possible number of actions
 
 ## Explanation about The algorithm that I use :
-   https://diyanazizo13.medium.com/fastest-push-swap-algorithm-2f510028602b
+  <a href="https://diyanazizo13.medium.com/fastest-push-swap-algorithm-2f510028602b">algorithm push_swap </a> 
 
 ## Concept of this Project ##
 
